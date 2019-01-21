@@ -1,11 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="zxx">
+<html>
+<head>
 
-	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-		<title>Sujon - Single Blog</title>
+		<title>Sujon - 404</title>
 
 		<!-- css include -->
 		<link rel="stylesheet" type="text/css" href="css/materialize.css">
@@ -19,119 +20,17 @@
 		<link rel="stylesheet" type="text/css" href="css/responsive.css">
 
 	</head>
-
-
-	<body>
-
-
-
-
-		<div class="thetop"></div>
-		<!-- for back to top -->
-
-		<div class='backToTop'>
-			<a href="#" class='scroll'>
-				<span>T</span>
-				<span>O</span>
-				<span>P</span>
-				<span class="go-up">
-					<i class="icofont icofont-long-arrow-up"></i>
-				</span>
-			</a>
-		</div>
-		<!-- backToTop -->
-
-
-
-
-		<!-- ==================== header-section Start ====================-->
-		<header id="header-section" class="header-section w100dt navbar-fixed">
-
-			<nav class="nav-extended main-nav">
-				<div class="container">
-					<div class="row">
-						<div class="nav-wrapper w100dt">
-
-							<div class="logo left">
-								<a href="index.html" class="brand-logo">
-									<img src="img/logo.png" alt="brand-logo">
-								</a>
-							</div>
-							<!-- logo -->
-
-							<div>
-								<a href="#" data-activates="mobile-demo" class="button-collapse">
-									<i class="icofont icofont-navigation-menu"></i>
-								</a>
-								<ul id="nav-mobile" class="main-menu center-align hide-on-med-and-down">
-									<li><a href="index.html">HOME</a></li>
-									<li><a href="cateogry.html">CATEGORIES</a></li>
-									<li class="dropdown">
-										<a href="#">PAGES <i class="icofont icofont-simple-down"></i></a>
-										<ul class="dropdown-container">
-											<li><a href="404.html">404 Page</a></li>
-										</ul>
-										<!-- /.dropdown-container -->
-									</li>
-									<li><a href="single-blog.html">BLOG SINGLE</a></li>
-									<li><a href="contact.html">CONTACT</a></li>
-								</ul>
-								<!-- /.main-menu -->
-
-								<!-- ******************** sidebar-menu ******************** -->
-								<ul class="side-nav" id="mobile-demo">
-									<li class="snavlogo center-align"><img src="img/logo.png" alt="logo"></li>
-									<li><a href="index.html">HOME</a></li>
-									<li><a href="cateogry.html">CATEGORIES</a></li>
-									<li class="active"><a href="single-blog.html">SINGLE BLOG</a></li>
-									<li><a href="contact.html">CONTACT</a></li>
-									<li><a href="404.html">404 PAGE</a></li>
-								</ul>
-							</div>
-							<!-- main-menu -->
-
-							<a href="#" class="search-trigger right">
-								<i class="icofont icofont-search"></i>
-							</a>
-							<!-- search -->
-							<div id="myNav" class="overlay">
-								<a href="javascript:void(0)" class="closebtn">&times;</a>
-								<div class="overlay-content">
-									<form>
-										<input type="text" name="search" placeholder="Search...">
-										<br>
-										<button class="waves-effect waves-light" type="submit" name="action">Search</button>
-									</form>
-								</div>
-							</div>
-
-						</div>
-						<!-- /.nav-wrapper -->
-					</div>
-					<!-- row -->
-				</div>
-				<!-- container -->
-			</nav>
-
-		</header>
-		<!-- /#header-section -->
-		<!-- ==================== header-section End ====================-->
-
-
-
-
-
-		<!-- ==================== header-section Start ====================-->
-		<section id="breadcrumb-section" class="breadcrumb-section w100dt mb-30">
+<body>
+	<section id="breadcrumb-section" class="breadcrumb-section w100dt mb-30">
 			<div class="container">
 
 				<nav class="breadcrumb-nav w100dt">
 					<div class="page-name hide-on-small-only left">
-						<h4>SINGLE BLOG</h4>
+						<h4>CATEOGRY</h4>
 					</div>
 					<div class="nav-wrapper right">
-						<a href="index.html" class="breadcrumb">Home</a>
-						<a href="single-blog.html" class="breadcrumb active">Blog Single</a>
+						<a href="#!" class="breadcrumb">Home</a>
+						<a href="#!" class="breadcrumb active">Cateogry</a>
 					</div>
 					<!-- /.nav-wrapper -->
 				</nav>
@@ -141,202 +40,100 @@
 			<!-- container -->
 		</section>
 		<!-- /.breadcrumb-section -->
-		<!-- ==================== header-section End ====================-->
+		<!-- ==================== header-section End ==================== -->
 
 
 
 
 
-		<!-- ==================== single-blog-section start ====================-->
-		<section id="single-blog-section" class="single-blog-section w100dt mb-50">
+		<!-- ==================== cateogry-section start ==================== -->
+		<section id="cateogry-section" class="cateogry-section w100dt mb-50">
 			<div class="container">
 				<div class="row">
 
-					<div class="col m8 s12">
-
-						<div class="blogs mb-30">
-							<div class="card">
-								<div class="card-image">
-									<img src="img/selfie.jpg" alt="Image">
-								</div>
-								<!-- /.card-image -->
-								<div class="card-content w100dt">
-									<p>
-										<a href="#" class="tag left w100dt l-blue mb-30">Lifestyle</a>
-									</p>
-									<a href="#" class="card-title mb-30">
-										Labore Etdolore Magna Aliqua Utero Ratione
-									</a>
-									<p class="mb-30">
-										Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
-									</p>
-									<ul class="post-mate-time left mb-30">
-										<li>
-											<p class="hero left">
-												By - <a href="#" class="l-blue">SujonMaji</a>
-											</p>
-										</li>
-										<li>
-											<i class="icofont icofont-ui-calendar"></i> 5 February'17
-										</li>
-									</ul>
-
-									<ul class="post-mate right mb-30">
-										<li class="like">
-											<a href="#">
-												<i class="icofont icofont-heart-alt"></i> 55
-											</a>
-										</li>
-										<li class="comment">
-											<a href="#">
-												<i class="icofont icofont-comment"></i> 32
-											</a>
-										</li>
-									</ul>
-
-									<p class="w100dt mb-10">
-										Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
-									</p>
-									<p class="w100dt mb-50">
-										Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
-									</p>
+					<div class="col s12 m8 l8">
 
 
-									<img class="mb-30" src="img/fashion.jpg" alt="Image">
-									<p class="w100dt">
-										Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
-									</p>
-									<blockquote class="grey lighten-2">
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde error cumque voluptatibus autem voluptatum corrupti cum facilis reprehenderit fugiat beatae.
-									</blockquote>
-									<p class="w100dt mb-50">
-										Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
-									</p>
-
-
-									<img class="mb-10" src="img/travel2.jpg" alt="Image">
-									<p class="w100dt mb-50">
-										Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
-									</p>
-
-									<ul class="tag-list left">
-										<li><a href="#!" class="waves-effect">#Fashion</a></li>
-										<li><a href="#!" class="waves-effect">#Lifestyle</a></li>
-										<li><a href="#!" class="waves-effect">#Travel</a></li>
-									</ul>
-
-									<ul class="share-links right">
-										<li><a href="#" class="facebook"><i class="icofont icofont-social-facebook"></i></a></li>
-										<li><a href="#" class="twitter"><i class="icofont icofont-social-twitter"></i></a></li>
-										<li><a href="#" class="google-plus"><i class="icofont icofont-social-google-plus"></i></a></li>
-										<li><a href="#" class="linkedin"><i class="icofont icofont-brand-linkedin"></i></a></li>
-										<li><a href="#" class="pinterest"><i class="icofont icofont-social-pinterest"></i></a></li>
-										<li><a href="#" class="instagram"><i class="icofont icofont-social-instagram"></i></a></li>
-									</ul>
-
-								</div>
-								<!-- /.card-content -->
-							</div>
-							<!-- /.card -->
-						</div>
-						<!-- /.blogs -->
-
-						<div class="prv-nxt-post w100dt mb-30">
-							<div class="row">
-
-								<div class="col m6 s12">
-									<div class="sb-prv-post">
-										<div class="pn-img left">
-											<img src="img/img1.jpg" alt="Image">
-										</div>
-										<div class="pn-text left-align">
-											<a href="#" class="title-name mb-10">Lorem ipsum dolor sit amet consectetur</a>
-											<a href="#" class="prv-nxt-btn l-blue"><i class="icofont icofont-caret-left"></i> Preveious</a>
-										</div>
-									</div>
-									<!-- /.sb-prv-post -->
-								</div>
-								<!-- colm6 -->
-
-								<div class="col m6 s12">
-									<div class="sb-nxt-post">
-										<div class="pn-img right">
-											<img src="img/img2.jpg" alt="Image">
-										</div>
-										<div class="pn-text right-align">
-											<a href="#" class="title-name mb-10">Lorem ipsum dolor sit amet consectetur</a>
-											<a href="#" class="prv-nxt-btn l-blue">Next <i class="icofont icofont-caret-right"></i></a>
-										</div>
-									</div>
-									<!-- /.sb-nxt-post -->
-								</div>
-								<!-- colm6 -->
-
-							</div>
-							<!-- row -->
-						</div>
-
-						<div class="peoples-comments w100dt mb-30">
-							<div class="sidebar-title center-align">
-								<h2>10 Comments</h2>
-							</div>
-
-							<div class="comment-area w100dt">
-
-								<div class="comment w100dt mb-30">
-									<div class="ppic left">
-										<img src="img/img1.png" alt="Image">
-									</div>
-									<!-- /.ppic -->
-									<div class="pname">
-										<h4 class="mb-10">
-											<a href="#" class="card-title l-blue">
-												Angelina Jolie
-											</a>
-										</h4>
-										<p class="comment-text mb-10">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum aut culpa modi vel eaque cumque illo. Vitae placeat itaque minus!
+						<div class="slider mb-30">
+							<ul class="slides">
+								<li class="slider-item">
+									<img src="img/blog4.jpg" alt="Image">
+									<div class="caption center-align">
+										<a href="#" class="tag l-blue w100dt mb-30">Lifestyle</a>
+										<h1 class="card-title mb-10">
+											Labore Etdolore Magna Aliqua Utero
+										</h1>
+										<p>
+											Sedquia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+											Sedquia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
 										</p>
-
-										<ul class="post-mate-time left">
-											<li class="like">
-												<a href="#">
-													<i class="icofont icofont-heart-alt"></i> 55
-												</a>
-											</li>
-											<li class="comment">
-												<a href="#">
-													<i class="icofont icofont-comment"></i> 32
-												</a>
-											</li>
-											<li class="reply">
-												<a href="#">
-													Reply
-												</a>
-											</li>
-											<li>
-												<i class="icofont icofont-ui-calendar"></i> 5 February'17
-											</li>
-										</ul>
-
+										<a href="single-blog.html" class="custom-btn waves-effect waves-light">READ MORE</a>
 									</div>
-									<!-- /.pname -->
-									<div class="cmnt-reply comment w100dt">
-										<div class="ppic left">
-											<img src="img/img2.png" alt="Image">
-										</div>
-										<!-- /.ppic -->
-										<div class="pname">
-											<h4 class="mb-10">
-												<a href="#" class="card-title l-blue">
-													Angelina Jolie
-												</a>
-											</h4>
-											<p class="comment-text mb-10">
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum aut culpa modi vel eaque cumque illo. Vitae placeat itaque minus!
-											</p>
+								</li>
+								<li class="slider-item">
+									<img src="img/fashion2.jpg" alt="Image">
+									<div class="caption left-align">
+										<a href="#" class="tag l-blue w100dt mb-30">Fashion</a>
+										<h1 class="card-title mb-10">
+											Labore Etdolore Magna Aliqua Utero
+										</h1>
+										<p>
+											Sedquia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+											Sedquia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+										</p>
+										<a href="single-blog.html" class="custom-btn waves-effect waves-light">READ MORE</a>
+									</div>
+								</li>
+								<li class="slider-item">
+									<img src="img/travel2.jpg" alt="Image">
+									<div class="caption right-align">
+										<a href="#" class="tag l-blue w100dt mb-30">Trave</a>
+										<h1 class="card-title mb-10">
+											Labore Etdolore Magna Aliqua Utero
+										</h1>
+										<p>
+											Sedquia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+											Sedquia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+										</p>
+										<a href="single-blog.html" class="custom-btn waves-effect waves-light">READ MORE</a>
+									</div>
+								</li>
+							</ul>
+						</div>
 
+						<div class="row">
+							<div class="col m6 s12">
+								<div class="blogs mb-30">
+									<div class="card">
+										<div class="card-image">
+											<img src="img/selfie.jpg" alt="Image">
+											<a class="btn-floating center-align cmn-bgcolor halfway-fab waves-effect waves-light">
+												<i class="icofont icofont-camera-alt"></i>
+											</a>
+										</div>
+										<!-- /.card-image -->
+										<div class="card-content w100dt">
+											<p>
+												<a href="#" class="tag left w100dt l-blue mb-30">Lifestyle</a>
+											</p>
+											<a href="single-blog.html" class="card-title">
+												Labore Etdolore Magna Aliqua Utero Ratione
+											</a>
+											<p class="mb-30">
+												Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
+											</p>
 											<ul class="post-mate-time left">
+												<li>
+													<p class="hero left">
+														By - <a href="#" class="l-blue">SujonMaji</a>
+													</p>
+												</li>
+												<li>
+													<i class="icofont icofont-ui-calendar"></i> 5 February'17
+												</li>
+											</ul>
+
+											<ul class="post-mate right">
 												<li class="like">
 													<a href="#">
 														<i class="icofont icofont-heart-alt"></i> 55
@@ -347,39 +144,48 @@
 														<i class="icofont icofont-comment"></i> 32
 													</a>
 												</li>
-												<li class="reply">
-													<a href="#">
-														Reply
-													</a>
+											</ul>
+										</div>
+										<!-- /.card-content -->
+									</div>
+									<!-- /.card -->
+								</div>
+								<!-- /.blogs -->
+							</div>
+							<!-- colm6 -->
+
+							<div class="col m6 s12">
+								<div class="blogs mb-30">
+									<div class="card">
+										<div class="card-image">
+											<img src="img/blog4.jpg" alt="Image">
+											<a class="btn-floating center-align cmn-bgcolor halfway-fab waves-effect waves-light">
+												<i class="icofont icofont-camera-alt"></i>
+											</a>
+										</div>
+										<!-- /.card-image -->
+										<div class="card-content w100dt">
+											<p>
+												<a href="#" class="tag left w100dt l-blue mb-30">Living</a>
+											</p>
+											<a href="single-blog.html" class="card-title">
+												Labore Etdolore Magna Aliqua Utero Ratione
+											</a>
+											<p class="mb-30">
+												Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
+											</p>
+											<ul class="post-mate-time left">
+												<li>
+													<p class="hero left">
+														By - <a href="#" class="l-blue">SujonMaji</a>
+													</p>
 												</li>
 												<li>
 													<i class="icofont icofont-ui-calendar"></i> 5 February'17
 												</li>
 											</ul>
 
-										</div>
-										<!-- /.pname -->
-									</div>
-									<!-- /.cmnt-reply -->
-								</div>
-								<!-- /.comment -->
-
-								<div class="comment w100dt">
-										<div class="ppic left">
-											<img src="img/img3.png" alt="Image">
-										</div>
-										<!-- /.ppic -->
-										<div class="pname">
-											<h4 class="mb-10">
-												<a href="#" class="card-title l-blue">
-													Angelina Jolie
-												</a>
-											</h4>
-											<p class="comment-text mb-10">
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum aut culpa modi vel eaque cumque illo. Vitae placeat itaque minus!
-											</p>
-
-											<ul class="post-mate-time left">
+											<ul class="post-mate right">
 												<li class="like">
 													<a href="#">
 														<i class="icofont icofont-heart-alt"></i> 55
@@ -390,59 +196,235 @@
 														<i class="icofont icofont-comment"></i> 32
 													</a>
 												</li>
-												<li class="reply">
-													<a href="#">
-														Reply
-													</a>
+											</ul>
+										</div>
+										<!-- /.card-content -->
+									</div>
+									<!-- /.card -->
+								</div>
+								<!-- /.blogs -->
+							</div>
+							<!-- colm6 -->
+
+							<div class="col m12 s12">
+								<div class="blogs mb-30">
+									<div class="card">
+										<div class="card-image">
+											<img src="img/travel2.jpg" alt="Image">
+											<a class="btn-floating center-align cmn-bgcolor halfway-fab waves-effect waves-light">
+												<i class="icofont icofont-camera-alt"></i>
+											</a>
+										</div>
+										<!-- /.card-image -->
+										<div class="card-content w100dt">
+											<p>
+												<a href="#" class="tag left w100dt l-blue mb-30">Travel</a>
+											</p>
+											<a href="single-blog.html" class="card-title">
+												Labore Etdolore Magna Aliqua Utero Ratione
+											</a>
+											<p class="mb-30">
+												Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
+											</p>
+											<ul class="post-mate-time left">
+												<li>
+													<p class="hero left">
+														By - <a href="#" class="l-blue">SujonMaji</a>
+													</p>
 												</li>
 												<li>
 													<i class="icofont icofont-ui-calendar"></i> 5 February'17
 												</li>
 											</ul>
 
+											<ul class="post-mate right">
+												<li class="like">
+													<a href="#">
+														<i class="icofont icofont-heart-alt"></i> 55
+													</a>
+												</li>
+												<li class="comment">
+													<a href="#">
+														<i class="icofont icofont-comment"></i> 32
+													</a>
+												</li>
+											</ul>
 										</div>
-										<!-- /.pname -->
+										<!-- /.card-content -->
 									</div>
-									<!-- /.comment -->
-
-							</div>
-							<!-- /.comment-area -->
-						</div>
-						<!-- /.peoples-comments -->
-
-						<div class="leave-comment">
-
-							<div class="sidebar-title center-align">
-								<h2>Leave Your Comment</h2>
-							</div>
-
-							<form class="comment-area w100dt" action="#">
-								<div class="row">
-									<div class="col m6 s12">
-										<div class="form-item">
-											<input id="icon_prefix" type="text" class="validate">
-											<label for="icon_prefix">First Name</label>
-										</div>
-									</div>
-									<div class="col m6 s12">
-										<div class="form-item">
-											<input id="email" type="email" class="validate">
-											<label for="email" data-error="wrong" data-success="right">Email</label>
-										</div>
-									</div>
-									<div class="col s12">
-										<div class="form-item">
-											<textarea id="textarea1" class="materialize-textarea"></textarea>
-											<label for="textarea1">Textarea</label>
-										</div>
-									</div>
+									<!-- /.card -->
 								</div>
-								<!-- row -->
-								<button type="button" class="custom-btn waves-effect waves-light right">SUBMIT NOW</button>
-							</form>
-							<!-- /.comment-area -->
+								<!-- /.blogs -->
+							</div>
+							<!-- colm6 -->
+
+							<div class="col m6 s12">
+								<div class="blogs mb-30">
+									<div class="card">
+										<div class="card-image">
+											<img src="img/fashion2.jpg" alt="Image">
+											<a class="btn-floating center-align cmn-bgcolor halfway-fab waves-effect waves-light">
+												<i class="icofont icofont-camera-alt"></i>
+											</a>
+										</div>
+										<!-- /.card-image -->
+										<div class="card-content w100dt">
+											<p>
+												<a href="#" class="tag left w100dt l-blue mb-30">Fashion</a>
+											</p>
+											<a href="single-blog.html" class="card-title">
+												Labore Etdolore Magna Aliqua Utero Ratione
+											</a>
+											<p class="mb-30">
+												Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
+											</p>
+											<ul class="post-mate-time left">
+												<li>
+													<p class="hero left">
+														By - <a href="#" class="l-blue">SujonMaji</a>
+													</p>
+												</li>
+												<li>
+													<i class="icofont icofont-ui-calendar"></i> 5 February'17
+												</li>
+											</ul>
+
+											<ul class="post-mate right">
+												<li class="like">
+													<a href="#">
+														<i class="icofont icofont-heart-alt"></i> 55
+													</a>
+												</li>
+												<li class="comment">
+													<a href="#">
+														<i class="icofont icofont-comment"></i> 32
+													</a>
+												</li>
+											</ul>
+										</div>
+										<!-- /.card-content -->
+									</div>
+									<!-- /.card -->
+								</div>
+								<!-- /.blogs -->
+							</div>
+							<!-- colm6 -->
+
+							<div class="col m6 s12">
+								<div class="blogs mb-30">
+									<div class="card">
+										<div class="card-image">
+											<img src="img/travel2.jpg" alt="Image">
+											<a class="btn-floating center-align cmn-bgcolor halfway-fab waves-effect waves-light">
+												<i class="icofont icofont-camera-alt"></i>
+											</a>
+										</div>
+										<!-- /.card-image -->
+										<div class="card-content w100dt">
+											<p>
+												<a href="#" class="tag left w100dt l-blue mb-30">Travel</a>
+											</p>
+											<a href="single-blog.html" class="card-title">
+												Labore Etdolore Magna Aliqua Utero Ratione
+											</a>
+											<p class="mb-30">
+												Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
+											</p>
+											<ul class="post-mate-time left">
+												<li>
+													<p class="hero left">
+														By - <a href="#" class="l-blue">SujonMaji</a>
+													</p>
+												</li>
+												<li>
+													<i class="icofont icofont-ui-calendar"></i> 5 February'17
+												</li>
+											</ul>
+
+											<ul class="post-mate right">
+												<li class="like">
+													<a href="#">
+														<i class="icofont icofont-heart-alt"></i> 55
+													</a>
+												</li>
+												<li class="comment">
+													<a href="#">
+														<i class="icofont icofont-comment"></i> 32
+													</a>
+												</li>
+											</ul>
+										</div>
+										<!-- /.card-content -->
+									</div>
+									<!-- /.card -->
+								</div>
+								<!-- /.blogs -->
+							</div>
+							<!-- colm6 -->
+
+							<div class="col m12 s12">
+								<div class="blogs mb-30">
+									<div class="card">
+										<div class="card-image">
+											<img src="img/selfie.jpg" alt="Image">
+											<a class="btn-floating center-align cmn-bgcolor halfway-fab waves-effect waves-light">
+												<i class="icofont icofont-camera-alt"></i>
+											</a>
+										</div>
+										<!-- /.card-image -->
+										<div class="card-content w100dt">
+											<p>
+												<a href="#" class="tag left w100dt l-blue mb-30">Lifestyle</a>
+											</p>
+											<a href="single-blog.html" class="card-title">
+												Labore Etdolore Magna Aliqua Utero Ratione
+											</a>
+											<p class="mb-30">
+												Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
+											</p>
+											<ul class="post-mate-time left">
+												<li>
+													<p class="hero left">
+														By - <a href="#" class="l-blue">SujonMaji</a>
+													</p>
+												</li>
+												<li>
+													<i class="icofont icofont-ui-calendar"></i> 5 February'17
+												</li>
+											</ul>
+
+											<ul class="post-mate right">
+												<li class="like">
+													<a href="#">
+														<i class="icofont icofont-heart-alt"></i> 55
+													</a>
+												</li>
+												<li class="comment">
+													<a href="#">
+														<i class="icofont icofont-comment"></i> 32
+													</a>
+												</li>
+											</ul>
+										</div>
+										<!-- /.card-content -->
+									</div>
+									<!-- /.card -->
+								</div>
+								<!-- /.blogs -->
+							</div>
+							<!-- colm6 -->
 						</div>
-						<!-- /.leave-comment -->
+						<!-- row -->
+
+						<ul class="pagination w100dt">
+							<li class="waves-effect"><a href="#!"><i class="icofont icofont-simple-left"></i></a></li>
+							<li class="active"><a href="#!">1</a></li>
+							<li class="waves-effect"><a href="#!">2</a></li>
+							<li class="waves-effect"><a href="#!">3</a></li>
+							<li class="waves-effect"><a href="#!">4</a></li>
+							<li class="waves-effect"><a href="#!">5</a></li>
+							<li class="waves-effect"><a href="#!"><i class="icofont icofont-simple-right"></i></a></li>
+						</ul>
 
 					</div>	
 					<!-- colm8 -->
@@ -1194,8 +1176,8 @@
 								</p>
 								<form action="#">
 									<div class="input-field">
-										<input id="email1" type="email" class="validate">
-										<label class="left-align" for="email1">Enter email address</label>
+										<input id="email" type="email" class="validate">
+										<label class="left-align" for="email">Enter email address</label>
 									</div>
 									<a class="waves-effect waves-light">SUBMIT NOW</a>
 								</form>
@@ -1213,14 +1195,14 @@
 			</div>
 			<!-- container -->
 		</section>
-		<!-- /#single-blog-section -->
-		<!-- ==================== single-blog-section end ====================-->
+		<!-- /#cateogry-section -->
+		<!-- ==================== cateogry-section end ==================== -->
 
 
 
 
 
-		<!-- ==================== instag leftram-section Start ====================-->
+		<!-- ==================== instag leftram-section Start ==================== -->
 		<section id="instagram-section" class="instagram-section w100dt">
 
 			<div class="instagram-link w100dt">
@@ -1232,54 +1214,8 @@
 
 		</section>
 		<!-- /#instag leftram-section -->
-		<!-- ==================== instag leftram-section End ====================-->
-
-
-
-
-
-		<!-- ==================== footer-section Start ====================-->
-		<footer id="footer-section" class="footer-section w100dt">
-			<div class="container">
-
-				<div class="footer-logo w100dt center-align mb-30">
-					<a href="#" class="brand-logo">
-						<img src="img/logo.png" alt="brand-logo">
-					</a>
-				</div>
-				<!-- /.footer-logo -->
-
-				<ul class="footer-social-links w100dt center-align mb-30">
-					<li><a href="#" class="facebook">FACEBOOK</a></li>
-					<li><a href="#" class="twitter">TWITTER</a></li>
-					<li><a href="#" class="google-plus">GOOGLE+</a></li>
-					<li><a href="#" class="linkedin">LINKDIN</a></li>
-					<li><a href="#" class="pinterest">PINTEREST</a></li>
-					<li><a href="#" class="instagram">INSTAGRAM</a></li>
-				</ul>
-
-				<p class="center-align">
-					<i class="icofont icofont-heart-alt l-blue"></i>  
-					All Right Reserved, Deasined by 
-					<a href="#" class="l-blue">SujonMaji</a>
-				</p>
-
-			</div>
-			<!-- container -->
-		</footer>
-		<!-- /#footer-section -->
-		<!-- ==================== footer-section End ====================-->
-
-
-
-
-
-
-
-
-
-
-		<!-- my custom js -->
+		<!-- ==================== instag leftram-section End ==================== -->
+		
 		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="js/materialize.js"></script>
 		<script type="text/javascript" src="js/owl.carousel.min.js"></script>
@@ -1289,8 +1225,7 @@
 
 		<script type="text/javascript">
 		</script>
+</body>
 
-
-	</body>
 
 </html>
