@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-		 <!-- ==================== blog-slider-section start ==================== -->
+			 <!-- ==================== blog-slider-section start ==================== -->
 		<section id="blog-slider-section" class="blog-slider-section w100dt mb-50">
 			<div class="container">
 
