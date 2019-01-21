@@ -1,7 +1,20 @@
 /**
  * member 자바스크립트
  */
-
+//로그인 유효성 검사
+function loginCheck() {
+	if (document.frm.userid.value.length == 0) {
+		alert("아이디를 써주세요");
+		frm.userid.focus();
+		return false;
+	}
+	if (document.frm.pwd.value == "") {
+		alert("암호는 반드시 입력해야 합니다.");
+		frm.pwd.focus();
+		return false;
+	}
+	return true;
+}
 // 회원 유효성 검사
 function memValidate() {
 
@@ -10,7 +23,7 @@ function memValidate() {
 		frm.memId.focus();
 		return false;
 	}
-	if (document.frm.memId.value.length > 8) {
+	if (document.frm.memId.value.length != 8) {
 		alert("학번 8자리를 입력해주세요.");
 		frm.memId.focus();
 		return false;
@@ -51,15 +64,19 @@ function removeChar(event) {
 		event.target.value = event.target.value.replace(/[^0-9]/g, "");
 }
 
-function popupOpen(memId){
-	var memId = document.frm.memId.value;
-	var popUrl = "member?command=popupFormAction&memId="+memId;	//팝업창에 출력될 페이지 URL
+function popupOpen() {
+	var popUrl = "popup.jsp"; // 팝업창에 출력될 url
 
-	var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
+	var popOption = "width=400, height=400, resizable=no, scrollbars=no, status=no;"; // 팝업창
+																						// 옵션(optoin)
+	window.open(popUrl, "", popOption);
 
-		window.open(popUrl,"",popOption);
+}
 
-	}
-
+function sendToParent(){
+	window.opener.document.frm.memId.value = document.frm.memId.value;
+	self.close();
+	
+}
 
 

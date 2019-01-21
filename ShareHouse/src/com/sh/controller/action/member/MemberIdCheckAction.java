@@ -8,19 +8,28 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sh.controller.action.Action;
+import com.sh.dao.MemberDAO;
 
-public class PopupFormAction implements Action {
+public class MemberIdCheckAction implements Action{
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
+		
 		String url = "popup.jsp";
+		
 		String memId = request.getParameter("memId");
 		request.setAttribute("memId", memId);
-		System.out.println(memId);
+		
+		MemberDAO memDao = MemberDAO.getInstance();
+		int result = memDao.confirmID(memId);
+		request.setAttribute("result", result);
+		
+		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
+		
 		
 	}
 
