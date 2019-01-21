@@ -2,6 +2,8 @@ package com.sh.controller;
 
 import com.sh.controller.action.Action;
 import com.sh.controller.action.MainAction;
+import com.sh.controller.action.member.InsertMemberAction;
+import com.sh.controller.action.member.JoinFormAction;
 import com.sh.controller.action.mlb.BoardFormAction;
 
 /**
@@ -38,6 +40,17 @@ public class ActionFactory {
 			action = new BoardFormAction();
 			
 		}
+		else if(command.equals("joinFormAction")) {
+			
+			action = new JoinFormAction();
+			
+		}
+		else if(command.equals("insertMemberAction")) {
+			
+			action = new InsertMemberAction();
+			
+		}
+		
 		return action;
 
 	}
