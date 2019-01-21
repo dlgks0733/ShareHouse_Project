@@ -1,4 +1,4 @@
-package com.sh.action;
+package com.sh.controller.action;
 
 import java.io.IOException;
 

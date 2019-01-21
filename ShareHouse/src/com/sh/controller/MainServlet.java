@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sh.action.Action;
+import com.sh.controller.action.Action;
 
 /**
  * Servlet implementation class MainServlet

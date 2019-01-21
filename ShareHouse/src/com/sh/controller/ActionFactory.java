@@ -1,7 +1,7 @@
 package com.sh.controller;
 
-import com.sh.action.Action;
-import com.sh.action.MainAction;
+import com.sh.controller.action.Action;
+import com.sh.controller.action.MainAction;
 
 /**
  * request로 받아온 매개변수의 command의 값으로 각 기능을 수행할 액션을 분기하는 클래스 <br>
