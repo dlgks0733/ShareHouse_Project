@@ -53,32 +53,25 @@ public class MemberDAO extends DBManager {
 	
 	
 	//아이디 중복체크
-	public int confirmID(String userid) {
+	public int confirmID(String memId) {
 		int result = -1;
-		String sql = "select userid from SHAREHOUSE where userid=?";
-		Connection conn = null;
-		PreparedStatement pstmt = null;
+		String sql = "select MEMBER_ID from TBL_MEMBER where MEMBER_ID=?";
+		Connection conn = getConnection();
+		PreparedStatement pstmt;
 		ResultSet rs = null;
 		try{
-			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1,  userid);
+			pstmt.setString(1,  memId);
 			rs = pstmt.executeQuery();
 			if(rs.next()){
-				result = 1;
+				result = 1;			//중복된 ID가 없음
 			} else {
-				result = -1;
+				result = -1;		//
 			}
-		} catch (Exception e){
+		} catch (SQLException e){
 			e.printStackTrace();
 		} finally {
-			try{
-				if(rs != null) rs.close();
-				if(pstmt != null) pstmt.close();
-				if(conn != null) conn.close(); 
-			} catch (Exception e){
-				e.printStackTrace();
-			}
+			dbClose();
 		}
 		return result;
 	}
@@ -88,9 +81,9 @@ public class MemberDAO extends DBManager {
 	//사용자 인증시 사용하는 메소드
 	public int userCheck(String userid, String pwd) {
 		int result = -1;
-		String sql = "select pwd from SHAREHOUSE where userid=?";
-		Connection conn = null;
-		PreparedStatement pstmt = null;
+		String sql = "select pwd from TBL_MEMBER where userid=?";
+		Connection conn = getConnection();
+		PreparedStatement pstmt;
 		ResultSet rs = null;
 		try{
 			conn = getConnection();
@@ -106,16 +99,10 @@ public class MemberDAO extends DBManager {
 			}else {
 					result = -1;
 			}
-		} catch (Exception e){
+		} catch (SQLException e){
 			e.printStackTrace();
 		} finally {
-			try{
-				if(rs != null) rs.close();
-				if(pstmt != null) pstmt.close();
-				if(conn != null) conn.close(); 
-			} catch (Exception e){
-				e.printStackTrace();
-			}
+			dbClose();
 		}
 		return result;
 	}
@@ -125,8 +112,8 @@ public class MemberDAO extends DBManager {
 	public MemberVO getMember(String userid) {
 		MemberVO mVo = null;
 		String sql = "select * from TBL_MEMBER where userid = ?";
-		Connection conn = null;
-		PreparedStatement pstmt = null;
+		Connection conn = getConnection();
+		PreparedStatement pstmt;
 		ResultSet rs = null;
 		try{
 			conn = getConnection();
@@ -143,13 +130,7 @@ public class MemberDAO extends DBManager {
 		} catch (Exception e){
 			e.printStackTrace();
 		}finally{
-			try{
-				if(rs != null) rs.close();
-				if(pstmt != null) pstmt.close();
-				if(conn != null) conn.close(); 
-			}catch (Exception e){
-				e.printStackTrace();
-			}
+			dbClose();
 		}
 		return mVo;
 	}

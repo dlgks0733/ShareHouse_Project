@@ -55,11 +55,16 @@
 	<!-- ==================== error-section start ==================== -->
 	<section id="error-section" class="error-section w100dt mb-50">
 		<div class="container">
-
-			<!-- join table form -->
-
-			
-		
+		<form method="post" action="member?command=memberIdCheck">
+				<table>
+					<tr>
+						<th>학번</th>
+							<td><input type="text" name="memId" value="${memId}"></td>
+							<td><button type="submit" class="btn">중복체크</button></td>
+					</tr>
+					<tr></tr>			
+				</table>
+		</form>
 		</div>
 		<!-- container -->
 	</section>
