@@ -52,7 +52,7 @@ public class ActionFactory {
 			
 			action = new InsertMemberAction();
 			
-		}
+		} 
 		//kju
 		else if(command.equals("insertStuBoardAction")) {
 			
