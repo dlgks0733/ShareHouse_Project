@@ -64,9 +64,9 @@ public class MemberDAO extends DBManager {
 			pstmt.setString(1,  memId);
 			rs = pstmt.executeQuery();
 			if(rs.next()){
-				result = 1;			//중복된 ID가 없음
+				result = 1;			//ID 중복
 			} else {
-				result = -1;		//
+				result = -1;		//ID 중복 아님
 			}
 		} catch (SQLException e){
 			e.printStackTrace();

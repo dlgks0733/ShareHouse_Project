@@ -4,8 +4,7 @@ import com.sh.controller.action.Action;
 import com.sh.controller.action.MainAction;
 import com.sh.controller.action.member.InsertMemberAction;
 import com.sh.controller.action.member.JoinFormAction;
-import com.sh.controller.action.member.MemberIdCheck;
-import com.sh.controller.action.member.PopupFormAction;
+import com.sh.controller.action.member.MemberIdCheckAction;
 import com.sh.controller.action.mlb.BoardFormAction;
 
 /**
@@ -36,33 +35,24 @@ public class ActionFactory {
 
 			action = new MainAction();
 
-		}
-		else if(command.equals("MlbBoardFormAciton")) {
-			
+		} else if (command.equals("MlbBoardFormAciton")) {
+
 			action = new BoardFormAction();
-			
-		}
-		else if(command.equals("joinFormAction")) {
-			
+
+		} else if (command.equals("joinFormAction")) {
+
 			action = new JoinFormAction();
-			
-		}
-		else if(command.equals("insertMemberAction")) {
-			
+
+		} else if (command.equals("insertMemberAction")) {
+
 			action = new InsertMemberAction();
-			
+
+		} else if (command.equals("memberIdCheck")) {
+
+			action = new MemberIdCheckAction();
+
 		}
-		else if(command.equals("popupFormAction")) {
-			
-			action = new PopupFormAction();
-			
-		}
-		else if(command.equals("memberIdCheck")) {
-			
-			action = new MemberIdCheck();
-			
-		}
-		
+
 		return action;
 
 	}

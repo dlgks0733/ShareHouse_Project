@@ -61,12 +61,10 @@
 			<form name="frm"  method="post" action="member?command=insertMemberAction" onsubmit="return memValidate();">
 				<div>
 					<table class="bordered">
-						
 						<tr>
 							<th><span style="color: red;">*</span> &nbsp; 학번</th>
-							<td><input type="text" name="memId" onkeydown="return onlyNumber(event);" 
-							onkeyup="removeChar(event);"></td>
-							<td><input type="button" class="btn" value="중복체크" onclick="popupOpen(memId)"></td>
+							<td><input type="text" name="memId" readonly="readonly">
+							<td><input type="button" class="btn" value="중복체크" onclick="popupOpen()" ></td>
 						</tr>
 	
 						<tr>

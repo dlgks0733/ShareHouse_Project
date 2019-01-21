@@ -55,14 +55,27 @@
 	<!-- ==================== error-section start ==================== -->
 	<section id="error-section" class="error-section w100dt mb-50">
 		<div class="container">
-		<form method="post" action="member?command=memberIdCheck">
-				<table>
+		<form name="frm" method="post" action="member?command=memberIdCheck">
+				<table class="bordered">
 					<tr>
-						<th>학번</th>
+							<th>학번</th>
 							<td><input type="text" name="memId" value="${memId}"></td>
 							<td><button type="submit" class="btn">중복체크</button></td>
 					</tr>
-					<tr></tr>			
+					<c:if test="${result == 1}">
+						<tr>
+							<td></td>
+							<td colspan="3" align="center">중복된 학번입니다.</td>
+							<td></td>
+						</tr>			
+					</c:if>
+					<c:if test="${result == -1}">
+						<tr>
+							<td></td>
+							<td>사용 가능한 학번입니다.</td>
+							<td><input type="button" class="btn" value="확인" onclick="sendToParent()"></td>
+						</tr>			
+					</c:if>
 				</table>
 		</form>
 		</div>
