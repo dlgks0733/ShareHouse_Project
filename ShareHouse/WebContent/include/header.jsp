@@ -55,7 +55,7 @@
 								<li class="dropdown active"><a href="index.html">HOME<i
 										class="icofont icofont-simple-down"></i></a>
 									<ul class="dropdown-container">
-										<li><a href="404.html">로그인</a></li>
+										<li><a href="login.do?command=LoginFormAction">로그인</a></li>
 										<li><a href="member?command=joinFormAction">회원가입</a></li>
 									</ul> <!-- /.dropdown-container --></li>
 								

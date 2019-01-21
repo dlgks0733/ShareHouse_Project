@@ -4,6 +4,7 @@ import com.sh.controller.action.Action;
 import com.sh.controller.action.MainAction;
 import com.sh.controller.action.member.InsertMemberAction;
 import com.sh.controller.action.member.JoinFormAction;
+import com.sh.controller.action.member.LoginFormAction;
 import com.sh.controller.action.member.MemberIdCheckAction;
 import com.sh.controller.action.mlb.BoardFormAction;
 
@@ -50,6 +51,10 @@ public class ActionFactory {
 		} else if (command.equals("memberIdCheck")) {
 
 			action = new MemberIdCheckAction();
+
+		} else if (command.equals("LoginFormAction")) {
+
+			action = new LoginFormAction();
 
 		}
 
