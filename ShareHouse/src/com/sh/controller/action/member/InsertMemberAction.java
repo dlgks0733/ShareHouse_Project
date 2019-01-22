@@ -28,7 +28,6 @@ public class InsertMemberAction	implements Action {
 		memVo.setMemberPwd(memPwd);
 		memVo.setMemberName(memName);
 		
-		System.out.println(memVo);
 		
 		MemberDAO memDao = MemberDAO.getInstance();
 		memDao.insertMember(memVo);

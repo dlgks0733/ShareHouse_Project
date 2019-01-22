@@ -1,5 +1,5 @@
 /**
- * member 자바스크립트
+ * @author Lee Han
  */
 //로그인 유효성 검사
 function loginCheck() {
@@ -17,7 +17,6 @@ function loginCheck() {
 }
 // 회원 유효성 검사
 function memValidate() {
-
 	if (document.frm.memId.value.length == 0) {
 		alert("학번을 입력해주세요.");
 		frm.memId.focus();
@@ -38,9 +37,10 @@ function memValidate() {
 		alert("비밀번호를 입력해주세요.");
 		frm.memPwd.focus();
 		return false;
-	} else {
-		return true;
 	}
+		alert("가입 완료되었습니다.");
+		return true;
+	
 }
 
 // 숫자만 입력하기

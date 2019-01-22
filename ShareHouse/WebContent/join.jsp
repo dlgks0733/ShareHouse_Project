@@ -58,7 +58,7 @@
 
 			<!-- join table form -->
 
-			<form name="frm"  method="post" action="member?command=insertMemberAction" onsubmit="return memValidate();">
+			<form name="frm"  method="post" action="member?command=insertMemberAction" onsubmit="return memValidate()">
 				<div>
 					<table class="bordered">
 						<tr>
@@ -86,7 +86,7 @@
 				<br>
 				
 				<button style="float: right;" class="btn" type="reset">취소</button> 
-				<button style="float: right;" class="btn" type="submit">가입</button>
+				<input type="submit" class="btn" style="float: right;" value="가입">
 				
 			</form>
 		
