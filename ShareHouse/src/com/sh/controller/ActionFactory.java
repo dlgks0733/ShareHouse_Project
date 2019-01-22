@@ -23,84 +23,84 @@ import com.sh.controller.action.startup.StuBoardView;
  */
 
 public class ActionFactory {
-   private static ActionFactory instance = new ActionFactory();
+	private static ActionFactory instance = new ActionFactory();
 
-   private ActionFactory() {
-      super();
-   }
+	private ActionFactory() {
+		super();
+	}
 
-   public static ActionFactory getInstance() {
-      return instance;
-   }
+	public static ActionFactory getInstance() {
+		return instance;
+	}
 
-   public Action getAction(String command) {
-      Action action = null;
+	public Action getAction(String command) {
+		Action action = null;
 
-      System.out.println("ActionFactory : " + command);
+		System.out.println("ActionFactory : " + command);
 
-      if (command.equals("main")) {
+		if (command.equals("main")) {
 
-         action = new MainAction();
+			action = new MainAction();
+/**
+ * @author LeeHan
+ * 
+ */
+		} else if (command.equals("joinFormAction")) {
 
-      }  else if (command.equals("joinFormAction")) {
+			action = new JoinFormAction();
 
-<<<<<<< HEAD
-			action = new MlbBoardFormAction();
-=======
-         action = new JoinFormAction();
+		} else if (command.equals("insertMemberAction")) {
 
-      } else if (command.equals("insertMemberAction")) {
+			action = new InsertMemberAction();
 
-         action = new InsertMemberAction();
+		} else if (command.equals("memberIdCheck")) {
 
-      } else if (command.equals("memberIdCheck")) {
-
-         action = new MemberIdCheckAction();
-
-      } 
-      //kju
-      else if (command.equals("insertStuBoardAction")) {
-    	  
-    	  action = new InsertStuBoardAction();
-    	  
-      } 
-      else if (command.equals("insertStuBoardList")) {
-    	  
-    	  action = new InsertStuBoardListAction();
-      }
-   
-      else if (command.equals("stuBoardList")) {
-    	  
-    	  action = new StuBoardListFormAction();
-      }   
-      else if (command.equals("stuBoardView")) {
-    	  
-    	  action = new StuBoardView();
-      }
-      else if (command.equals("stuBoardUpdate")) {
-    	  
-    	  action = new StuBoardUpdateAction();
-      }
-      else if (command.equals("stuBoardUpdateyForm")) {
-    	  
-    	  action = new StuBoardUpdateFormAction();
-      }
-      return action;
-
-<<<<<<< HEAD
 			action = new MemberIdCheckAction();
 
-		} else if (command.equals("mlbInsertFormAction")) {
-			
+		}else if (command.equals("mlbInsertFormAction")) {
+
 			action = new MlbBoardInsertFormAction();
-			
+
 		}
+/**
+*	@author Kim Jong Uk 
+* 
+*/
+		else if (command.equals("insertStuBoardAction")) {
+
+			action = new InsertStuBoardAction();
+
+		} else if (command.equals("insertStuBoardList")) {
+
+			action = new InsertStuBoardListAction();
+		}
+
+		else if (command.equals("stuBoardList")) {
+
+			action = new StuBoardListFormAction();
+		} else if (command.equals("stuBoardView")) {
+
+			action = new StuBoardView();
+		} else if (command.equals("stuBoardUpdate")) {
+
+			action = new StuBoardUpdateAction();
+		} else if (command.equals("stuBoardUpdateyForm")) {
+
+			action = new StuBoardUpdateFormAction();
+		} 
+/**
+ * @author Kim Jung Min
+ * 
+ */
+
+		
+		
+/**
+ * @author Lee Chang Hyun
+ * 		
+ */
 
 		return action;
 
 	}
 }
-=======
-   }
-}
->>>>>>> branch 'master' of https://github.com/dlgks0733/ShareHouse_Project.git
