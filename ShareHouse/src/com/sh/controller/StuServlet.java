@@ -12,16 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 import com.sh.controller.action.Action;
 
 /**
- * Servlet implementation class MemberServlet
+ * Servlet implementation class StuServlet
  */
-@WebServlet("/member")
-public class MemberServlet extends HttpServlet {
+@WebServlet("/stu")
+public class StuServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MemberServlet() {
+    public StuServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,7 +32,7 @@ public class MemberServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String command = request.getParameter("command");
-		System.out.println("MemberServlet에서 요청을 받음을 확인 : " + command);
+		System.out.println("StuServlet에서 요청을 받음을 확인 : " + command);
 
 		if (command == null) {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("main.jsp");
@@ -51,6 +51,7 @@ public class MemberServlet extends HttpServlet {
 			}
 		}
 	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
