@@ -13,6 +13,7 @@
 <body>
 	<div id="wrap" align="center">
 		<h1>게시글 상세보기</h1>
+		<form name="frm" method="post" action="stu?command=insertStuBoardAction">
 		<table>
 			<tr>
 				<th>작성자</th>
@@ -39,14 +40,10 @@
 				<td colspan="3"><pre>${StuBoardVO.bodContents}</pre></td>
 			</tr>
 		</table>
-		<br> <br> <input type="button" value="게시글 수정"
-			onclick="stu?command=stuBoardUpdateyForm">
-		<input type="button" value="게시글 삭제"
-			onclick="open_win('BoardServlet?command=board_check_pass_form&num=${board.num}', 'delete')">
-		<input type="button" value="게시글 리스트"
-			onclick="location.href='BoardServlet?command=board_list'"> 
-		<input type="button" value="게시글 등록"
-			onclick="location.href='BoardServlet?command=board_write_form'">
+		<br> <br> 
+		<a type = "button" href ="stu?command=stuBoardList" class="btn btn-danger">취소</a>
+		<button type="submit" class="btn btn-primary">등록</button>	
+		</form>
 	</div>
 </body>
 </html>
