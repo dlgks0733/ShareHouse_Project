@@ -63,7 +63,7 @@
 			</table>			
 			
 			<hr>
-			<div>
+			<div>	
 				<input type="button" class="btn" style="float: right;"
 				onclick="location.href='mlb?command=mlbBoardListFormAciton'" value="취소">
 				<input type="submit" class="btn" style="float: right;" value="등록">
