@@ -11,7 +11,7 @@ import java.util.Date;
     NOC_DATE           DATE DEFAULT SYSDATE  CONSTRAINT STARTUP_NOC_DATE_NN NOT NULL,
     ADMIN_ID           VARCHAR2(10)  CONSTRAINT STARTUP_ADMIN_ID_FK REFERENCES TBL_STU_ADMIN(ADMIN_ID)
 );*/
-public class StuNoiceVO {
+public class StuNoticeVO {
 
 	private String NocNum;
 	private String NocTitle;

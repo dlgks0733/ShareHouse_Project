@@ -9,6 +9,12 @@ import com.sh.controller.action.startup.StuBoardListFormAction;
 import com.sh.controller.action.startup.StuBoardUpdateAction;
 import com.sh.controller.action.startup.StuBoardUpdateFormAction;
 import com.sh.controller.action.startup.StuBoardView;
+import com.sh.controller.action.startup.StuNoticeInsertAction;
+import com.sh.controller.action.startup.StuNoticeInsertFormAction;
+import com.sh.controller.action.startup.StuNoticeListFormAction;
+import com.sh.controller.action.startup.StuNoticeViewAction;
+
+
 
 /**
  * request로 받아온 매개변수의 command의 값으로 각 기능을 수행할 액션을 분기하는 클래스 <br>
@@ -60,10 +66,22 @@ public class StuActionFactory {
 		} else if (command.equals("stuBoardUpdateForm")) {
 
 			action = new StuBoardUpdateFormAction();
-		} else if (command.equals("stuBoardDelete"))
+		} else if (command.equals("stuBoardDelete")) {
 			
 			action = new StuBoardDeleteAction();
-
+		} else if (command.equals("stuNoticeList")) {
+			action = new StuNoticeListFormAction(); 
+				
+		} else if (command.equals("StuNoticeinsertForm")) {
+			action = new StuNoticeInsertFormAction(); 
+				
+		} else if (command.equals("StuNoticeinsert")) {
+			action = new StuNoticeInsertAction();
+			
+		} else if (command.equals("stuNoticeView")) {
+			action = new StuNoticeViewAction();
+		}
+		
 		return action;
 
 	}
