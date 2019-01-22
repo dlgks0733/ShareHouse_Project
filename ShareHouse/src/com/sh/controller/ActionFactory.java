@@ -5,7 +5,7 @@ import com.sh.controller.action.MainAction;
 import com.sh.controller.action.member.InsertMemberAction;
 import com.sh.controller.action.member.JoinFormAction;
 import com.sh.controller.action.member.MemberIdCheckAction;
-import com.sh.controller.action.mlb.MlbBoardFormAction;
+import com.sh.controller.action.mlb.MlbBoardListFormAction;
 import com.sh.controller.action.mlb.MlbBoardInsertFormAction;
 import com.sh.controller.action.startup.InsertStuBoardAction;
 import com.sh.controller.action.startup.InsertStuBoardListAction;
@@ -41,27 +41,33 @@ public class ActionFactory {
 		if (command.equals("main")) {
 
 			action = new MainAction();
+		}
 /**
  * @author LeeHan
  * 
  */
-		} else if (command.equals("joinFormAction")) {
+		else if (command.equals("mlbBoardFormAciton")) {
 
-			action = new JoinFormAction();
+	         action = new MlbBoardListFormAction();
 
-		} else if (command.equals("insertMemberAction")) {
+	      } else if (command.equals("joinFormAction")) {
 
-			action = new InsertMemberAction();
+	         action = new JoinFormAction();
 
-		} else if (command.equals("memberIdCheck")) {
+	      } else if (command.equals("insertMemberAction")) {
 
-			action = new MemberIdCheckAction();
+	         action = new InsertMemberAction();
 
-		}else if (command.equals("mlbInsertFormAction")) {
+	      } else if (command.equals("memberIdCheck")) {
 
-			action = new MlbBoardInsertFormAction();
+	         action = new MemberIdCheckAction();
 
-		}
+	      } else if (command.equals("mlbInsertFormAction")) {
+	         
+	         action = new MlbBoardInsertFormAction();
+	         
+	      }
+
 /**
 *	@author Kim Jong Uk 
 * 

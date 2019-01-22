@@ -8,17 +8,29 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sh.controller.action.Action;
+import com.sh.dao.MlbBoardDAO;
+import com.sh.vo.MlbBoardVO;
 
-public class MlbBoardFormAction implements Action{
+public class MlbBoardViewFormAction implements Action{
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		String url = "mlb/board.jsp";
+		
+		String url = "mlb/boardViewForm.jsp";
+		
+		String bodNum = request.getParameter("bodNum");
+		
+		MlbBoardDAO mlbDao = MlbBoardDAO.getInstance();
+		MlbBoardVO mlbVo = mlbDao.mlbBoardView(bodNum);
+		request.setAttribute("mlbVo", mlbVo);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 		
+		
+	
 	}
-
+	
+	
+	
 }

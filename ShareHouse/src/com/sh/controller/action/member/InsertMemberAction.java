@@ -18,7 +18,6 @@ public class InsertMemberAction	implements Action {
 		
 		String url = "index.jsp";
 		
-		request.setCharacterEncoding("UTF-8");
 		
 		String memId = request.getParameter("memId");
 		String memPwd = request.getParameter("memPwd");
