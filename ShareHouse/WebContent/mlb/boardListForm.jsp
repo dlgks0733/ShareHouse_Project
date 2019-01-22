@@ -48,35 +48,38 @@
 	<section id="error-section" class="error-section w100dt mb-50">
 		<div class="container">
 			<!-- nlb board table form -->
-			<table class="bordered">
+			<table class="centered">
+				<thead>
 					<tr>
+						<th>번호</th>
 						<th>제목</th>
-						<td>${mlbVo.bodTitle}</td>
 						<th>작성자</th>
-						<td>이한</td>
 						<th>작성일</th>
-						<td>${mlbVo.bodDate}</td>
-						
+						<th>조회수</th>
 					</tr>
+				</thead>
 				
+				<tbody>
+					
+
+					<c:forEach var="mVO" items="${list}" varStatus="status">
 					<tr>
-						<th>내용</th>
-						<td colspan="5"><textarea name="contents"
-						rows="28" cols="93" style="margin: 0px; width: 1051px; height: 246px;" disabled="disabled" >${mlbVo.bodContents}</textarea></td>
-					</tr>				
+					<td width="10%">${status.index+1}</td>
+					<td width="20%"><a href="mlb?command=mlbBoardViewFormAction&bodNum=${mVO.bodNum}">${mVO.bodTitle}</a></td>
+					<td width="10%">이한</td>
+					<td width="10%">${mVO.bodDate}</td>
+					<td width="10%">${mVO.bodHits}</td>
+					</tr>
+					</c:forEach>
+				</tbody>
 							
 			</table>			
 			
 			<hr>
 			<div>
 				<input type="button" class="btn" style="float: right;"
-				onclick="location.href='mlb?command=mlbBoardDeleteAction&bodNum=${mlbVo.bodNum}'" value="삭제">
-				<input type="button" class="btn" style="float: right;"
-				onclick="location.href='mlb?command=mlbBoardUpdateFormAction&bodNum=${mlbVo.bodNum}'" value="수정">
-				<input type="button" class="btn" style="float: right;"
-				onclick="location.href='mlb?command=mlbBoardListFormAciton'" value="목록">
+				onclick="location.href='mlb?command=mlbInsertFormAction'" value="등록">
 			</div>
-			
 		</div>
 		<!-- container -->
 	</section>
