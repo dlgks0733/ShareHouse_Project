@@ -1,8 +1,6 @@
 package com.sh.controller.action.mlb;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,18 +11,18 @@ import com.sh.controller.action.Action;
 import com.sh.dao.MlbBoardDAO;
 import com.sh.vo.MlbBoardVO;
 
-public class MlbBoardListFormAction implements Action{
+public class MlbBoardUpdateFormAction implements Action{
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		String url = "mlb/boardListForm.jsp";
+		String url = "mlb/boardUpdateForm.jsp";
+		
+		String bodNum = request.getParameter("bodNum");
 		
 		MlbBoardDAO mlbDao = MlbBoardDAO.getInstance();
-		ArrayList<MlbBoardVO> list = mlbDao.mlbBoardList();
+		MlbBoardVO mlbVo = mlbDao.mlbBoardView(bodNum);
+		request.setAttribute("mlbVo", mlbVo);		
 		
-		request.setAttribute("list", list);
-		System.out.println(list);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <%@include file="../include/header.jsp" %>    
 <!DOCTYPE html>
 <html>
@@ -31,7 +32,7 @@
 					</div>
 					<div class="nav-wrapper right">
 						<a href="index.html" class="breadcrumb">Home</a>
-						<a href="404.html" class="breadcrumb active">농구동아리 게시판</a>
+						<a href="mlb?command=mlbBoardListFormAciton" class="breadcrumb active">농구동아리 게시판</a>
 					</div>
 					<!-- /.nav-wrapper -->
 				</nav>
@@ -60,6 +61,16 @@
 				
 				<tbody>
 					
+
+					<c:forEach var="mVO" items="${list}" varStatus="status">
+					<tr>
+					<td width="10%">${status.index+1}</td>
+					<td width="20%"><a href="mlb?command=mlbBoardViewFormAction&bodNum=${mVO.bodNum}">${mVO.bodTitle}</a></td>
+					<td width="10%">이한</td>
+					<td width="10%">${mVO.bodDate}</td>
+					<td width="10%">${mVO.bodHits}</td>
+					</tr>
+					</c:forEach>
 				</tbody>
 							
 			</table>			

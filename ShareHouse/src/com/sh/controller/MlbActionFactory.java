@@ -6,6 +6,8 @@ import com.sh.controller.action.member.InsertMemberAction;
 import com.sh.controller.action.member.JoinFormAction;
 import com.sh.controller.action.member.MemberIdCheckAction;
 import com.sh.controller.action.mlb.MlbBoardListFormAction;
+import com.sh.controller.action.mlb.MlbBoardUpdateFormAction;
+import com.sh.controller.action.mlb.MlbBoardViewFormAction;
 import com.sh.controller.action.mlb.MlbBoardInsertAction;
 import com.sh.controller.action.mlb.MlbBoardInsertFormAction;
 
@@ -66,6 +68,12 @@ public class MlbActionFactory {
 
 			action = new MlbBoardInsertAction();
 
+		} else if (command.equals("mlbBoardViewFormAction")) {
+			
+			action = new MlbBoardViewFormAction();
+		} else if (command.equals("mlbBoardUpdateFormAction")) {
+			
+			action = new MlbBoardUpdateFormAction();
 		}
 
 		return action;

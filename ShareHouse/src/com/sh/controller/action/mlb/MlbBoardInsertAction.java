@@ -16,15 +16,14 @@ public class MlbBoardInsertAction implements Action{
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		String title = request.getParameter("title");
-		String contents = request.getParameter("contents");
+		String bodTitle = request.getParameter("bodTitle");
+		String bodContents = request.getParameter("bodContents");
 	  //String memId
 	  //String adminId
 		
-		
 		MlbBoardVO mlbVo = new MlbBoardVO();
-		mlbVo.setBodTitle(title);
-		mlbVo.setBodContents(contents);
+		mlbVo.setBodTitle(bodTitle);
+		mlbVo.setBodContents(bodContents);
 		
 		System.out.println("mlbVo : "+mlbVo);
 		
