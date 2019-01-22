@@ -22,14 +22,14 @@ import com.sh.controller.action.startup.StuBoardView;
  *
  */
 
-public class ActionFactory {
-	private static ActionFactory instance = new ActionFactory();
+public class MlbActionFactory {
+	private static MlbActionFactory instance = new MlbActionFactory();
 
-	private ActionFactory() {
+	private MlbActionFactory() {
 		super();
 	}
 
-	public static ActionFactory getInstance() {
+	public static MlbActionFactory getInstance() {
 		return instance;
 	}
 
@@ -67,44 +67,6 @@ public class ActionFactory {
 	         action = new MlbBoardInsertFormAction();
 	         
 	      }
-
-/**
-*	@author Kim Jong Uk 
-* 
-*/
-		else if (command.equals("insertStuBoardAction")) {
-
-			action = new InsertStuBoardAction();
-
-		} else if (command.equals("insertStuBoardList")) {
-
-			action = new InsertStuBoardListAction();
-		}
-
-		else if (command.equals("stuBoardList")) {
-
-			action = new StuBoardListFormAction();
-		} else if (command.equals("stuBoardView")) {
-
-			action = new StuBoardView();
-		} else if (command.equals("stuBoardUpdate")) {
-
-			action = new StuBoardUpdateAction();
-		} else if (command.equals("stuBoardUpdateyForm")) {
-
-			action = new StuBoardUpdateFormAction();
-		} 
-/**
- * @author Kim Jung Min
- * 
- */
-
-		
-		
-/**
- * @author Lee Chang Hyun
- * 		
- */
 
 		return action;
 

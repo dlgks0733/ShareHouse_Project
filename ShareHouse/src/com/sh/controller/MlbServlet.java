@@ -42,7 +42,7 @@ public class MlbServlet extends HttpServlet {
 			dispatcher.forward(request, response);
 
 		} else {
-			ActionFactory af = ActionFactory.getInstance();
+			MlbActionFactory af = MlbActionFactory.getInstance();
 			Action action = af.getAction(command);
 
 			if (action != null) {
