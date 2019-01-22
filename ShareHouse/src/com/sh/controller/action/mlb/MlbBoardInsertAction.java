@@ -25,7 +25,6 @@ public class MlbBoardInsertAction implements Action{
 		mlbVo.setBodTitle(bodTitle);
 		mlbVo.setBodContents(bodContents);
 		
-		System.out.println("mlbVo : "+mlbVo);
 		
 		MlbBoardDAO mlbDao = MlbBoardDAO.getInstance();
 		mlbDao.insertMlbBoard(mlbVo);

@@ -71,6 +71,8 @@
 			<hr>
 			<div>
 				<input type="button" class="btn" style="float: right;"
+				onclick="location.href='mlb?command=mlbBoardDeleteAction&bodNum=${mlbVo.bodNum}'" value="삭제">
+				<input type="button" class="btn" style="float: right;"
 				onclick="location.href='mlb?command=mlbBoardUpdateFormAction&bodNum=${mlbVo.bodNum}'" value="수정">
 				<input type="button" class="btn" style="float: right;"
 				onclick="location.href='mlb?command=mlbBoardListFormAciton'" value="목록">

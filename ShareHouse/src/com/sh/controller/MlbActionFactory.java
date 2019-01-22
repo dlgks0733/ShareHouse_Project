@@ -6,8 +6,10 @@ import com.sh.controller.action.member.InsertMemberAction;
 import com.sh.controller.action.member.JoinFormAction;
 import com.sh.controller.action.member.MemberIdCheckAction;
 import com.sh.controller.action.mlb.MlbBoardListFormAction;
+import com.sh.controller.action.mlb.MlbBoardUpdateAction;
 import com.sh.controller.action.mlb.MlbBoardUpdateFormAction;
 import com.sh.controller.action.mlb.MlbBoardViewFormAction;
+import com.sh.controller.action.mlb.MlbBoardDeleteAction;
 import com.sh.controller.action.mlb.MlbBoardInsertAction;
 import com.sh.controller.action.mlb.MlbBoardInsertFormAction;
 
@@ -74,6 +76,10 @@ public class MlbActionFactory {
 		} else if (command.equals("mlbBoardUpdateFormAction")) {
 			
 			action = new MlbBoardUpdateFormAction();
+		} else if (command.equals("mlbBoardUpdateAction")) {
+			action = new MlbBoardUpdateAction();
+		} else if (command.equals("mlbBoardDeleteAction")) {
+			action = new MlbBoardDeleteAction();
 		}
 
 		return action;

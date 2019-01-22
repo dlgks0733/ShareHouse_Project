@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+
 import com.sh.vo.MlbBoardVO;
 
 import util.DBManager;
@@ -125,6 +126,52 @@ public class MlbBoardDAO extends DBManager{
 			dbClose();
 		}
 		return mlbVo;
+	}
+	
+	//mlb 게시물 수정
+	public void updateMlbBoard(MlbBoardVO mlbVo) {
+		String sql = "UPDATE TBL_MLB_BOARD SET BODTITLE = ?"
+				+ "	 , BODCONTENTS = ?"
+				+ "	  WHERE BODNUM = ?";
+		
+		Connection conn = getConnection();
+		PreparedStatement pstmt;
+		
+		try {
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, mlbVo.getBodTitle());
+			pstmt.setString(2, mlbVo.getBodContents());
+			pstmt.setString(3, mlbVo.getBodNum());
+			
+			pstmt.executeUpdate();
+			
+		}	catch (SQLException e) {
+			e.printStackTrace();
+		}	finally {
+			dbClose();
+		}
+		
+	}
+	
+	public void deleteMlbBoard(String bodNum) {
+		String sql = "DELETE FROM TBL_MLB_BOARD WHERE BODNUM = ?";
+		
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, bodNum);
+			
+			pstmt.executeUpdate();
+		}	catch (SQLException e) {
+				e.printStackTrace();
+		}	finally {
+			dbClose();
+		}
 	}
 	
 }
