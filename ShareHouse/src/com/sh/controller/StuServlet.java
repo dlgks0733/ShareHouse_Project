@@ -43,7 +43,7 @@ public class StuServlet extends HttpServlet {
 			dispatcher.forward(request, response);
 
 		} else {
-			ActionFactory af = ActionFactory.getInstance();
+			StuActionFactory af = StuActionFactory.getInstance();
 			Action action = af.getAction(command);
 
 			if (action != null) {
