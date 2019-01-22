@@ -15,38 +15,37 @@ public class StuBoardUpdateAction implements Action{
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url = "Stu?command=stuBoardList";
 		
-		String BodNum = request.getParameter("BodNum");
-		request.setAttribute(BodNum, "BodNum");
-		String BodTitle = request.getParameter("BodTitle");
-		request.setAttribute(BodTitle, "BodTitle");
-		String BodContents = request.getParameter("BodContents");
-		request.setAttribute(BodContents, "BodContents");
-		String MemberId = request.getParameter("MemberId");
+		String bodNum = request.getParameter("bodNum");
+		request.setAttribute("bodNum", bodNum);
+		String bodTitle = request.getParameter("bodTitle");
+		request.setAttribute("bodTitle", bodTitle);
+		String bodContents = request.getParameter("bodContents");
+		request.setAttribute("bodContents", bodContents);
+/*		String MemberId = request.getParameter("MemberId");
 		request.setAttribute(MemberId, "MemberId");
 		String AdminId = request.getParameter("AdminId");
-		request.setAttribute(AdminId, "AdminId");
+		request.setAttribute(AdminId, "AdminId");*/
 		
-		System.out.println("BodNum :" + BodNum );
-		System.out.println("BodTitle :" + BodTitle );
-		System.out.println("BodContents :" + BodContents );
-		System.out.println("MemberId :" + MemberId );
-		System.out.println("AdminId :" + AdminId );
+		System.out.println("bodNum :" + bodNum );
+		System.out.println("bodTitle :" + bodTitle );
+		System.out.println("bodContents :" + bodContents );
+/*		System.out.println("MemberId :" + MemberId );
+		System.out.println("AdminId :" + AdminId );*/
 		
 		StuBoardVO stuVO = new StuBoardVO();
-		
-		stuVO.setBodNum(BodNum);
-		stuVO.setBodTitle(BodTitle);
-		stuVO.setBodContents(BodContents);
-		stuVO.setMemberId(MemberId);
-		stuVO.setAdminId(AdminId);
-		
 		StuBoardDAO stuDAO = StuBoardDAO.getInstance();
+		
+		stuVO.setBodNum(bodNum);
+		stuVO.setBodTitle(bodTitle);
+		stuVO.setBodContents(bodContents);
+		System.out.println(stuVO);
+/*		stuVO.setMemberId(MemberId);
+		stuVO.setAdminId(AdminId);*/
+		
 		stuDAO.updateStuBoard(stuVO);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-		dispatcher.forward(request, response);
+		new StuBoardListFormAction().execute(request, response);
 		
 		
 	}

@@ -16,32 +16,30 @@ public class InsertStuBoardAction implements Action{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String url = "Stu?command=stuBoardList";
 
-		String BodNum = request.getParameter("BodNum");
-		String BodTitle = request.getParameter("BodTitle");
-		String BodContents = request.getParameter("BodContents");
+		
+		String bodTitle = request.getParameter("bodTitle");
+		String bodContents = request.getParameter("bodContents");
 /*		String MemberId = request.getParameter("MemberId");
 		String AdminId = request.getParameter("AdminId");*/
 		
-		System.out.println("BodNum :" + BodNum );
-		System.out.println("BodTitle :" + BodTitle );
-		System.out.println("BodContents :" + BodContents );
+		
+		System.out.println("bodTitle :" + bodTitle );
+		System.out.println("bodContents :" + bodContents );
 /*		System.out.println("MemberId :" + MemberId );
 		System.out.println("AdminId :" + AdminId );*/
 		
 		StuBoardVO stuVO = new StuBoardVO();
-		stuVO.setBodNum(BodNum);
-		stuVO.setBodTitle(BodTitle);
-		stuVO.setBodContents(BodContents);
+		
+		stuVO.setBodTitle(bodTitle);
+		stuVO.setBodContents(bodContents);
 /*		stuVO.setMemberId(MemberId);
 		stuVO.setAdminId(AdminId);*/
 		
 		StuBoardDAO stuDAO = StuBoardDAO.getInstance();
 		stuDAO.insertStuBoard(stuVO);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-		dispatcher.forward(request, response);
+		new StuBoardListFormAction().execute(request, response);
 		
 	}
 }

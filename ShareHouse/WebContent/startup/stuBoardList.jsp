@@ -25,8 +25,9 @@
 			</tr>
 			<c:forEach items="${StuBoardList}" var="StuBoardVO">
 				<tr class="record">
+				
 					<td>${StuBoardVO.bodNum}</td>
-					<td><a href="stu?command=stuBoardView">
+					<td><a href="stu?command=stuBoardView&bodNum=${StuBoardVO.bodNum}">
 							${StuBoardVO.bodTitle} </a></td>
 					
 					<td><fmt:formatDate value="${StuBoardVO.bodDate}" /></td>

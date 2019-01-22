@@ -13,14 +13,15 @@
 	<div id="wrap" align="center">
 		<h1>게시글 등록</h1>
 		<form name="frm" method="post" action="stu?command=insertStuBoardAction">
+		<input type="hidden" name="bodNum" value="${bodNum}">
 			<table>
 				<tr>
 					<th>제목</th>
-					<td><input type="text" name="BodTitle"> * 필수</td>
+					<td><input type="text" name="bodTitle"> * 필수</td>
 				</tr>
 				<tr>
 					<th>내용</th>
-					<td><textarea cols="70" rows="15" name="BodContents"></textarea></td>
+					<td><textarea cols="70" rows="15" name="bodContents"></textarea></td>
 				</tr>
 			</table>
 			<br>

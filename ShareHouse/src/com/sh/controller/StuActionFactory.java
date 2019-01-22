@@ -31,7 +31,7 @@ public class StuActionFactory {
 	public Action getAction(String command) {
 		Action action = null;
 
-		System.out.println("ActionFactory : " + command);
+		System.out.println("StuActionFactory : " + command);
 
 		if (command.equals("main")) {
 
@@ -55,7 +55,8 @@ public class StuActionFactory {
 		} else if (command.equals("stuBoardUpdate")) {
 
 			action = new StuBoardUpdateAction();
-		} else if (command.equals("stuBoardUpdateyForm")) {
+			
+		} else if (command.equals("stuBoardUpdateForm")) {
 
 			action = new StuBoardUpdateFormAction();
 		} 

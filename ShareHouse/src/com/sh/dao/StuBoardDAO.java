@@ -55,6 +55,39 @@ public class StuBoardDAO extends DBManager{
 		}
 		return list;
 	}
+	
+	/*public ArrayList<StuBoardVO> selectNumStuBoard(String bodNum){
+		
+		String sql = "SELECT * FROM TBL_STU_BOARD WHERE BODNUM = " + bodNum +"";
+		
+		ArrayList<StuBoardVO> list = new ArrayList<StuBoardVO>();
+		
+	    Connection conn = getConnection();
+	    PreparedStatement psmt;
+	    ResultSet rs = null;
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				StuBoardVO stuVO = new StuBoardVO();
+				
+				stuVO.setBodNum(rs.getString("bodNum"));
+				stuVO.setBodTitle(rs.getString("bodTitle"));
+				stuVO.setBodContents(rs.getString("bodContents"));
+				stuVO.setBodDate(rs.getDate("bodDate"));
+
+				
+				
+				list.add(stuVO);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			dbClose();
+		}
+		return list;
+	}*/
 		// 게시판 글 등록
 	   public void insertStuBoard(StuBoardVO stuVO) {
 		     
@@ -140,9 +173,7 @@ public class StuBoardDAO extends DBManager{
 	  }
 	  
 	  public void updateStuBoard(StuBoardVO stuVO) {
-		  String sql = "UPDATE TBL_STU_BOARD SET BODTITLE = ?"
-		  									  + "BODCONTENTS = ?"
-		  									  + "WHERE BODNUM = ?";
+		  String sql = "UPDATE TBL_STU_BOARD SET BODTITLE = ?, BODCONTENTS = ? WHERE BODNUM = ?";
 		  
 		  Connection conn = getConnection();
 		  PreparedStatement psmt;

@@ -24,6 +24,7 @@ public class StuBoardListFormAction implements Action{
 		ArrayList<StuBoardVO> StuBoardList = sDAO.selectAllStuBoard();
 		request.setAttribute("StuBoardList", StuBoardList);
 		
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 		

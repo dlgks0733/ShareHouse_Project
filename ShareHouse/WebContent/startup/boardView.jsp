@@ -13,16 +13,17 @@
 <body>
 	<div id="wrap" align="center">
 		<h1>게시글 상세보기</h1>
-		<form name="frm" method="post" action="stu?command=insertStuBoardAction">
+		<form name="frm" method="post" action="stu?command=stuBoardUpdateForm">
+		<input type="hidden" name="bodNum" value="${bodNum}">
 		<table>
-			<tr>
+<%-- 			<tr>
 				<th>작성자</th>
 				<td>${StuBoardVO.adminID}</td>
 				<tr>
 				<th>이메일</th>
 				<td>${board.email}</td>
 				</tr>
-			</tr>
+			</tr> --%>
 			<tr>
 				<th>작성일</th>
 				<td><fmt:formatDate value="${StuBoardVO.bodDate}" /></td>
@@ -42,7 +43,7 @@
 		</table>
 		<br> <br> 
 		<a type = "button" href ="stu?command=stuBoardList" class="btn btn-danger">취소</a>
-		<button type="submit" class="btn btn-primary">등록</button>	
+		<button type="submit" class="btn btn-primary">수정</button>	
 		</form>
 	</div>
 </body>
