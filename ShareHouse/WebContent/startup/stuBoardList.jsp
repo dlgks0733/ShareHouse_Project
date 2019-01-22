@@ -23,14 +23,14 @@
 				<th>작성일</th>
 				<th>조회</th>
 			</tr>
-			<c:forEach var="StuBoardVO" items="${StuBoardList}">
+			<c:forEach items="${StuBoardList}" var="StuBoardVO">
 				<tr class="record">
-					<td>${StuBoardVO.BodNum}</td>
-					<td><a href="BoardServlet?command=board_view&num=${StuBoardVO.BodNum}">
-							${StuBoardVO.BodTitle } </a></td>
+					<td>${StuBoardVO.bodNum}</td>
+					<td><a href="stu?command=stuBoardView">
+							${StuBoardVO.bodTitle} </a></td>
 					
-					<td><fmt:formatDate value="${StuBoardVO.BodDate}" /></td>
-					<td>${StuBoardVO.BodHits}</td>
+					<td><fmt:formatDate value="${StuBoardVO.bodDate}" /></td>
+					<td>${StuBoardVO.bodHits}</td>
 				</tr>
 			</c:forEach>
 		</table>

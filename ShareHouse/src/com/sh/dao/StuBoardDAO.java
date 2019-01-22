@@ -22,42 +22,43 @@ public class StuBoardDAO extends DBManager{
 	public static StuBoardDAO getInstance() {
 		return instance;
 	}
-	// 게시판 목록
-	public ArrayList<StuBoardVO> selectAllBoards() {
-	      String sql = "select * from TBL_STU_BOARD order by BOD_NUM";
-	      
-	      ArrayList<StuBoardVO> list = new ArrayList<StuBoardVO>();
-	      Connection conn = getConnection();
-	      PreparedStatement psmt;
-	      ResultSet rs = null;
-	      
-	      try {
-	         psmt = conn.prepareStatement(sql);
-	         rs = psmt.executeQuery();
-	         
-	         while(rs.next()) {
-	        	StuBoardVO stuVo = new StuBoardVO();
-	        	
-	        	stuVo.setBodNum(rs.getString("BodNum"));
-	        	stuVo.setBodTitle(rs.getString("BodTitle"));
-	        	stuVo.setBodContents(rs.getString("bodContents"));
-	        	stuVo.setBodHits(rs.getInt("BodHits"));
-	        	stuVo.setBodDate(rs.getDate("BodDate"));
-	            stuVo.setMemberId(rs.getString("MemberId"));
-	            stuVo.setAdminId(rs.getString("AdminId"));
-	            list.add(stuVo);
-	         }
-	         } catch (SQLException e) {
-	            e.printStackTrace();
-	         } finally {
-	            dbClose();
-	         }
-	      return list;
+		// 게시판 목록
+	public ArrayList<StuBoardVO> selectAllStuBoard(){
+		
+		String sql = "SELECT * FROM TBL_STU_BOARD";
+		
+		ArrayList<StuBoardVO> list = new ArrayList<StuBoardVO>();
+		
+	    Connection conn = getConnection();
+	    PreparedStatement psmt;
+	    ResultSet rs = null;
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				StuBoardVO stuVO = new StuBoardVO();
+				
+				stuVO.setBodNum(rs.getString("bodNum"));
+				stuVO.setBodTitle(rs.getString("bodTitle"));
+				stuVO.setBodHits(rs.getInt("bodHits"));
+				stuVO.setBodDate(rs.getDate("bodDate"));
+
+				
+				
+				list.add(stuVO);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			dbClose();
+		}
+		return list;
 	}
 		// 게시판 글 등록
 	   public void insertStuBoard(StuBoardVO stuVO) {
 		     
-		      String sql = "INSERT INTO TBL_STU_BOARD(BOD_NUM, BOD_TITLE, BOD_CONTENTS)"
+		      String sql = "INSERT INTO TBL_STU_BOARD(BODNUM, BODTITLE, BODCONTENTS)"
 		      		+ "VALUES(STU_BODNUM_SEQ.nextval, ? , ?)";
 		 
 
@@ -85,7 +86,7 @@ public class StuBoardDAO extends DBManager{
 	   //조회수 늘어나는거
 	   public void updateHits(String BodNum) {
 		   
-		   String sql = "UPDATE TBL_STU_BOARD SET BOD_HITS = BOD_HITS +1 WHERE BOD_NUM = ?";
+		   String sql = "UPDATE TBL_STU_BOARD SET BODHITS = BODHITS +1 WHERE BODNUM = ?";
 		   
 		   Connection conn = getConnection();
 		   PreparedStatement psmt;
@@ -106,7 +107,7 @@ public class StuBoardDAO extends DBManager{
 	   }
 	   // 게시판 글 상세 내용 보기 글번호로 찾아온다.
 	  public StuBoardVO selectOneBoardByBodNum(String BodNum) {
-		  String sql = "SELECT * FROM TBL_STU_BOARD WHERE BOD_NUM = ?";
+		  String sql = "SELECT * FROM TBL_STU_BOARD WHERE BODNUM = ?";
 		  
 		  StuBoardVO stuVO  = null;
 		  Connection conn = getConnection();
@@ -139,9 +140,9 @@ public class StuBoardDAO extends DBManager{
 	  }
 	  
 	  public void updateStuBoard(StuBoardVO stuVO) {
-		  String sql = "UPDATE TBL_STU_BOARD SET BOD_TITLE = ?"
-		  									  + "BOD_CONTENTS = ?"
-		  									  + "WHERE BOD_NUM = ?";
+		  String sql = "UPDATE TBL_STU_BOARD SET BODTITLE = ?"
+		  									  + "BODCONTENTS = ?"
+		  									  + "WHERE BODNUM = ?";
 		  
 		  Connection conn = getConnection();
 		  PreparedStatement psmt;
@@ -161,7 +162,7 @@ public class StuBoardDAO extends DBManager{
 	  }
 	  
 	  public void deleteStuBoard(String BodNum) {
-		  String sql = "DELETE TBL_STU_BOARD WHERE BOD_NUM = ?";
+		  String sql = "DELETE TBL_STU_BOARD WHERE BODNUM = ?";
 		  
 		  Connection conn = getConnection();
 		  PreparedStatement psmt;

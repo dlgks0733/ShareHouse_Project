@@ -69,10 +69,5 @@ public class StuBoardVO {
 		AdminId = adminId;
 	}
 	
-	@Override
-	public String toString() {
-		return "StuBoardVO [BodNum=" + BodNum + ", BodTitle=" + BodTitle + ", BodContents=" + BodContents + ", BodHits="
-				+ BodHits + ", BodDate=" + BodDate + ", MemberId=" + MemberId + ", AdminId=" + AdminId + "]";
-	}
 	
 }
