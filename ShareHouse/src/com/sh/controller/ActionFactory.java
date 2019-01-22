@@ -5,7 +5,7 @@ import com.sh.controller.action.MainAction;
 import com.sh.controller.action.member.InsertMemberAction;
 import com.sh.controller.action.member.JoinFormAction;
 import com.sh.controller.action.member.MemberIdCheckAction;
-import com.sh.controller.action.mlb.MlbBoardFormAction;
+import com.sh.controller.action.mlb.MlbBoardListFormAction;
 import com.sh.controller.action.mlb.MlbBoardInsertFormAction;
 import com.sh.controller.action.startup.InsertStuBoardAction;
 import com.sh.controller.action.startup.InsertStuBoardListAction;
@@ -48,7 +48,7 @@ public class ActionFactory {
  */
 		else if (command.equals("mlbBoardFormAciton")) {
 
-	         action = new MlbBoardFormAction();
+	         action = new MlbBoardListFormAction();
 
 	      } else if (command.equals("joinFormAction")) {
 

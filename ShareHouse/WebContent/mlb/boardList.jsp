@@ -59,29 +59,7 @@
 				</thead>
 				
 				<tbody>
-					<tr>
-						<td>1</td>
-						<td>하하하</td>
-						<td>이한</td>
-						<td>2019.01.12</td>
-						<td>1</td>
-					</tr>
 					
-					<tr>
-						<td>2</td>
-						<td>임시데이터 view</td>
-						<td>이한</td>
-						<td>2019.01.12</td>
-						<td>1</td>
-					</tr>
-					
-					<tr>
-						<td>1</td>
-						<td>임시데이터 view</td>
-						<td>이한</td>
-						<td>2019.01.12</td>
-						<td>1</td>
-					</tr>
 				</tbody>
 							
 			</table>			

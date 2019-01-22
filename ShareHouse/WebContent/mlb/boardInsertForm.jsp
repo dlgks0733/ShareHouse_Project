@@ -47,6 +47,7 @@
 	<section id="error-section" class="error-section w100dt mb-50">
 		<div class="container">
 			<!-- nlb board table form -->
+		<form method="post" action="mlb?command=mlbBoardInsertAction">
 			<table class="centered">
 					<tr>
 						<th>제목</th>
@@ -64,10 +65,10 @@
 			<hr>
 			<div>
 				<input type="button" class="btn" style="float: right;"
-				onclick="location.href='mlb?command=MlbBoardFormAciton'" value="목록">
-				<input type="button" class="btn" style="float: right;"
-				onclick="location.href='mlb?command=mlbInsertFormAction'" value="등록">
+				onclick="location.href='mlb?command=mlbBoardFormAciton'" value="목록">
+				<input type="submit" class="btn" style="float: right;" value="등록">
 			</div>
+		</form>
 		</div>
 		<!-- container -->
 	</section>
