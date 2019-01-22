@@ -27,7 +27,7 @@ public class MemberDAO extends DBManager {
 	//회원 등록
 	public void insertMember(MemberVO memVo) {
 		String sql = "INSERT INTO TBL_MEMBER("
-				+ "	  MEMBER_ID, MEMBER_PWD, MEMBER_NAME, AUTHORITY)"
+				+ "	  MEMBERID, MEMBERPWD, MEMBERNAME, AUTHORITY)"
 				+ "	  VALUES(?, ?, ?, ?)";
 		
 		Connection conn = getConnection();
@@ -55,7 +55,7 @@ public class MemberDAO extends DBManager {
 	//아이디 중복체크
 	public int confirmID(String memId) {
 		int result = -1;
-		String sql = "select MEMBER_ID from TBL_MEMBER where MEMBER_ID=?";
+		String sql = "select MEMBERID from TBL_MEMBER where MEMBERID=?";
 		Connection conn = getConnection();
 		PreparedStatement pstmt;
 		ResultSet rs = null;
@@ -81,7 +81,7 @@ public class MemberDAO extends DBManager {
 	//사용자 인증시 사용하는 메소드
 	public int userCheck(String userid, String pwd) {
 		int result = -1;
-		String sql = "select pwd from TBL_MEMBER where userid=?";
+		String sql = "select MEMBERPWD from TBL_MEMBER where MEMBERID=?";
 		Connection conn = getConnection();
 		PreparedStatement pstmt;
 		ResultSet rs = null;
@@ -111,7 +111,7 @@ public class MemberDAO extends DBManager {
 	//아이디로 회원 정보 가져오는 메소드
 	public MemberVO getMember(String userid) {
 		MemberVO mVo = null;
-		String sql = "select * from TBL_MEMBER where userid = ?";
+		String sql = "select * from TBL_MEMBER where MEMBERID = ?";
 		Connection conn = getConnection();
 		PreparedStatement pstmt;
 		ResultSet rs = null;

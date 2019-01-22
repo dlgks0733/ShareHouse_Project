@@ -7,7 +7,7 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
 
-		<title>Sujon - 404</title>
+		<title>Share House :: 농구동아리 게시판</title>
 
 		<!-- css include -->
 		<link rel="stylesheet" type="text/css" href="css/materialize.css">
@@ -27,11 +27,11 @@
 
 				<nav class="breadcrumb-nav w100dt">
 					<div class="page-name hide-on-small-only left">
-						<h4>404 ERROR</h4>
+						<h4>농구동아리 게시판</h4>
 					</div>
 					<div class="nav-wrapper right">
 						<a href="index.html" class="breadcrumb">Home</a>
-						<a href="404.html" class="breadcrumb active">404 ERROR</a>
+						<a href="404.html" class="breadcrumb active">농구동아리 게시판</a>
 					</div>
 					<!-- /.nav-wrapper -->
 				</nav>
@@ -43,45 +43,58 @@
 		<!-- /.breadcrumb-section -->
 		<!-- ==================== header-section End ==================== -->
 
-
-
-
-
-		<!-- ==================== error-section start ==================== -->
-		<section id="error-section" class="error-section w100dt mb-50">
-			<div class="container">
-
-			<div class="error-contant center-align">
-				<h2 class="error-head-title">404</h2>
-				<p>
-					It looks like that page no longer exists. Would you like to go to <a href="index.html">homepage</a> instead?
-				</p>
+		<!-- ==================== board-section start ==================== -->
+	<section id="error-section" class="error-section w100dt mb-50">
+		<div class="container">
+			<!-- nlb board table form -->
+			<table class="centered">
+				<thead>
+					<tr>
+						<th>번호</th>
+						<th>제목</th>
+						<th>작성자</th>
+						<th>작성일</th>
+						<th>조회수</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>하하하</td>
+						<td>이한</td>
+						<td>2019.01.12</td>
+						<td>1</td>
+					</tr>
+					
+					<tr>
+						<td>2</td>
+						<td>임시데이터 view</td>
+						<td>이한</td>
+						<td>2019.01.12</td>
+						<td>1</td>
+					</tr>
+					
+					<tr>
+						<td>1</td>
+						<td>임시데이터 view</td>
+						<td>이한</td>
+						<td>2019.01.12</td>
+						<td>1</td>
+					</tr>
+				</tbody>
+							
+			</table>			
+			
+			<hr>
+			<div>
+				<input type="button" class="btn" style="float: right;"
+				onclick="location.href='mlb?command=mlbInsertFormAction'" value="등록">
 			</div>
-			<!-- /.error-contant -->
+		</div>
+		<!-- container -->
+	</section>
 
-			</div>
-			<!-- container -->
-		</section>
-		<!-- /#error-section -->
-		<!-- ==================== error-section end ==================== -->
-
-
-
-
-
-		<!-- ==================== instag leftram-section Start ==================== -->
-		<section id="instagram-section" class="instagram-section w100dt">
-
-			<div class="instagram-link w100dt">
-				<a href="#">
-					<span>FIND US ON INSTAGRAM</span>
-					@SUJONMAJIDESIGN
-				</a>
-			</div>
-
-		</section>
-		<!-- /#instag leftram-section -->
-		<!-- ==================== instag leftram-section End ==================== -->
 		
 		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="js/materialize.js"></script>

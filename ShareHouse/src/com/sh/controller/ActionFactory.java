@@ -5,7 +5,8 @@ import com.sh.controller.action.MainAction;
 import com.sh.controller.action.member.InsertMemberAction;
 import com.sh.controller.action.member.JoinFormAction;
 import com.sh.controller.action.member.MemberIdCheckAction;
-import com.sh.controller.action.mlb.BoardFormAction;
+import com.sh.controller.action.mlb.MlbBoardFormAction;
+import com.sh.controller.action.mlb.MlbBoardInsertFormAction;
 
 /**
  * request로 받아온 매개변수의 command의 값으로 각 기능을 수행할 액션을 분기하는 클래스 <br>
@@ -37,7 +38,7 @@ public class ActionFactory {
 
 		} else if (command.equals("MlbBoardFormAciton")) {
 
-			action = new BoardFormAction();
+			action = new MlbBoardFormAction();
 
 		} else if (command.equals("joinFormAction")) {
 
@@ -51,6 +52,10 @@ public class ActionFactory {
 
 			action = new MemberIdCheckAction();
 
+		} else if (command.equals("mlbInsertFormAction")) {
+			
+			action = new MlbBoardInsertFormAction();
+			
 		}
 
 		return action;

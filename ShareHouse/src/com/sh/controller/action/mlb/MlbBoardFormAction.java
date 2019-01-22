@@ -9,12 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.sh.controller.action.Action;
 
-public class BoardFormAction implements Action{
+public class MlbBoardFormAction implements Action{
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String url = "mlb/404.jsp";
+		String url = "mlb/board.jsp";
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
