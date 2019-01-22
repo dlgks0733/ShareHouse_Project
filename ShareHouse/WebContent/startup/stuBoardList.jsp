@@ -1,40 +1,99 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@include file="../include/header.jsp" %>    
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="css/shopping.css">
-</head>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+
+		<title>Share House :: 창업동아리 게시판</title>
+
+		<!-- css include -->
+		<link rel="stylesheet" type="text/css" href="css/materialize.css">
+		<link rel="stylesheet" type="text/css" href="css/icofont.css">
+		<link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
+		<link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css">
+
+		<!-- my css include -->
+		<link rel="stylesheet" type="text/css" href="css/custom-menu.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/responsive.css">
+
+	</head>
 <body>
-	<div id="wrap" align="center">
-		<h1>게시글 리스트</h1>
-		<table class="list">
-			<tr>
-				<td colspan="5" style="border: white; text-align: right"><a
-					href="stu?command=insertStuBoardList">게시글 등록</a></td>
-			</tr>
-			<tr>
-				<th>번호</th>
-				<th>제목</th>
-				<th>작성일</th>
-				<th>조회</th>
-			</tr>
-			<c:forEach items="${StuBoardList}" var="StuBoardVO">
-				<tr class="record">
+	<section id="breadcrumb-section" class="breadcrumb-section w100dt mb-30">
+			<div class="container">
+
+				<nav class="breadcrumb-nav w100dt">
+					<div class="page-name hide-on-small-only left">
+						<h4>창업동아리 게시판</h4>
+					</div>
+					<div class="nav-wrapper right">
+						<a href="index.html" class="breadcrumb">Home</a>
+						<a href="mlb?command=mlbBoardListFormAciton" class="breadcrumb active">창업동아리 게시판</a>
+					</div>
+					<!-- /.nav-wrapper -->
+				</nav>
+				<!-- /.breadcrumb-nav -->
+
+			</div>
+			<!-- container -->
+		</section>
+		<!-- /.breadcrumb-section -->
+		<!-- ==================== header-section End ==================== -->
+
+		<!-- ==================== board-section start ==================== -->
+	<section id="error-section" class="error-section w100dt mb-50">
+		<div class="container">
+			<!-- nlb board table form -->
+			<table class="centered">
+				<thead>
+					<tr>
+						<th>번호</th>
+						<th>제목</th>
+						<th>작성자</th>
+						<th>작성일</th>
+						<th>조회수</th>
+					</tr>
+				</thead>
 				
-					<td>${StuBoardVO.bodNum}</td>
-					<td><a href="stu?command=stuBoardView&bodNum=${StuBoardVO.bodNum}">
-							${StuBoardVO.bodTitle} </a></td>
+				<tbody>
 					
-					<td><fmt:formatDate value="${StuBoardVO.bodDate}" /></td>
-					<td>${StuBoardVO.bodHits}</td>
-				</tr>
-			</c:forEach>
-		</table>
-	</div>
+
+					<c:forEach var="StuBoardVO" items="${StuBoardList}" varStatus="status">
+					<tr>
+					<td width="10%">${status.index+1}</td>
+					<td width="20%"><a href="stu?command=stuBoardView&bodNum=${StuBoardVO.bodNum}">${StuBoardVO.bodTitle}</a></td>
+					<td width="10%">김종욱</td>
+					<td width="10%">${StuBoardVO.bodDate}</td>
+					<td width="10%">${StuBoardVO.bodHits}</td>
+					</tr>
+					</c:forEach>
+				</tbody>
+							
+			</table>			
+			
+			<hr>
+			<div>
+				<input type="button" class="btn" style="float: right;"
+				onclick="location.href='stu?command=insertStuBoardList'" value="등록">
+			</div>
+		</div>
+		<!-- container -->
+	</section>
+
+		
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="js/materialize.js"></script>
+		<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+
+		<!-- my custom js -->
+		<script type="text/javascript" src="js/custom.js"></script>
+
+		<script type="text/javascript">
+		</script>
+<%@include file="../include/footer.jsp" %>		
 </body>
 </html>

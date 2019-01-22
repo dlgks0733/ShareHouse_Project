@@ -4,6 +4,7 @@ import com.sh.controller.action.Action;
 import com.sh.controller.action.MainAction;
 import com.sh.controller.action.startup.InsertStuBoardAction;
 import com.sh.controller.action.startup.InsertStuBoardListAction;
+import com.sh.controller.action.startup.StuBoardDeleteAction;
 import com.sh.controller.action.startup.StuBoardListFormAction;
 import com.sh.controller.action.startup.StuBoardUpdateAction;
 import com.sh.controller.action.startup.StuBoardUpdateFormAction;
@@ -59,7 +60,9 @@ public class StuActionFactory {
 		} else if (command.equals("stuBoardUpdateForm")) {
 
 			action = new StuBoardUpdateFormAction();
-		} 
+		} else if (command.equals("stuBoardDelete"))
+			
+			action = new StuBoardDeleteAction();
 
 		return action;
 

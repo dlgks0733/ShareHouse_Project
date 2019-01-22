@@ -24,6 +24,7 @@ public class StuBoardView implements Action {
 		
 		StuBoardVO bodList =  sDAO.selectOneBoardByBodNum(bodNum);
 		request.setAttribute("bodNum", bodNum);
+		request.setAttribute("bodList", bodList);
 		System.out.println(bodList);
 		
 		

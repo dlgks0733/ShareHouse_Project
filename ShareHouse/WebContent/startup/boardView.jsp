@@ -1,50 +1,99 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@include file="../include/header.jsp" %>    
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="css/shopping.css">
-<script type="text/javascript" src="script/board.js"></script>
-</head>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+
+		<title>Share House :: 창업동아리 게시판</title>
+
+		<!-- css include -->
+		<link rel="stylesheet" type="text/css" href="css/materialize.css">
+		<link rel="stylesheet" type="text/css" href="css/icofont.css">
+		<link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
+		<link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css">
+
+		<!-- my css include -->
+		<link rel="stylesheet" type="text/css" href="css/custom-menu.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/responsive.css">
+
+	</head>
 <body>
-	<div id="wrap" align="center">
-		<h1>게시글 상세보기</h1>
-		<form name="frm" method="post" action="stu?command=stuBoardUpdateForm">
-		<input type="hidden" name="bodNum" value="${bodNum}">
-		<table>
-<%-- 			<tr>
-				<th>작성자</th>
-				<td>${StuBoardVO.adminID}</td>
-				<tr>
-				<th>이메일</th>
-				<td>${board.email}</td>
-				</tr>
-			</tr> --%>
-			<tr>
-				<th>작성일</th>
-				<td><fmt:formatDate value="${StuBoardVO.bodDate}" /></td>
-				<tr>
-				<th>조회수</th>
-				<td>${StuBoardVO.bodHits}</td>
-				</tr>
-			</tr>
-			<tr>
-				<th>제목</th>
-				<td colspan="3">${StuBoardVO.bodTitle}</td>
-			</tr>
-			<tr>
-				<th>내용</th>
-				<td colspan="3"><pre>${StuBoardVO.bodContents}</pre></td>
-			</tr>
-		</table>
-		<br> <br> 
-		<a type = "button" href ="stu?command=stuBoardList" class="btn btn-danger">취소</a>
-		<button type="submit" class="btn btn-primary">수정</button>	
+
+	<section id="breadcrumb-section" class="breadcrumb-section w100dt mb-30">
+			<div class="container">
+
+				<nav class="breadcrumb-nav w100dt">
+					<div class="page-name hide-on-small-only left">
+						<h4>창업동아리 게시판</h4>
+					</div>
+					<div class="nav-wrapper right">
+						<a href="index.html" class="breadcrumb">Home</a>
+						<a href="mlb?command=mlbBoardListFormAciton" class="breadcrumb active">농구동아리 게시판</a>
+					</div>
+					<!-- /.nav-wrapper -->
+				</nav>
+				<!-- /.breadcrumb-nav -->
+
+			</div>
+			<!-- container -->
+		</section>
+		<!-- /.breadcrumb-section -->
+		<!-- ==================== header-section End ==================== -->
+
+		<!-- ==================== board-section start ==================== -->
+	<section id="error-section" class="error-section w100dt mb-50">
+	<form name="frm" method="post" action="stu?command=stuBoardUpdateForm">
+		<div class="container">
+			<!-- nlb board table form -->
+			
+			<input type="hidden" name="bodNum" value="${bodNum}">
+			
+			<table class="bordered">
+					<tr>
+						<th>제목</th>
+						<td>${bodList.bodTitle}</td>
+						<th>작성자</th>
+						<td>김종욱</td>
+						<th>작성일</th>
+						<td>${bodList.bodDate}</td>
+						
+					</tr>
+				
+					<tr>
+						<th>내용</th>
+						<td colspan="5"><textarea name="bodContents"
+						rows="28" cols="93" style="margin: 0px; width: 1051px; height: 246px;" disabled="disabled" >${bodList.bodContents}</textarea></td>
+					</tr>				
+							
+			</table>			
+			
+			<hr>
+			<div>
+			<a type = "button" href ="stu?command=stuBoardList" class="btn btn-danger">취소</a>
+			<a href="stu?command=stuBoardDelete&bodNum=${bodList.bodNum}">삭제</a>
+			<button type="submit" class="btn btn-primary">수정</button>
+			</div>
+			
+		</div>
 		</form>
-	</div>
+		<!-- container -->
+	</section>
+
+		
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="js/materialize.js"></script>
+		<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+
+		<!-- my custom js -->
+		<script type="text/javascript" src="js/custom.js"></script>
+
+		<script type="text/javascript">
+		</script>
+<%@include file="../include/footer.jsp" %>		
 </body>
 </html>

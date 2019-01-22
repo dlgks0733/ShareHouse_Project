@@ -17,19 +17,12 @@ public class StuBoardUpdateAction implements Action{
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String bodNum = request.getParameter("bodNum");
-		request.setAttribute("bodNum", bodNum);
 		String bodTitle = request.getParameter("bodTitle");
-		request.setAttribute("bodTitle", bodTitle);
 		String bodContents = request.getParameter("bodContents");
-		request.setAttribute("bodContents", bodContents);
 /*		String MemberId = request.getParameter("MemberId");
 		request.setAttribute(MemberId, "MemberId");
 		String AdminId = request.getParameter("AdminId");
 		request.setAttribute(AdminId, "AdminId");*/
-		
-		System.out.println("bodNum :" + bodNum );
-		System.out.println("bodTitle :" + bodTitle );
-		System.out.println("bodContents :" + bodContents );
 /*		System.out.println("MemberId :" + MemberId );
 		System.out.println("AdminId :" + AdminId );*/
 		

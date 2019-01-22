@@ -184,6 +184,8 @@ public class StuBoardDAO extends DBManager{
 			psmt.setString(1, stuVO.getBodTitle());
 			psmt.setString(2, stuVO.getBodContents());
 			psmt.setString(3, stuVO.getBodNum());
+			
+			psmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -192,7 +194,7 @@ public class StuBoardDAO extends DBManager{
 				  
 	  }
 	  
-	  public void deleteStuBoard(String BodNum) {
+	  public void deleteStuBoard(String bodNum) {
 		  String sql = "DELETE TBL_STU_BOARD WHERE BODNUM = ?";
 		  
 		  Connection conn = getConnection();
@@ -200,7 +202,7 @@ public class StuBoardDAO extends DBManager{
 		  
 		  try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, BodNum);
+			psmt.setString(1, bodNum);
 			psmt.executeQuery();
 		} catch (Exception e) {
 			e.printStackTrace();

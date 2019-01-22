@@ -23,6 +23,12 @@ public class StuBoardUpdateFormAction implements Action{
 		request.setAttribute("bodNum", bodNum);
 		System.out.println("bodNum : " + bodNum);
 		
+		StuBoardDAO sDAO = StuBoardDAO.getInstance();
+		
+		StuBoardVO bodList =  sDAO.selectOneBoardByBodNum(bodNum);
+		
+		request.setAttribute("bodList", bodList);
+		System.out.println(bodList);
 
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
