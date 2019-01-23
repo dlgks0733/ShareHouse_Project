@@ -200,6 +200,7 @@
 					<p> 동아리 회장 : 염정인 </p>(<i><small>글로벌 IT 경영 최고의 축구동아리입니다.</small></i>)
 				</div>
 			</div>
+			
 		</section>
 		
         <section id="map">
