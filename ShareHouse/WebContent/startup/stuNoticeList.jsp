@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
- 
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
 
 		<title>Share House :: 창업동아리 게시판</title>
@@ -23,7 +23,6 @@
 
 	</head>
 <body>
-
 	<section id="breadcrumb-section" class="breadcrumb-section w100dt mb-30">
 			<div class="container">
 
@@ -33,7 +32,7 @@
 					</div>
 					<div class="nav-wrapper right">
 						<a href="index.html" class="breadcrumb">Home</a>
-						<a href="mlb?command=mlbBoardListFormAciton" class="breadcrumb active">농구동아리 게시판</a>
+						<a href="mlb?command=mlbBoardListFormAciton" class="breadcrumb active">창업동아리 게시판</a>
 					</div>
 					<!-- /.nav-wrapper -->
 				</nav>
@@ -47,42 +46,41 @@
 
 		<!-- ==================== board-section start ==================== -->
 	<section id="error-section" class="error-section w100dt mb-50">
-	<form name="frm" method="post" action="stu?command=stuBoardUpdateForm">
 		<div class="container">
 			<!-- nlb board table form -->
-			
-			<input type="hidden" name="bodNum" value="${bodNum}">
-			
-			<table class="bordered">
+			<table class="centered">
+				<thead>
 					<tr>
+						<th>번호</th>
 						<th>제목</th>
-						<td>${bodList.bodTitle}</td>
 						<th>작성자</th>
-						<td>김종욱</td>
 						<th>작성일</th>
-						<td>${bodList.bodDate}</td>
-						
+						<th>조회수</th>
 					</tr>
+				</thead>
 				
+				<tbody>
+					
+
+					<c:forEach var="StuNoticeVO" items="${noclist}" varStatus="status">
 					<tr>
-						<th>내용</th>
-						<td colspan="5"><textarea name="bodContents"
-						rows="28" cols="93" style="margin: 0px; width: 1051px; height: 246px;" disabled="disabled" >${bodList.bodContents}</textarea></td>
-					</tr>				
+					<td width="10%">${status.index+1}</td>
+					<td width="20%"><a href="stu?command=stuNoticeView&nocNum=${StuNoticeVO.nocNum}">${StuNoticeVO.nocTitle}</a></td>
+					<td width="10%">김종욱</td>
+					<td width="10%">${StuNoticeVO.nocDate}</td>
+					<td width="10%">${StuNoticeVO.nocHits}</td>
+					</tr>
+					</c:forEach>
+				</tbody>
 							
 			</table>			
 			
 			<hr>
 			<div>
-			<a type = "button" href ="stu?command=stuBoardList" class="btn btn-danger">취소</a>
-			<%-- <a href="stu?command=stuBoardDelete&bodNum=${bodList.bodNum}">삭제</a> --%>
-			<input type="button" class="btn" style="float: right;"
-			onclick="location.href='stu?command=stuBoardDelete&bodNum=${bodList.bodNum}'" value="삭제">
-			<button type="submit" class="btn btn-primary">수정</button>
+				<input type="button" class="btn" style="float: right;"
+				onclick="location.href='stu?command=StuNoticeinsertForm'" value="등록">
 			</div>
-			
 		</div>
-		</form>
 		<!-- container -->
 	</section>
 

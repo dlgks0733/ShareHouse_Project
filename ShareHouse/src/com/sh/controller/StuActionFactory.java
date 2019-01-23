@@ -9,9 +9,12 @@ import com.sh.controller.action.startup.StuBoardListFormAction;
 import com.sh.controller.action.startup.StuBoardUpdateAction;
 import com.sh.controller.action.startup.StuBoardUpdateFormAction;
 import com.sh.controller.action.startup.StuBoardView;
+import com.sh.controller.action.startup.StuNoticeDeleteAction;
 import com.sh.controller.action.startup.StuNoticeInsertAction;
 import com.sh.controller.action.startup.StuNoticeInsertFormAction;
 import com.sh.controller.action.startup.StuNoticeListFormAction;
+import com.sh.controller.action.startup.StuNoticeUpdateAction;
+import com.sh.controller.action.startup.StuNoticeUpdateFormAction;
 import com.sh.controller.action.startup.StuNoticeViewAction;
 
 
@@ -79,9 +82,19 @@ public class StuActionFactory {
 			action = new StuNoticeInsertAction();
 			
 		} else if (command.equals("stuNoticeView")) {
+			
 			action = new StuNoticeViewAction();
+		} else if (command.equals("noticeUpdateForm")) {
+			
+			action = new StuNoticeUpdateFormAction(); 
+				
+		} else if (command.equals("noticeUpdate")) {
+			
+			action = new StuNoticeUpdateAction();
+		} else if (command.equals("noticeDelete")) {
+			
+			action = new StuNoticeDeleteAction();
 		}
-		
 		return action;
 
 	}
