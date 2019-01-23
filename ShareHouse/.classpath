@@ -12,5 +12,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/cos-26Dec2008.zip"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

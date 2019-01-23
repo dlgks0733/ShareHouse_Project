@@ -9,10 +9,11 @@ import com.sh.controller.action.mlb.MlbBoardListFormAction;
 import com.sh.controller.action.mlb.MlbBoardUpdateAction;
 import com.sh.controller.action.mlb.MlbBoardUpdateFormAction;
 import com.sh.controller.action.mlb.MlbBoardViewFormAction;
+import com.sh.controller.action.mlb.MlbGalBoardInsertFormAction;
+import com.sh.controller.action.mlb.MlbGalBoardListFormAction;
 import com.sh.controller.action.mlb.MlbBoardDeleteAction;
 import com.sh.controller.action.mlb.MlbBoardInsertAction;
 import com.sh.controller.action.mlb.MlbBoardInsertFormAction;
-
 
 /**
  * request로 받아온 매개변수의 command의 값으로 각 기능을 수행할 액션을 분기하는 클래스 <br>
@@ -71,15 +72,28 @@ public class MlbActionFactory {
 			action = new MlbBoardInsertAction();
 
 		} else if (command.equals("mlbBoardViewFormAction")) {
-			
+
 			action = new MlbBoardViewFormAction();
 		} else if (command.equals("mlbBoardUpdateFormAction")) {
-			
+
 			action = new MlbBoardUpdateFormAction();
+			
 		} else if (command.equals("mlbBoardUpdateAction")) {
+			
 			action = new MlbBoardUpdateAction();
+			
 		} else if (command.equals("mlbBoardDeleteAction")) {
+			
 			action = new MlbBoardDeleteAction();
+			
+		} else if (command.equals("mlbGalBoardListFormAction")) {
+			
+			action = new MlbGalBoardListFormAction();
+			
+		} else if (command.equals("mlbGalBoardInsertFormAction")) {
+			
+			action = new MlbGalBoardInsertFormAction();
+			
 		}
 
 		return action;
