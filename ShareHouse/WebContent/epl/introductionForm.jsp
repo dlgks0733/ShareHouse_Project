@@ -173,7 +173,7 @@
 					</div>
 					<div class="nav-wrapper right">
 						<a href="index.html" class="breadcrumb">Home</a>
-						<a href="epl?command=introductionFormAction" class="breadcrumb active">축구동아리 소개</a>
+						<a href="epl?command=eplIntroListFormAction" class="breadcrumb active">축구동아리 소개</a>
 					</div>
 					<!-- /.nav-wrapper -->
 				</nav>
@@ -192,53 +192,96 @@
 				<h1>축구동아리 소개</h1>
 			</div>
 			<div class="content">
-				<div class="photo">
-					<img src="img\fashion2.jpg" alt="동아리 사진">
+				<table class="bordered">
+					<thead>
+						<tr>
+							<th> 동아리명 : <br></th>
+							<th> 동아리 소개 : </th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<c:forEach var="eplVo" items="${list}" >
+							<td>${eplVo.intClubname }</td>
+							<td>${eplVo.intContents }</td>
+						</c:forEach>
+						</tr>
+					</tbody>
+				</table>	
 				</div>
-				<div class="text">
-					<p> 동아리명 : FC MIS </p>
-					<p> 동아리 회장 : 염정인 </p>(<i><small>글로벌 IT 경영 최고의 축구동아리입니다.</small></i>)
-				</div>
+				<br><br><br><br>
+				<hr>
+				
+				
+				</section>
 			</div>
-			
-		</section>
 		
-        <section id="map">
-            <div class="page-title">
-		        <h1>동아리 연혁</h1>
-            </div>
-            <div class="content">
-                <div class="photo">
-		            <img src="img\fashion2.jpg" alt="사계 포구에서 서쪽 방향으로 000미터 진행">
-                </div>
-                <div class="text">
-		           <p><i><small> 2013년 3월 : 경영정보학과 FC MIS 축구동아리 창설</p>
-                    <p>2013년 5월 : 경상대학 축구리그 4위</p>	
-                    <p>2013년 9월 : 경상대학 체육대회 축구 3위</p>
-                    <p>2014년 9월 : 경상대학 체육대회 축구 4위</p>
-                    <p>2016년 4월 : 경상대학 축구리그 준우승</p>
-                    <p>2017년 9월 : LSGB 체육대회 우승</p>
-                    <p>2018년 5월 : 경상대학 체육대회 축구 4위</p>
-                    <p>2018년 9월 : LSGB 체육대회 우승</p></small></i>
-                    		
-                </div>
-		    </div>
-        </section>
-
-        <section id="choice">
-            <div class="page-title">
-		        <h1> 구성원 </h1>
-            </div>
-            <div class="content">
-                <div class="text">
-		            <ol>
-			            <li>1인분 기준으로 서버에 각얼음 5조각(한조각의 20cc) 넣고 추출을 시작한다.</li>
-			            <li>평상시 보다 원두의 양은 2배 정도 (20g)와 추출액은 얼음 포함해서 200cc까지 내린다.</li>
-			            <li>아이스 잔에 얼음 6~7개 섞어서 시원하게 마신다</li>
-		            </ol>
-                </div>
+		
+		<div id="container">
+		
+        <section id="intro">
+        <div class="page-title">
+				<h1>축구동아리 연혁</h1>
 			</div>
-		</section>
+           <div class="content">
+				<table class="bordered">				
+					<thead>
+						<tr>
+							<th> - 동아리 연혁 -  <br></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<c:forEach var="eplVo" items="${list}" >
+							<td>${eplVo.intHistory }</td>
+						</c:forEach>
+						</tr>
+					</tbody>
+				</table>	
+				</div>
+				<br><br><br><br>
+				<hr>
+				
+				
+        </section>
+        
+        </div>
+        
+
+      <div id="container">
+		
+        <section id="intro">
+        <form method="post" action="epl?command=eplIntroUpdateFormAction">
+        <div class="page-title">
+				<h1>축구동아리 구성원</h1>
+			</div>
+           <div class="content">
+				<table class="bordered">				
+					<thead>
+						<tr>
+							<th> - 동아리 회장 -  <br></th>
+							<th> - 동아리 구성원 -  <br></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<c:forEach var="eplVo" items="${list}" >
+						<input type="hidden" name="adminId" value="${eplVo.adminId}">	
+							<td>${eplVo.intName }</td>
+							<td>${eplVo.intId }</td>
+						</c:forEach>
+						</tr>
+					</tbody>
+				</table>	
+				</div>
+				<br><br><br><br>
+				<hr>
+				
+				<div>
+				 <input type="submit" class="btn" value="수정">
+				</div>
+			</form>
+        </section>
 
 	</div>
 	<br><br>
