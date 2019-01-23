@@ -7,7 +7,7 @@
 		<script type="text/javascript" src="js/board.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
 
-		<title>Share House :: 농구동아리 갤러리</title>
+		<title>Share House :: sns동아리 게시판</title>
 
 		<!-- css include -->
 		<link rel="stylesheet" type="text/css" href="css/materialize.css">
@@ -27,11 +27,11 @@
 
 				<nav class="breadcrumb-nav w100dt">
 					<div class="page-name hide-on-small-only left">
-						<h4>농구동아리 게시물 등록</h4>
+						<h4>sns동아리 게시물 등록</h4>
 					</div>
 					<div class="nav-wrapper right">
 						<a href="index.html" class="breadcrumb">Home</a>
-						<a href="404.html" class="breadcrumb active">농구동아리 갤러리</a>
+						<a href="404.html" class="breadcrumb active">sns동아리 게시판</a>
 					</div>
 					<!-- /.nav-wrapper -->
 				</nav>
@@ -47,32 +47,25 @@
 	<section id="error-section" class="error-section w100dt mb-50">
 		<div class="container">
 			<!-- nlb board table form -->
-		<form name="frm" method="post" enctype="multipart/form-data" action="mlb?command=fileInsert" onsubmit="return validateBoard()">
-		  
-		
+		<form name="frm" method="post" action="sns?command=snsBoardInsertAction" onsubmit="return validateBoard()">
 			<table class="centered">
 					<tr>
 						<th>제목</th>
-						<td><input type="text" name="galTitle"></td>
-					</tr>
-
-					<tr>
-						<th>사진</th>
-						<td>
-						<input type="file" name="fileName" class="file-field btn"></td>
+						<td><input type="text" name="bodTitle"></td>
 					</tr>
 					
 					<tr>
 						<th>내용</th>
-						<td><textarea name="galContents"
+						<td><textarea name="bodContents"
 						rows="28" cols="93" style="margin: 0px; width: 1051px; height: 246px;"></textarea></td>
 					</tr>
 							
 			</table>			
+			
 			<hr>
 			<div>	
 				<input type="button" class="btn" style="float: right;"
-				onclick="location.href='mlb?command=mlbBoardListFormAciton'" value="취소">
+				onclick="location.href='sns?command=snsBoardListFormAciton'" value="취소">
 				<input type="submit" class="btn" style="float: right;" value="등록">
 			</div>
 		</form>

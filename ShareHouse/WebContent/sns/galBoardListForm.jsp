@@ -8,7 +8,7 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
 
-		<title>Share House :: 농구동아리 게시판</title>
+		<title>Share House :: sns동아리 갤러리</title>
 
 		<!-- css include -->
 		<link rel="stylesheet" type="text/css" href="css/materialize.css">
@@ -28,11 +28,11 @@
 
 				<nav class="breadcrumb-nav w100dt">
 					<div class="page-name hide-on-small-only left">
-						<h4>농구동아리 갤러리</h4>
+						<h4>sns동아리 갤러리</h4>
 					</div>
 					<div class="nav-wrapper right">
 						<a href="index.html" class="breadcrumb">Home</a>
-						<a href="mlb?command=mlbBoardListFormAciton" class="breadcrumb active">농구동아리 갤러리</a>
+						<a href="sns?command=snsBoardListFormAciton" class="breadcrumb active">sns동아리 갤러리</a>
 					</div>
 					<!-- /.nav-wrapper -->
 				</nav>
@@ -47,13 +47,12 @@
 		<!-- ==================== board-section start ==================== -->
 	<section id="error-section" class="error-section w100dt mb-50">
 		<div class="container">
-			
+		
 			<div class="col m6 s12">
 								<div class="blogs mb-30">
 									<div class="card">
 										<div class="card-image">
-										<img class='max-small' alt="" src="/displayFile?fileName=APA 아사쿠사 2인 45만원4.JPG">
-											
+											<img src="img/selfie.jpg" alt="Image">
 											<!--<a class="btn-floating center-align cmn-bgcolor halfway-fab waves-effect waves-light">
 												<i class="icofont icofont-camera-alt"></i>
 											</a> -->
@@ -61,7 +60,7 @@
 										<!-- /.card-image -->
 										<div class="card-content w100dt">
 											<p>
-												<a href="#" class="tag left w100dt l-blue mb-30">농구동아리</a>
+												<a href="#" class="tag left w100dt l-blue mb-30">sns동아리</a>
 											</p>
 											<a href="single-blog.html" class="card-title">
 												Labore Etdolore Magna Aliqua Utero Ratione
@@ -113,7 +112,7 @@
 										<!-- /.card-image -->
 										<div class="card-content w100dt">
 											<p>
-												<a href="#" class="tag left w100dt l-blue mb-30">농구동아리</a>
+												<a href="#" class="tag left w100dt l-blue mb-30">sns동아리</a>
 											</p>
 											<a href="single-blog.html" class="card-title">
 												Labore Etdolore Magna Aliqua Utero Ratione
@@ -164,7 +163,7 @@
 										<!-- /.card-image -->
 										<div class="card-content w100dt">
 											<p>
-												<a href="#" class="tag left w100dt l-blue mb-30">농구동아리</a>
+												<a href="#" class="tag left w100dt l-blue mb-30">sns동아리</a>
 											</p>
 											<a href="single-blog.html" class="card-title">
 												Labore Etdolore Magna Aliqua Utero Ratione
@@ -216,7 +215,7 @@
 										<!-- /.card-image -->
 										<div class="card-content w100dt">
 											<p>
-												<a href="#" class="tag left w100dt l-blue mb-30">농구동아리</a>
+												<a href="#" class="tag left w100dt l-blue mb-30">sns동아리</a>
 											</p>
 											<a href="single-blog.html" class="card-title">
 												Labore Etdolore Magna Aliqua Utero Ratione
@@ -265,7 +264,7 @@
 				
 				<div>
 					<input type="button" class="btn" style="float: right;"
-				onclick="location.href='mlb?command=mlbGalBoardInsertFormAction'" value="등록">
+				onclick="location.href='sns?command=snsGalBoardInsertFormAction'" value="등록">
 				</div>
 			
 			

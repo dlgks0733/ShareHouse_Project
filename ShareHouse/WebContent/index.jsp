@@ -15,9 +15,9 @@
 				<div class="slider">
 					<ul class="slides">
 						<li class="slider-item">
-							<img src="img/travel.jpg" alt="Image">
+							<img src="img/메인화면.jpg" alt="Image">
 							<div class="caption center-align">
-								<a href="#" class="tag l-blue w100dt mb-30">Travel</a>
+								<a href="#" class="tag l-blue w100dt mb-30">글로벌 IT경영학과</a>
 								<h1 class="card-title mb-10">
 									Labore Etdolore Magna Aliqua Utero
 								</h1>
@@ -25,13 +25,13 @@
 									Sedquia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
 									Sedquia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
 								</p>
-								<a href="single-blog.html" class="custom-btn waves-effect waves-light">READ MORE</a>
+								<a href="index.jsp" class="custom-btn waves-effect waves-light">READ MORE</a>
 							</div>
 						</li>
 						<li class="slider-item">
-							<img src="img/lifestyle.jpg" alt="Image">
+							<img src="img/한큐.jpg" alt="Image">
 							<div class="caption left-align">
-								<a href="#" class="tag l-blue w100dt mb-30">Lifestyle</a>
+								<a href="#" class="tag l-blue w100dt mb-30">한큐레이터</a>
 								<h1 class="card-title mb-10">
 									Labore Etdolore Magna Aliqua Utero
 								</h1>
@@ -39,13 +39,13 @@
 									Sedquia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
 									Sedquia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
 								</p>
-								<a href="single-blog.html" class="custom-btn waves-effect waves-light">READ MORE</a>
+								<a href="https://hannamqurator.imweb.me/" class="custom-btn waves-effect waves-light">READ MORE</a>
 							</div>
 						</li>
 						<li class="slider-item">
-							<img src="img/fashion.jpg" alt="Image">
+							<img src="img/메인화면.png" alt="Image">
 							<div class="caption right-align">
-								<a href="#" class="tag l-blue w100dt mb-30">Fashion</a>
+								<a href="#" class="tag l-blue w100dt mb-30">글로벌 IT경영학과</a>
 								<h1 class="card-title mb-10">
 									Labore Etdolore Magna Aliqua Utero
 								</h1>
@@ -53,7 +53,7 @@
 									Sedquia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
 									Sedquia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
 								</p>
-								<a href="single-blog.html" class="custom-btn waves-effect waves-light">READ MORE</a>
+								<a href="http://gitb.hannam.ac.kr/main/" class="custom-btn waves-effect waves-light">READ MORE</a>
 							</div>
 						</li>
 					</ul>
