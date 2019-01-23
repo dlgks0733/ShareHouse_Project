@@ -83,8 +83,8 @@
 									<ul class="dropdown-container">
 										<li><a href="404.html">동아리 소개</a></li>
 										<li><a href="404.html">공지사항</a></li>
-										<li><a href="404.html">게시판</a></li>
-										<li><a href="404.html">갤러리</a></li>
+										<li><a href="sns?command=snsBoardListFormAciton">게시판</a></li>
+										<li><a href="sns?command=snsGalBoardListFormAciton">갤러리</a></li>
 									</ul> <!-- /.dropdown-container --></li>
 
 								<li class="dropdown"><a href="404.html">축구동아리<i
@@ -134,7 +134,7 @@
 									<ul class="dropdown-container">
 										<li><a href="404.html">동아리 소개</a></li>
 										<li><a href="404.html">공지사항</a></li>
-										<li><a href="404.html">게시판</a></li>
+										<li><a href="sns?command=snsBoardListFormAciton">게시판</a></li>
 										<li><a href="404.html">갤러리</a></li>
 									</ul> <!-- /.dropdown-container --></li>
 
@@ -177,7 +177,7 @@
 										<li><a href="member?command=joinFormAction">회원가입</a></li>
 									</ul> <!-- /.dropdown-container --></li>
 								<li><a href="cateogry.html">창업동아리</a></li>
-								<li><a href="single-blog.html">SNS 동아리</a></li>
+								<li><a href="boardViewForm.jsp">SNS 동아리</a></li>
 								<li><a href="contact.html">축구동아리</a></li>
 								<li><a href="404.html">농구동아리</a></li>
 							</ul>
