@@ -9,6 +9,7 @@ import com.sh.controller.action.startup.StuBoardListFormAction;
 import com.sh.controller.action.startup.StuBoardUpdateAction;
 import com.sh.controller.action.startup.StuBoardUpdateFormAction;
 import com.sh.controller.action.startup.StuBoardView;
+
 import com.sh.controller.action.startup.StuNoticeDeleteAction;
 import com.sh.controller.action.startup.StuNoticeInsertAction;
 import com.sh.controller.action.startup.StuNoticeInsertFormAction;
@@ -94,7 +95,7 @@ public class StuActionFactory {
 		} else if (command.equals("noticeDelete")) {
 			
 			action = new StuNoticeDeleteAction();
-		}
+		} 
 		return action;
 
 	}
