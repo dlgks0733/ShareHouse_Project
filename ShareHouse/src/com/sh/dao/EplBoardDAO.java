@@ -18,7 +18,7 @@ public class EplBoardDAO extends DBManager {
 		
 	}
 	
-	public static EplBoardDAO getInstace() {
+	public static EplBoardDAO getInstnace() {
 		if (instance == null) {
 			instance = new EplBoardDAO();
 		}
@@ -26,7 +26,7 @@ public class EplBoardDAO extends DBManager {
 	}
 	
 	//epl 게시물 등록
-	public void inserEplBoard(EplBoardVO eplVo) {
+	public void insertEplBoard(EplBoardVO eplVo) {
 		String sql = "INSERT INTO TBL_EPL_BOARD("
 				+ "	  BODNUM, BODTITLE, BODCONTENTS )"
 				+ "	  VALUES(mlb_bodnum_seq.nextval, ?, ?)";
@@ -122,6 +122,52 @@ public class EplBoardDAO extends DBManager {
 			dbClose();
 		}
 		return eplVo;
+	}
+	
+	//epl 게시물 수정
+	public void updateEplBoard(EplBoardVO eplVo) {
+		String sql = "UPDATE TBL_MLB_BOARD SET BODTITLE = ?"
+				+ "	 , BODCONTENTS = ?"
+				+ "	  WHERE BODNUM = ?";
+		
+		Connection conn = getConnection();
+		PreparedStatement pstmt;
+		
+		try {
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, eplVo.getBodTitle());
+			pstmt.setString(2, eplVo.getBodContents());
+			pstmt.setString(3, eplVo.getBodNum());
+			
+			pstmt.executeQuery();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			dbClose();
+		}
+		
+	}
+	
+	public void deleteEplBoard(String bodNum) {
+		String sql = "DELETE FROM TBL_MLB_BOARD WHERE BODNUM = ?";
+		
+		Connection conn = getConnection();
+		PreparedStatement pstmt = null;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, bodNum);
+			pstmt.executeQuery();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			dbClose();
+		}
 	}
 }
 

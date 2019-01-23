@@ -92,7 +92,7 @@
 									<ul class="dropdown-container">
 										<li><a href="epl?command=eplIntroListFormAction">동아리 소개</a></li>
 										<li><a href="404.html">공지사항</a></li>
-										<li><a href="404.html">게시판</a></li>
+										<li><a href="epl?command=eplBoardListFormAciton">게시판</a></li>
 										<li><a href="404.html">갤러리</a></li>
 									</ul> <!-- /.dropdown-container --></li>
 								<li class="dropdown"><a href="mlb?command=introFormAction">농구동아리<i
