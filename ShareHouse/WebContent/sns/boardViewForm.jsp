@@ -53,7 +53,7 @@
 						<th>제목</th>
 						<td>${snsVo.bodTitle}</td>
 						<th>작성자</th>
-						<td>창현</td>
+						<td>${MemberVO.memberName}</td>
 						<th>작성일</th>
 						<td>${snsVo.bodDate}</td>
 						
@@ -91,6 +91,80 @@
 
 		<script type="text/javascript">
 		</script>
+		
+		
+		
+		
+		
+		
+	<!-- 댓글 부분 -->
+	<div id="comment">
+		<table border="1" bordercolor="lightgray">
+		<!-- 댓글 목록 -->	
+		<c:if test="${requestScope.commentList != null}">
+			<c:forEach var="comment" items="${requestScope.commentList}">
+				<tr>
+					<!-- 아이디, 작성날짜 -->
+					<td width="150">
+						<div>
+					
+						
+							${comment.MEMBERID}<br>
+							<font size="2" color="lightgray">${comment.COMMDATE}</font>
+						</div>
+					</td>
+					<!-- 본문내용 -->
+					<td width="550">
+						<div class="text_wrapper">
+						</div>
+					</td>
+					<!-- 버튼 -->
+					<td width="100">
+						<div  id="btn">
+						<!-- 댓글 작성자만 수정, 삭제 가능하도록 -->	
+						<c:if test="${comment.MEMBERID == sessionScope.sessionID}">
+							<a href="#" onclick="cmUpdateOpen(${comment.COMMNUM})">[수정]</a><br>	
+							<a href="#" onclick="cmDeleteOpen(${comment.COMMNUM})">[삭제]</a>
+						</c:if>		
+						</div>
+					</td>
+				</tr>
+				
+			</c:forEach>
+		</c:if>
+			
+			<!-- 로그인 했을 경우만 댓글 작성가능 -->
+		<c:if test="${sessionScope.sessionID !=null}">
+			<tr bgcolor="#F5F5F5">
+			<form id="writeCommentForm">
+				<input type="hidden" name="comment_board" value="${board.bodNum}">
+				<input type="hidden" name="comment_id" value="${sessionScope.sessionID}">
+				<!-- 아이디-->
+				<td width="150">
+					<div>
+						${sessionScope.sessionID}
+					</div>
+				</td>
+				<!-- 본문 작성-->
+				<td width="550">
+					<div>
+						<textarea name="comment_content" rows="4" cols="70" ></textarea>
+					</div>
+				</td>
+				<!-- 댓글 등록 버튼 -->
+				<td width="100">
+					<div id="btn">
+						<p><a href="#" onclick="writeCmt()">[댓글등록]</a></p>	
+					</div>
+				</td>
+			</form>
+			</tr>
+		</c:if>
+	
+		</table>
+	</div>
+
+		
 <%@include file="../include/footer.jsp" %>		
 </body>
 </html>
