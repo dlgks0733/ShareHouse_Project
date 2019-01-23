@@ -25,9 +25,11 @@ public class LoginFormAction implements Action{
 		//아이디와 비밀번호 가져오기
 		String userid = request.getParameter("userid");
 		String pwd = request.getParameter("pwd");
+		String name = request.getParameter("name");
 		
 		System.out.println(userid + " : LoginFormAction.java에 저장된 아이디");
-		
+		System.out.println(name + " : LoginFormAction.java에 저장된 이름");
+
 		//db에서 아이디,비번	확인하기 
 		MemberDAO mDao=MemberDAO.getInstance();
 		int result = mDao.userCheck(userid,  pwd); //1:로그인 성공, 0:비번불일치, -1:아이디 불일치
