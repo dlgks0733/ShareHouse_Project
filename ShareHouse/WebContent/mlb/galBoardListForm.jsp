@@ -47,7 +47,7 @@
 		<!-- ==================== board-section start ==================== -->
 	<section id="error-section" class="error-section w100dt mb-50">
 		<div class="container">
-		
+			
 			<div class="col m6 s12">
 								<div class="blogs mb-30">
 									<div class="card">
