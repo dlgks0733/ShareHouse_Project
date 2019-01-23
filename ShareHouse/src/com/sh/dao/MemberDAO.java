@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+
+
 import com.sh.vo.MemberVO;
 
 import util.DBManager;
@@ -21,8 +23,11 @@ public class MemberDAO extends DBManager {
 		if(instance == null) {
 			instance = new MemberDAO();
 		}
+		System.out.print("MemberDAO.java");
 		return instance;
 	}
+	
+
 	
 	//회원 등록
 	public void insertMember(MemberVO memVo) {
@@ -90,14 +95,18 @@ public class MemberDAO extends DBManager {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, userid);
 			rs = pstmt.executeQuery();
+			
 			if(rs.next()){
-				if(rs.getString("pwd")!=null && rs.getString("pwd").equals(pwd)){
-					result = 1;
+				if(rs.getString("memberPwd")!=null && rs.getString("memberPwd").equals(pwd)){
+					System.out.println("로그인성공(useerCheck)");
+					result = 1;//로그인 성공
 				} else {
-					result = 0;
+					System.out.println("비밀번호가 틀립니다.(useerCheck)");
+					result = 0;// 비밀번호 불일치
 				}
 			}else {
-					result = -1;
+					System.out.println("아이디가 존재하지 않습니다.(useerCheck)");
+					result = -1; //아이디없음
 			}
 		} catch (SQLException e){
 			e.printStackTrace();
@@ -134,6 +143,9 @@ public class MemberDAO extends DBManager {
 		}
 		return mVo;
 	}
+	
+	
+
 	
 	
 }
