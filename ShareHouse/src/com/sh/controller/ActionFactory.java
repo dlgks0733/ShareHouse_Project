@@ -46,54 +46,7 @@ public class ActionFactory {
  * @author LeeHan
  * 
  */
-		else if (command.equals("mlbBoardFormAciton")) {
 
-	         action = new MlbBoardListFormAction();
-
-	      } else if (command.equals("joinFormAction")) {
-
-	         action = new JoinFormAction();
-
-	      } else if (command.equals("insertMemberAction")) {
-
-	         action = new InsertMemberAction();
-
-	      } else if (command.equals("memberIdCheck")) {
-
-	         action = new MemberIdCheckAction();
-
-	      } else if (command.equals("mlbInsertFormAction")) {
-	         
-	         action = new MlbBoardInsertFormAction();
-	         
-	      }
-
-/**
-*	@author Kim Jong Uk 
-* 
-*/
-		else if (command.equals("insertStuBoardAction")) {
-
-			action = new InsertStuBoardAction();
-
-		} else if (command.equals("insertStuBoardList")) {
-
-			action = new InsertStuBoardListAction();
-		}
-
-		else if (command.equals("stuBoardList")) {
-
-			action = new StuBoardListFormAction();
-		} else if (command.equals("stuBoardView")) {
-
-			action = new StuBoardView();
-		} else if (command.equals("stuBoardUpdate")) {
-
-			action = new StuBoardUpdateAction();
-		} else if (command.equals("stuBoardUpdateyForm")) {
-
-			action = new StuBoardUpdateFormAction();
-		} 
 /**
  * @author Kim Jung Min
  * 

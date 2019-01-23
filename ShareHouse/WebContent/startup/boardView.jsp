@@ -75,7 +75,9 @@
 			<hr>
 			<div>
 			<a type = "button" href ="stu?command=stuBoardList" class="btn btn-danger">취소</a>
-			<a href="stu?command=stuBoardDelete&bodNum=${bodList.bodNum}">삭제</a>
+			<%-- <a href="stu?command=stuBoardDelete&bodNum=${bodList.bodNum}">삭제</a> --%>
+			<input type="button" class="btn" style="float: right;"
+			onclick="location.href='stu?command=stuBoardDelete&bodNum=${bodList.bodNum}'" value="삭제">
 			<button type="submit" class="btn btn-primary">수정</button>
 			</div>
 			

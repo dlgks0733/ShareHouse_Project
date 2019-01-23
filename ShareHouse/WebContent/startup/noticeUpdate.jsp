@@ -28,11 +28,11 @@
 
 				<nav class="breadcrumb-nav w100dt">
 					<div class="page-name hide-on-small-only left">
-						<h4>농구동아리 게시판</h4>
+						<h4>창업동아리 게시판</h4>
 					</div>
 					<div class="nav-wrapper right">
 						<a href="index.html" class="breadcrumb">Home</a>
-						<a href="mlb?command=mlbBoardListFormAciton" class="breadcrumb active">농구동아리 게시판</a>
+						<a href="mlb?command=mlbBoardListFormAciton" class="breadcrumb active">창업동아리 게시판</a>
 					</div>
 					<!-- /.nav-wrapper -->
 				</nav>
@@ -46,39 +46,39 @@
 
 		<!-- ==================== board-section start ==================== -->
 	<section id="error-section" class="error-section w100dt mb-50">
+		<form name="frm" method="post" action="stu?command=noticeUpdate">
 		<div class="container">
 			<!-- nlb board table form -->
+		
+		
+		<input type="hidden" name="nocNum" value="${noclist.nocNum}">
 			<table class="bordered">
 					<tr>
 						<th>제목</th>
-						<td>${mlbVo.bodTitle}</td>
+						<td><input type="text" name="nocTitle" value="${noclist.nocTitle}"></td>
 						<th>작성자</th>
-						<td>이한</td>
+						<td>김종욱</td>
 						<th>작성일</th>
-						<td>${mlbVo.bodDate}</td>
+						<td>${noclist.nocDate}</td>
 						
 					</tr>
 				
 					<tr>
 						<th>내용</th>
-						<td colspan="5"><textarea name="contents"
-						rows="28" cols="93" style="margin: 0px; width: 1051px; height: 246px;" disabled="disabled" >${mlbVo.bodContents}</textarea></td>
+						<td colspan="5"><textarea name="nocContents"
+						rows="28" cols="93" style="margin: 0px; width: 1051px; height: 246px;">${noclist.nocContents}</textarea></td>
 					</tr>				
 							
 			</table>			
 			
 			<hr>
 			<div>
-				<input type="button" class="btn" style="float: right;"
-				onclick="location.href='mlb?command=mlbBoardDeleteAction&bodNum=${mlbVo.bodNum}'" value="삭제">
-				<input type="button" class="btn" style="float: right;"
-				onclick="location.href='mlb?command=mlbBoardUpdateFormAction&bodNum=${mlbVo.bodNum}'" value="수정">
-				<input type="button" class="btn" style="float: right;"
-				onclick="location.href='mlb?command=mlbBoardListFormAciton'" value="목록">
+		<a type = "button" href ="stu?command=stuNoticeList" class="btn btn-danger">취소</a>
+		<button type="submit" class="btn btn-primary">수정</button>
 			</div>
-			
 		</div>
 		<!-- container -->
+		</form>
 	</section>
 
 		

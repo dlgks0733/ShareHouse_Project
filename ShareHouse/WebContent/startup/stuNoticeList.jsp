@@ -8,7 +8,7 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
 
-		<title>Share House :: 농구동아리 게시판</title>
+		<title>Share House :: 창업동아리 게시판</title>
 
 		<!-- css include -->
 		<link rel="stylesheet" type="text/css" href="css/materialize.css">
@@ -28,11 +28,11 @@
 
 				<nav class="breadcrumb-nav w100dt">
 					<div class="page-name hide-on-small-only left">
-						<h4>농구동아리 게시판</h4>
+						<h4>창업동아리 게시판</h4>
 					</div>
 					<div class="nav-wrapper right">
 						<a href="index.html" class="breadcrumb">Home</a>
-						<a href="mlb?command=mlbBoardListFormAciton" class="breadcrumb active">농구동아리 게시판</a>
+						<a href="mlb?command=mlbBoardListFormAciton" class="breadcrumb active">창업동아리 게시판</a>
 					</div>
 					<!-- /.nav-wrapper -->
 				</nav>
@@ -48,35 +48,38 @@
 	<section id="error-section" class="error-section w100dt mb-50">
 		<div class="container">
 			<!-- nlb board table form -->
-			<table class="bordered">
+			<table class="centered">
+				<thead>
 					<tr>
+						<th>번호</th>
 						<th>제목</th>
-						<td>${mlbVo.bodTitle}</td>
 						<th>작성자</th>
-						<td>이한</td>
 						<th>작성일</th>
-						<td>${mlbVo.bodDate}</td>
-						
+						<th>조회수</th>
 					</tr>
+				</thead>
 				
+				<tbody>
+					
+
+					<c:forEach var="StuNoticeVO" items="${noclist}" varStatus="status">
 					<tr>
-						<th>내용</th>
-						<td colspan="5"><textarea name="contents"
-						rows="28" cols="93" style="margin: 0px; width: 1051px; height: 246px;" disabled="disabled" >${mlbVo.bodContents}</textarea></td>
-					</tr>				
+					<td width="10%">${status.index+1}</td>
+					<td width="20%"><a href="stu?command=stuNoticeView&nocNum=${StuNoticeVO.nocNum}">${StuNoticeVO.nocTitle}</a></td>
+					<td width="10%">김종욱</td>
+					<td width="10%">${StuNoticeVO.nocDate}</td>
+					<td width="10%">${StuNoticeVO.nocHits}</td>
+					</tr>
+					</c:forEach>
+				</tbody>
 							
 			</table>			
 			
 			<hr>
 			<div>
 				<input type="button" class="btn" style="float: right;"
-				onclick="location.href='mlb?command=mlbBoardDeleteAction&bodNum=${mlbVo.bodNum}'" value="삭제">
-				<input type="button" class="btn" style="float: right;"
-				onclick="location.href='mlb?command=mlbBoardUpdateFormAction&bodNum=${mlbVo.bodNum}'" value="수정">
-				<input type="button" class="btn" style="float: right;"
-				onclick="location.href='mlb?command=mlbBoardListFormAciton'" value="목록">
+				onclick="location.href='stu?command=StuNoticeinsertForm'" value="등록">
 			</div>
-			
 		</div>
 		<!-- container -->
 	</section>

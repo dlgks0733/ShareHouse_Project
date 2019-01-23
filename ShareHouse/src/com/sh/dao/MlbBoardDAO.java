@@ -63,7 +63,7 @@ public class MlbBoardDAO extends DBManager{
 		PreparedStatement pstmt;
 		ResultSet rs = null;
 		
-		String sql = "SELECT * FROM TBL_MLB_BOARD";
+		String sql = "SELECT * FROM TBL_MLB_BOARD ORDER BY BODNUM DESC";
 		
 		try {
 			
