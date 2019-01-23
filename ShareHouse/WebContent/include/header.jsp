@@ -21,6 +21,12 @@
 <link rel="stylesheet" type="text/css" href="css/responsive.css">
 </head>
 <body>
+<%
+	Object userID = null;
+	if(session.getAttribute("loginUser") != null){
+		userID = (Object)session.getAttribute("loginUser");
+	} 
+%>
 	<!-- ==================== header-section Start ==================== -->
 	<header id="header-section" class="header-section w100dt navbar-fixed">
 
@@ -33,7 +39,7 @@
 					<div class="nav-wrapper w100dt">
 
 						<div class="logo left">
-							<a href="index.html" class="brand-logo"> <img
+							<a href="index.jsp" class="brand-logo"> <img
 								src="img/logo.png" alt="brand-logo">
 							</a>
 						</div>
@@ -47,15 +53,20 @@
 								<i class="icofont icofont-navigation-menu"></i>
 							</a>
 
+			<%
+				if(userID == null){
+			%>
+
 							<ul id="nav-mobile"
 								class="main-menu center-align hide-on-med-and-down">
 								<!-- <li class="dropdown" class="active"><a href="index.html">HOME</a>
 								
 								</li> -->
-								<li class="dropdown active"><a href="index.html">HOME<i
+								<li class="dropdown active"><a href="index.jsp">HOME<i
 										class="icofont icofont-simple-down"></i></a>
 									<ul class="dropdown-container">
-										<li><a href="login.do?command=LoginFormAction">로그인</a></li>
+										<li><a href="login.jsp">로그인</a></li>
+										
 										<li><a href="member?command=joinFormAction">회원가입</a></li>
 									</ul> <!-- /.dropdown-container --></li>
 								
@@ -63,7 +74,7 @@
 										class="icofont icofont-simple-down"></i></a>
 									<ul class="dropdown-container">
 										<li><a href="404.html">동아리 소개</a></li>
-										<li><a href="stu?command=stuNoticeList">공지사항</a></li>
+										<li><a href="404.html">공지사항</a></li>
 										<li><a href="stu?command=stuBoardList">게시판</a></li>
 										<li><a href="404.html">갤러리</a></li>
 									</ul> <!-- /.dropdown-container --></li>
@@ -90,11 +101,67 @@
 										<li><a href="404.html">동아리 소개</a></li>
 										<li><a href="404.html">공지사항</a></li>
 										<li><a href="mlb?command=mlbBoardListFormAciton">게시판</a></li>
-										<li><a href="mlb?command=mlbGalBoardListFormAction">갤러리</a></li>
+										<li><a href="404.html">갤러리</a></li>
 									</ul> <!-- /.dropdown-container --></li>
 								<!-- <li class="dropdown"><a href="404.html">로그인</a> -->
 							</ul>
+			<%
+				} else {
+			%>
+							
+							<ul id="nav-mobile"
+								class="main-menu center-align hide-on-med-and-down">
+								<!-- <li class="dropdown" class="active"><a href="index.html">HOME</a>
+								
+								</li> -->
+								<li class="dropdown active"><a href="index.jsp">HOME<i
+										class="icofont icofont-simple-down"></i></a>
+									<ul class="dropdown-container">
+										<li><a href="logout.do?command=LogoutFormAction">로그아웃</a></li>
+										
+									</ul> <!-- /.dropdown-container --></li>
+								
+								<li class="dropdown"><a href="404.html">창업동아리<i
+										class="icofont icofont-simple-down"></i></a>
+									<ul class="dropdown-container">
+										<li><a href="404.html">동아리 소개</a></li>
+										<li><a href="404.html">공지사항</a></li>
+										<li><a href="stu?command=stuBoardList">게시판</a></li>
+										<li><a href="404.html">갤러리</a></li>
+									</ul> <!-- /.dropdown-container --></li>
+								<li class="dropdown"><a href="404.html">SNS동아리<i
+										class="icofont icofont-simple-down"></i></a>
+									<ul class="dropdown-container">
+										<li><a href="404.html">동아리 소개</a></li>
+										<li><a href="404.html">공지사항</a></li>
+										<li><a href="404.html">게시판</a></li>
+										<li><a href="404.html">갤러리</a></li>
+									</ul> <!-- /.dropdown-container --></li>
 
+								<li class="dropdown"><a href="404.html">축구동아리<i
+										class="icofont icofont-simple-down"></i></a>
+									<ul class="dropdown-container">
+										<li><a href="404.html">동아리 소개</a></li>
+										<li><a href="404.html">공지사항</a></li>
+										<li><a href="404.html">게시판</a></li>
+										<li><a href="404.html">갤러리</a></li>
+									</ul> <!-- /.dropdown-container --></li>
+								<li class="dropdown"><a href="mlb?command=introFormAction">농구동아리<i
+										class="icofont icofont-simple-down"></i></a>
+									<ul class="dropdown-container">
+										<li><a href="404.html">동아리 소개</a></li>
+										<li><a href="404.html">공지사항</a></li>
+										<li><a href="mlb?command=MlbBoardFormAciton">게시판</a></li>
+										<li><a href="404.html">갤러리</a></li>
+									</ul> <!-- /.dropdown-container --></li>
+								<!-- <li class="dropdown"><a href="404.html">로그인</a> -->
+							</ul>
+							
+			<% 
+				}
+			%>
+							
+							
 
 							<!-- /.main-menu -->
 
@@ -103,11 +170,11 @@
 								<li class="snavlogo center-align"><img src="img/logo.png"
 									alt="logo"></li>
 								<!-- <li class="active"><a href="index.html">HOME</a></li> -->
-								<li class="dropdown active"><a href="index.html">HOME<i
+								<li class="dropdown active"><a href="index.jsp">HOME<i
 										class="icofont icofont-simple-down"></i></a>
 									<ul class="dropdown-container">
-										<li><a href="404.html">로그인</a></li>
-										<li><a href="404.html">회원가입</a></li>
+										<li><a href="login.jsp">로그인</a></li>
+										<li><a href="member?command=joinFormAction">회원가입</a></li>
 									</ul> <!-- /.dropdown-container --></li>
 								<li><a href="cateogry.html">창업동아리</a></li>
 								<li><a href="single-blog.html">SNS 동아리</a></li>

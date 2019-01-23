@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@include file="include/header.jsp" %>    
+ <%@include file="include/header.jsp" %> 
 
 <!DOCTYPE html>
 <html>
@@ -23,27 +23,27 @@
 		<div class="col-lg-4"></div>
 		<div class="col-lg-4">
 			<div class="jumbotron" style="padding-top: 20px;">
-				<form action="login.do" method="post" name = frm>
+				<form action="Login?command=LoginFormAction" method="post" name = frm>
 					<h2 style="text-align: center;">Share House</h2><br>
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="아이디" name="userid" maxlength="20"value="${userid}"/>
+						<input type="text" class="form-control" placeholder="아이디" name="userid" maxlength="20"/>
 					</div>
 					<div class="form-group">
 						<input type="password" class="form-control" placeholder="비밀번호" name="pwd" maxlength="20"/>
 					</div>
 					<input type="submit" class="btn btn-primary form-control" value="로그인" onclick="return loginCheck()"/> <br><br>
-					<input type="button" class="btn btn-primary form-control" value="회원가입" onclick="location.href='member'"/> 
 				</form>
+					<input type="button" class="btn btn-primary form-control" value="회원가입" onclick="location.href='join.jsp'"/>
 			</div>
 		</div>
 		<div class="col-lg-4"></div>
 	</div>
-	
-	
+	 
+		
 	
 	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-<%@include file="include/footer.jsp" %>
+ <%@include file="include/footer.jsp" %>
 
 </body>
 </html>
