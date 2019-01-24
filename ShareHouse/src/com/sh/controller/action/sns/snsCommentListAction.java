@@ -16,12 +16,12 @@ public class snsCommentListAction implements Action{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String BODNUM = request.getParameter("BODNUM");
+		String bodNum = request.getParameter("BODNUM");
 		
 		
-		snsCommentDAO commDao = snsCommentDAO.getInstance();
-		ArrayList<snsCommentVO> commentList = commDao.getCommentList(BODNUM);
-		if(commentList.size() > 0) request.setAttribute("commentList", commentList);
+		snsCommentDAO snsCommDao = snsCommentDAO.getInstance();
+		ArrayList<snsCommentVO> snsCommList = snsCommDao.getCommentList(bodNum);
+		if(snsCommList.size() > 0) request.setAttribute("commentList", snsCommList);
 	}
 
 }

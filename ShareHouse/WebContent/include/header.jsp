@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,10 +45,7 @@
 								src="img/logo.png" alt="brand-logo">
 							</a>
 						</div>
-						<!-- logo -->
-						<!-- <div class="row" align="right">
-							<a href="index.html"><span style="color: #92B3B7">로그인</span></a>
-						</div>-->
+						
 						<div>
 
 							<a href="#" data-activates="mobile-demo" class="button-collapse">
@@ -117,6 +116,7 @@
 								<li class="dropdown active"><a href="index.jsp">HOME<i
 										class="icofont icofont-simple-down"></i></a>
 									<ul class="dropdown-container">
+										<li><a href="#">${loginUser.memberName}님 반갑습니다.</a></li>
 										<li><a href="logout.do?command=LogoutFormAction">로그아웃</a></li>
 										
 									</ul> <!-- /.dropdown-container --></li>
@@ -154,8 +154,14 @@
 										<li><a href="mlb?command=MlbBoardFormAciton">게시판</a></li>
 										<li><a href="404.html">갤러리</a></li>
 									</ul> <!-- /.dropdown-container --></li>
-								<!-- <li class="dropdown"><a href="404.html">로그인</a> -->
-							</ul>
+		
+									
+									
+								</ul> <!-- /.dropdown-container -->
+								
+								<!-- <li class="right"><a href="404.html">로그인</a> -->
+							
+						
 							
 			<% 
 				}
@@ -181,30 +187,16 @@
 								<li><a href="contact.html">축구동아리</a></li>
 								<li><a href="404.html">농구동아리</a></li>
 							</ul>
-
+						
 						</div>
 
 						<!-- main-menu -->
 
-						<a href="#" class="search-trigger right"> <i
-							class="icofont icofont-search"></i>
-						</a>
-
-						<!-- search -->
-						<div id="myNav" class="overlay">
-							<a href="javascript:void(0)" class="closebtn">&times;</a>
-							<div class="overlay-content">
-								<form>
-									<input type="text" name="search" placeholder="Search...">
-									<br>
-									<button class="waves-effect waves-light" type="submit"
-										name="action">Search</button>
-								</form>
-							</div>
-						</div>
-
+						
+						
 					</div>
 					<!-- /.nav-wrapper -->
+
 				</div>
 				<!-- row -->
 			</div>
