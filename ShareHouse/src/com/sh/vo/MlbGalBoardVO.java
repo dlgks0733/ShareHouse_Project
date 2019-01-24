@@ -20,6 +20,16 @@ public class MlbGalBoardVO {
 	private Date galDate;
 	private int galHits;
 	private String adminId;
+	private String fileName;
+	
+
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
 
 	public String getGalNum() {
 		return galNum;
@@ -72,7 +82,10 @@ public class MlbGalBoardVO {
 	@Override
 	public String toString() {
 		return "MlbGalBoardVO [galNum=" + galNum + ", galTitle=" + galTitle + ", galContents=" + galContents
-				+ ", galDate=" + galDate + ", galHits=" + galHits + ", adminId=" + adminId + "]";
+				+ ", galDate=" + galDate + ", galHits=" + galHits + ", adminId=" + adminId + ", fileName=" + fileName
+				+ "]";
 	}
+
+	
 
 }

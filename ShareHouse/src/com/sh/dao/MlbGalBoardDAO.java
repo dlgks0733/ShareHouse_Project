@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import com.sh.vo.MlbGalBoardVO;
 
@@ -88,5 +89,91 @@ public class MlbGalBoardDAO extends DBManager{
 		
 		return res;
 	}
+	
+	//갤러리 게시판 리스트 불러오기
+	public ArrayList<MlbGalBoardVO> mlbGalBoardList(){
+		
+		ArrayList<MlbGalBoardVO> list = new ArrayList<MlbGalBoardVO>();
+		
+		Connection conn = getConnection();
+		PreparedStatement pstmt;
+		ResultSet rs = null;
+		
+		String sql = "SELECT g.galNum, g.galTitle, g.galContents, g.galDate, g.galHits, g.adminId,i.fileName as \"FileName\"" + 
+				"  	  FROM tbl_mlb_gallery g, tbl_mlb_imagefile i" + 
+				"	  WHERE g.galNum = i.galNum" + 
+				"	  ORDER BY g.galNum DESC";
+		
+		try {
+			
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				MlbGalBoardVO mlbVo = new MlbGalBoardVO();
+				mlbVo.setGalNum(rs.getString("GALNUM"));
+				mlbVo.setGalTitle(rs.getString("GALTITLE"));
+				mlbVo.setGalContents(rs.getString("GALCONTENTS"));
+				mlbVo.setGalDate(rs.getDate("GALDATE"));
+				mlbVo.setGalHits(rs.getInt("GALHITS"));
+				mlbVo.setAdminId(rs.getString("ADMINID"));
+				mlbVo.setFileName(rs.getString("FileName"));
+				
+				
+				list.add(mlbVo);
+				
+			}
+			
+		}	catch (SQLException e) {
+			e.printStackTrace();
+		}	finally {
+			dbClose();
+		}
+		
+		return list;
+	}
+	
+	//mlb 게시판 상세보기
+		public MlbGalBoardVO mlbGalBoardView(String galNum) {
+			String sql = "SELECT g.galNum, g.galTitle, g.galContents, g.galDate, g.galHits, g.adminId,i.fileName as \"FileName\"" + 
+					"  	  FROM tbl_mlb_gallery g, tbl_mlb_imagefile i" + 
+					"	  WHERE g.galNum = i.galNum AND g.galNum = ?";
+			
+			MlbGalBoardVO mlbVo = null;
+			Connection conn = getConnection();
+			PreparedStatement pstmt;
+			ResultSet rs = null;
+			
+			try {
+				
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, galNum);
+				
+				rs = pstmt.executeQuery();
+				
+				if(rs.next()) {
+					mlbVo = new MlbGalBoardVO();
+					
+					mlbVo.setGalNum(rs.getString("GALNUM"));
+					mlbVo.setGalTitle(rs.getString("GALTITLE"));
+					mlbVo.setGalContents(rs.getString("GALCONTENTS"));
+					mlbVo.setGalDate(rs.getDate("GALDATE"));
+					mlbVo.setGalHits(rs.getInt("GALHITS"));
+					mlbVo.setAdminId(rs.getString("ADMINID"));
+					mlbVo.setFileName(rs.getString("FileName"));
+					
+				}
+			}	catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				dbClose();
+			}
+			
+			return mlbVo;
+			
+		}
+	
+	
 	
 }

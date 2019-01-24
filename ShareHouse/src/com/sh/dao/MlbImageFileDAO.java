@@ -2,7 +2,9 @@ package com.sh.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.sh.vo.MlbImageFileVO;
 
@@ -46,5 +48,43 @@ public class MlbImageFileDAO extends DBManager{
 		}
 		
 	}
+	
+	
+	
+	
+	//이미지 파일 리스트 불러오기
+	
+	/*public ArrayList<MlbImageFileVO> mlbImageList(){
+		
+		ArrayList<MlbImageFileVO> imgList = new ArrayList<MlbImageFileVO>();
+		
+		Connection conn = getConnection();
+		PreparedStatement pstmt;
+		ResultSet rs = null;
+		
+		String sql = "SELECT * FROM TBL_MLB_IMAGEFILE";
+		
+		try {
+			
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				MlbImageFileVO mlbVo = new MlbImageFileVO();
+				mlbVo.setGalNum(rs.getString("GALNUM"));
+				mlbVo.setFileName(rs.getString("FILENAME"));
+				
+				imgList.add(mlbVo);
+				
+			}
+			
+		}	catch (SQLException e) {
+			e.printStackTrace();
+		}	finally {
+			dbClose();
+		}
+		return imgList;
+	}*/
 	
 }

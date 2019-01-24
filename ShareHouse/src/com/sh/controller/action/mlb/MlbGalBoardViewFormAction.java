@@ -1,7 +1,6 @@
 package com.sh.controller.action.mlb;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,18 +11,20 @@ import com.sh.controller.action.Action;
 import com.sh.dao.MlbGalBoardDAO;
 import com.sh.vo.MlbGalBoardVO;
 
-public class MlbGalBoardListFormAction implements Action{
+public class MlbGalBoardViewFormAction implements Action{
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String url = "mlb/galBoardListForm.jsp";
+		String url = "mlb/galBoardViewForm.jsp";
+		
+		String galNum = request.getParameter("galNum");
+		request.setAttribute("galNum", galNum);
 		
 		MlbGalBoardDAO mlbDao = MlbGalBoardDAO.getInstance();
-		
-		//게시판 리스트 가져오기
-		ArrayList<MlbGalBoardVO> galList = mlbDao.mlbGalBoardList();
-		request.setAttribute("galList", galList);
+		MlbGalBoardVO mlbVo = new MlbGalBoardVO();
+		mlbVo = mlbDao.mlbGalBoardView(galNum);
+		request.setAttribute("mlbVo", mlbVo);
 		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
