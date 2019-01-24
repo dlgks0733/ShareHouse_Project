@@ -173,6 +173,28 @@ public class MlbGalBoardDAO extends DBManager{
 			return mlbVo;
 			
 		}
+		
+		public void deleteGalBoard(String galNum) {
+			
+			String sql = "DELETE FROM TBL_MLB_GALLERY WHERE GALNUM = ?";
+			
+			Connection conn = getConnection();
+			PreparedStatement pstmt = null;
+			
+			
+			try {
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, galNum);
+				
+				pstmt.executeUpdate();
+				
+			}	catch (SQLException e) {
+				e.printStackTrace();
+			}	finally {
+				dbClose();
+			}
+			
+		}
 	
 	
 	
