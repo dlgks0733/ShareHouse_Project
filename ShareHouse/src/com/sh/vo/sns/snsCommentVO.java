@@ -1,12 +1,10 @@
 package com.sh.vo.sns;
 
-import java.sql.Date;
-
 public class snsCommentVO {
 	
 	private String COMMNUM;			//댓글 번호
 	private String COMMCONTENTS;	//댓글 내용
-	private Date COMMDATE;			//댓글 작성일
+	private String COMMDATE;			//댓글 작성일
 	private String BODNUM;			//게시글 번호
 	private String MEMBERID;		//댓글 작성자
 	
@@ -23,10 +21,10 @@ public class snsCommentVO {
 	public void setCOMMCONTENTS(String cOMMCONTENTS) {
 		COMMCONTENTS = cOMMCONTENTS;
 	}
-	public Date getCOMMDATE() {
+	public String getCOMMDATE() {
 		return COMMDATE;
 	}
-	public void setCOMMDATE(Date cOMMDATE) {
+	public void setCOMMDATE(String cOMMDATE) {
 		COMMDATE = cOMMDATE;
 	}
 	public String getBODNUM() {

@@ -51,9 +51,9 @@
 			<table class="bordered">
 					<tr>
 						<th>제목</th>
-						<td>${snsVo.bodTitle}</td>
+						<td>${snsdVo.bodTitle}</td>
 						<th>작성자</th>
-						<td>${MemberVO.memberName}</td>
+						<td>${snsVo.memberId}</td>
 						<th>작성일</th>
 						<td>${snsVo.bodDate}</td>
 						
@@ -94,15 +94,22 @@
 		
 		
 		
-		
-		
+	test<br>
+	test<br>
+	test<br>
+	test<br>
+	test<br>
+	test<br>
+	"${CommentList }"
+	
+	아아
 		
 	<!-- 댓글 부분 -->
 	<div id="comment">
 		<table border="1" bordercolor="lightgray">
 		<!-- 댓글 목록 -->	
-		<c:if test="${requestScope.commentList != null}">
-			<c:forEach var="comment" items="${requestScope.commentList}">
+		<c:if test="${requestScope.CommentList != null}">
+			<c:forEach var="comment" items="${requestScope.CommentList}">
 				<tr>
 					<!-- 아이디, 작성날짜 -->
 					<td width="150">
@@ -118,16 +125,7 @@
 						<div class="text_wrapper">
 						</div>
 					</td>
-					<!-- 버튼 -->
-					<td width="100">
-						<div  id="btn">
-						<!-- 댓글 작성자만 수정, 삭제 가능하도록 -->	
-						<c:if test="${comment.MEMBERID == sessionScope.sessionID}">
-							<a href="#" onclick="cmUpdateOpen(${comment.COMMNUM})">[수정]</a><br>	
-							<a href="#" onclick="cmDeleteOpen(${comment.COMMNUM})">[삭제]</a>
-						</c:if>		
-						</div>
-					</td>
+					
 				</tr>
 				
 			</c:forEach>
@@ -151,12 +149,7 @@
 						<textarea name="comment_content" rows="4" cols="70" ></textarea>
 					</div>
 				</td>
-				<!-- 댓글 등록 버튼 -->
-				<td width="100">
-					<div id="btn">
-						<p><a href="#" onclick="writeCmt()">[댓글등록]</a></p>	
-					</div>
-				</td>
+				
 			</form>
 			</tr>
 		</c:if>
