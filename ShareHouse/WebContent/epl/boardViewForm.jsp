@@ -67,11 +67,38 @@
 						<td colspan="5"><textarea name="contents"
 						rows="28" cols="93" style="margin: 0px; width: 1051px; height: 246px;" disabled="disabled" >${eplVo.bodContents}</textarea></td>
 					</tr>
-			
-							
+
 			</table>
-			<form name="frm" method="post" action="epl?command=eplCommentInsertAction" onsubmit="return validateBoard()">
+			
+			<div>
+				<input type="button" class="btn" style="float: right;"
+				onclick="location.href='epl?command=eplBoardDeleteAction&bodNum=${eplVo.bodNum}'" value="삭제">
+				<input type="button" class="btn" style="float: right;"
+				onclick="location.href='epl?command=eplBoardUpdateFormAction&bodNum=${eplVo.bodNum}'" value="수정">
+				<input type="button" class="btn" style="float: right;"
+				onclick="location.href='epl?command=eplBoardListFormAciton'" value="목록">
+			</div>
+			
+			
+			
+		<!-- 댓글부분 -->	
+		<form name="frm" method="post" action="epl?command=eplCommentInsertAction" onsubmit="return validateBoard()">
 			<input type="hidden" name="bodNum" value="${eplVo.bodNum}"> 
+			
+			
+			<br><br>
+			<H3>의견쓰기</H3>
+				<table class="responsive-table ">
+					<tr>
+						<th>댓글</th>
+						<td colspan="5"><textarea name="commContents"
+						rows="28" cols="93" style="margin: 0px; width: 900px; height: 100px;" ></textarea></td>
+						<td><input type="submit" class="btn" style="float: right;" value="답글"></td>
+					</tr>
+				</table>
+			
+			
+			
 			<table>
 			 <thead>
 			
@@ -90,28 +117,12 @@
 						</tr>
 					</c:forEach>
 				</tbody>
-				</table>
+			</table>
+			
 				
-				<table class="responsive-table ">
-					<tr>
-						<th>댓글</th>
-						<td colspan="5"><textarea name="commContents"
-						rows="28" cols="93" style="margin: 0px; width: 900px; height: 100px;" ></textarea></td>
-						<td><input type="submit" class="btn" style="float: right;" value="답글"></td>
-					</tr>
-				</table>
-				</form>
+		</form>
 				
 			
-			<div>
-				
-				<input type="button" class="btn" style="float: right;"
-				onclick="location.href='epl?command=eplBoardDeleteAction&bodNum=${eplVo.bodNum}'" value="삭제">
-				<input type="button" class="btn" style="float: right;"
-				onclick="location.href='epl?command=eplBoardUpdateFormAction&bodNum=${eplVo.bodNum}'" value="수정">
-				<input type="button" class="btn" style="float: right;"
-				onclick="location.href='epl?command=eplBoardListFormAciton'" value="목록">
-			</div>
 			
 		</div>
 		<!-- container -->
