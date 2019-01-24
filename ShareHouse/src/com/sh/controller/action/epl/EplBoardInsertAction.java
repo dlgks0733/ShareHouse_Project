@@ -21,12 +21,14 @@ public class EplBoardInsertAction implements Action{
 		
 		String bodTitle = request.getParameter("bodTitle");
 		String bodContents = request.getParameter("bodContents");
+		String memberId = request.getParameter("memberId");
 	  //String memId
 	  //String adminId
 		
 		EplBoardVO eplVo = new EplBoardVO();
 		eplVo.setBodTitle(bodTitle);
 		eplVo.setBodContents(bodContents);
+		eplVo.setMemberId(memberId);
 		
 		
 		EplBoardDAO eplDao = EplBoardDAO.getInstnace();
