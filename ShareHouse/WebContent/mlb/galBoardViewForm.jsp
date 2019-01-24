@@ -90,9 +90,9 @@
 								<p class="w100dt mb-50">${mlbVo.galContents}</p>
 
 								<ul class="tag-list right">
-									<li><a href="#!" class="waves-effect">#삭제</a></li>
-									<li><a href="#!" class="waves-effect">#수정</a></li>
-									<li><a href="#!" class="waves-effect">#목록</a></li>
+									<li><a href="mlb?command=mlbGalBoardListFormAction" class="waves-effect">#목록</a></li>
+									<li><a href="mlb?command=mlbGalBoardUpdateFormAction" class="waves-effect">#수정</a></li>
+									<li><a href="mlb?command=mlbGalBoardDeleteAction" class="waves-effect">#삭제</a></li>
 								</ul>
 
 								<ul class="share-links left">
