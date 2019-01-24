@@ -66,7 +66,7 @@
 					<tr>
 					<td width="10%">${status.index+1}</td>
 					<td width="20%"><a href="mlb?command=mlbBoardViewFormAction&bodNum=${mVO.bodNum}">${mVO.bodTitle}</a></td>
-					<td width="10%">이한</td>
+					<td width="10%">${mVO.memberName}</td>
 					<td width="10%">${mVO.bodDate}</td>
 					<td width="10%">${mVO.bodHits}</td>
 					</tr>

@@ -47,6 +47,27 @@ public class MlbImageFileDAO extends DBManager{
 		
 	}
 	
+	//이미지 삭제 
+	public void deleteMlbImage(String galNum) {
+		
+		String sql = "DELETE FROM TBL_MLB_IMAGEFILE WHERE GALNUM = ?";
+		
+		Connection conn = getConnection();
+		PreparedStatement pstmt;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, galNum);
+			pstmt.executeUpdate();
+			
+		}	catch (SQLException e) {
+
+			e.printStackTrace();
+		}	finally {
+			dbClose();
+		}
+		
+	}
 	
 	
 	
