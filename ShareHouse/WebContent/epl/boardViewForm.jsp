@@ -87,6 +87,7 @@
 						<td>${status.index+1 }</td>
 						<td>${eplVo.commContents}</td>
 						<td>${eplVo.commDate}</td>
+						</tr>
 					</c:forEach>
 				</tbody>
 				</table>

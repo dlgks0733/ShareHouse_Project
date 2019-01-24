@@ -19,7 +19,8 @@ public class EplCommentInsertAction implements Action {
 		String commContents = request.getParameter("commContents");
 		String commDate = request.getParameter("commDate");
 		
-		
+		System.out.println(commContents);
+		System.out.println(commDate);
 		
 		EplCommentVO eplVo = new EplCommentVO();
 		eplVo.setBodNum(bodNum);
