@@ -132,7 +132,7 @@
                   <!-- /.card -->
                </div>
                <!-- /.blogs -->
-               <!-- nlb board table form -->
+               <!-- nlb board table form --> 
             </div>
          </div>
       </div>
