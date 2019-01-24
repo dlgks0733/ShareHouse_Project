@@ -28,7 +28,13 @@ public class EplIntroInsertAction implements Action {
 		eplVo.setIntName(intName);
 		eplVo.setIntId(intId);
 		
+        if (eplVo.getIntContents() != null) {
+        	eplVo.setIntContents(eplVo.getIntContents().replace("\\r\n", "<br>"));
+         }
 		
+        if (eplVo.getIntHistory() != null) {
+        	eplVo.setIntHistory(eplVo.getIntHistory().replace("\\r\n", "<br>"));
+         }
 		EplIntroductionDAO eplDao = EplIntroductionDAO.getInstance();
 		eplDao.inserEplIntroduction(eplVo);
 		

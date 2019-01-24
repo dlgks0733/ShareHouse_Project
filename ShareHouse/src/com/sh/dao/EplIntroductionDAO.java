@@ -111,6 +111,8 @@ public class EplIntroductionDAO extends DBManager {
 			pstmt.setString(5, eplVo.getIntId());
 			pstmt.setString(6, eplVo.getAdminId());
 			
+			
+			
 			pstmt.executeUpdate();
 			
 		} catch (SQLException e) {

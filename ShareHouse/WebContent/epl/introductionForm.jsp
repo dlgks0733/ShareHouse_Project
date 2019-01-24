@@ -1,7 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
-<%@include file="../include/header.jsp" %>    
+<%@include file="../include/header.jsp" %> 
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%> 
+ 
+<%
+    // 줄바꿈 
+    pageContext.setAttribute("br", "<br/>");
+    pageContext.setAttribute("cn", "\n");
+%> 
+   
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,7 +85,7 @@
 	
 	                        
 	
-	                        <p class="w100dt mb-50">${eplVo.intContents}</p>
+	                        <p class="w100dt mb-50">${fn:replace(eplVo.intContents, cn, br)}</p>
 	                        
 	                         <ul class="post-mate-time left mb-30">
 	                           <li>
@@ -97,7 +105,7 @@
 	                           </a></li>
 	                        </ul> -->
 	
-	                        <p class="w100dt mb-50">${eplVo.intHistory}</p>
+	                        <p class="w100dt mb-50">${fn:replace(eplVo.intHistory, cn, br)}</p>
 	                        
 	                        <p></p>
 	                        <p></p>
@@ -132,7 +140,7 @@
                   <!-- /.card -->
                </div>
                <!-- /.blogs -->
-               <!-- nlb board table form --> 
+               <!-- nlb board table form -->
             </div>
          </div>
       </div>
