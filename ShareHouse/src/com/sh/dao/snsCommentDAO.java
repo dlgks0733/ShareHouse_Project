@@ -10,7 +10,7 @@ import com.sh.vo.sns.snsCommentVO;
 
 import util.DBManager;
 
-public class CommentDAO extends DBManager{
+public class snsCommentDAO extends DBManager{
 	
 	
 	
@@ -18,12 +18,12 @@ public class CommentDAO extends DBManager{
 	    private PreparedStatement pstmt;
 	    private ResultSet rs;
 	    
-	    private static CommentDAO instance;
+	    private static snsCommentDAO instance;
 	    
-	    private CommentDAO(){}
-	    public static CommentDAO getInstance(){
+	    private snsCommentDAO(){}
+	    public static snsCommentDAO getInstance(){
 	        if(instance==null)
-	            instance=new CommentDAO();
+	            instance=new snsCommentDAO();
 	        return instance;
 	    }
 	    
@@ -71,7 +71,7 @@ public class CommentDAO extends DBManager{
 	            pstmt = conn.prepareStatement(sql.toString());
 	            pstmt.setString(1, comment.getCOMMNUM());
 	            pstmt.setString(2, comment.getCOMMCONTENTS());
-	            pstmt.setDate(3, comment.getCOMMDATE());
+	            pstmt.setString(3, comment.getCOMMDATE());
 	            pstmt.setString(4, comment.getBODNUM());
 	            pstmt.setString(5, comment.getMEMBERID());
 
@@ -96,7 +96,7 @@ public class CommentDAO extends DBManager{
 	    } // end boardInsert();    
 	    
 	    // 댓글 목록 가져오기
-	    public ArrayList<snsCommentVO> getCommentList(int boardNum)
+	    public ArrayList<snsCommentVO> getCommentList(String bODNUM)
 	    {
 	        ArrayList<snsCommentVO> list = new ArrayList<snsCommentVO>();
 	        
@@ -130,7 +130,7 @@ public class CommentDAO extends DBManager{
 	            sql.append("    WHERE BODNUM = ?");      
 	            
 	            pstmt = conn.prepareStatement(sql.toString());
-	            pstmt.setInt(1, boardNum);
+	            pstmt.setString(1, bODNUM);
 	            
 	            rs = pstmt.executeQuery();
 	            while(rs.next())
@@ -138,7 +138,7 @@ public class CommentDAO extends DBManager{
 	            	snsCommentVO comment = new snsCommentVO();
 	                comment.setCOMMNUM(rs.getString("COMMNUM"));
 	                comment.setCOMMCONTENTS(rs.getString("COMMCONTENTS"));
-	                comment.setCOMMDATE(rs.getDate("COMMDATE"));
+	                comment.setCOMMDATE(rs.getString("COMMDATE"));
 	                comment.setBODNUM(rs.getString("BODNUM"));
 	                comment.setMEMBERID(rs.getString("MEMBERID"));
 	                list.add(comment);
@@ -153,6 +153,20 @@ public class CommentDAO extends DBManager{
 	        return list;
 	    } // end getCommentList
 	    
+	    
+	    //댓글 개수구하기
+	    public int getCount(String COMMNUM) throws SQLException {
+	    	String sql="select count(*) form TBL_SNS_COMMENT where MEMBERID = ?";
+	    	pstmt = conn.prepareStatement(sql);
+	    	pstmt.setString(1,  COMMNUM);
+	    	rs = pstmt.executeQuery();
+	    	int cnt = 0;
+	    	if(rs.next()) {
+	    		cnt = rs.getInt(1);
+	    	}
+	    	pstmt.close();
+	    	return cnt;
+	    }
 	    
 	    // DB 자원해제
 	    private void close()
