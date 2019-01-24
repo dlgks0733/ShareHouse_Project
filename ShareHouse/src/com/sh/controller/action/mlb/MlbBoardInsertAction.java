@@ -18,13 +18,13 @@ public class MlbBoardInsertAction implements Action{
 		
 		String bodTitle = request.getParameter("bodTitle");
 		String bodContents = request.getParameter("bodContents");
-	  //String memId
+	    String memId = request.getParameter("memId");
 	  //String adminId
 		
 		MlbBoardVO mlbVo = new MlbBoardVO();
 		mlbVo.setBodTitle(bodTitle);
 		mlbVo.setBodContents(bodContents);
-		
+		mlbVo.setMemberId(memId);
 		
 		MlbBoardDAO mlbDao = MlbBoardDAO.getInstance();
 		mlbDao.insertMlbBoard(mlbVo);

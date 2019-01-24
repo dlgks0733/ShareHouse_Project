@@ -124,11 +124,19 @@
 
 			<div class="col m12 s12">
 				<a href="mlb?command=mlbGalBoardInsertFormAction">
-				<button type="button" class="custom-btn waves-effect waves-light right" style="align: right;">등록</button>
+				<button type="button" class="custom-btn waves-effect waves-light right" >등록</button>
 				</a>				
 			</div>
 
-
+		<ul class="pagination w100dt">
+							<li class="waves-effect"><a href="#!"><i class="icofont icofont-simple-left"></i></a></li>
+							<li class="active"><a href="#!">1</a></li>
+							<li class="waves-effect"><a href="#!">2</a></li>
+							<li class="waves-effect"><a href="#!">3</a></li>
+							<li class="waves-effect"><a href="#!">4</a></li>
+							<li class="waves-effect"><a href="#!">5</a></li>
+							<li class="waves-effect"><a href="#!"><i class="icofont icofont-simple-right"></i></a></li>
+						</ul>
 
 
 		</div>
