@@ -229,7 +229,7 @@ public class EplBoardDAO extends DBManager {
 		PreparedStatement pstmt;
 		ResultSet rs = null;
 		
-		String sql = "SELECT * FROM TBL_EPL_COMMENT WHERE BODNUM = ? ORDER BY COMMNUM ASC";
+		String sql = "SELECT * FROM TBL_EPL_COMMENT WHERE BODNUM = ? ORDER BY COMMNUM DESC";
 		
 		try {
 			
