@@ -47,7 +47,7 @@
 	<section id="error-section" class="error-section w100dt mb-50">
 		<div class="container">
 			<!-- nlb board table form -->
-		<form name="frm" method="post" enctype="multipart/form-data" action="" onsubmit="return validateBoard()">
+		<form name="frm" method="post" enctype="multipart/form-data" action="mlb?command=fileInsert" onsubmit="return validateBoard()">
 		  
 		
 			<table class="centered">
@@ -59,7 +59,7 @@
 					<tr>
 						<th>사진</th>
 						<td>
-						<input type="file" name="" class="file-field btn"></td>
+						<input type="file" name="fileName" class="file-field btn"></td>
 					</tr>
 					
 					<tr>

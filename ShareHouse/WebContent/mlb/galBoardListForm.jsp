@@ -47,12 +47,13 @@
 		<!-- ==================== board-section start ==================== -->
 	<section id="error-section" class="error-section w100dt mb-50">
 		<div class="container">
-		
+			
 			<div class="col m6 s12">
 								<div class="blogs mb-30">
 									<div class="card">
 										<div class="card-image">
-											<img src="img/selfie.jpg" alt="Image">
+										<img class='max-small' alt="" src="/displayFile?fileName=APA 아사쿠사 2인 45만원4.JPG">
+											
 											<!--<a class="btn-floating center-align cmn-bgcolor halfway-fab waves-effect waves-light">
 												<i class="icofont icofont-camera-alt"></i>
 											</a> -->
