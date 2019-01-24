@@ -26,7 +26,7 @@
 
 		<!-- my css include -->
 		<link rel="stylesheet" type="text/css" href="css/custom-menu.css">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css"> 
 		<link rel="stylesheet" type="text/css" href="css/responsive.css">
 		
 		
