@@ -6,12 +6,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 import java.sql.Date;
 
 
 import com.sh.vo.StuBoardVO;
+import com.sh.vo.StuNoticeVO;
 
 import util.DBManager;
+import util.Paging;
 
 public class StuBoardDAO extends DBManager{
 	private StuBoardDAO() {
@@ -208,5 +211,99 @@ public class StuBoardDAO extends DBManager{
 			e.printStackTrace();
 		}
 	  }
-	  
+	   //공지사항 리스트 페이징처리
+	   
+	   public List<StuBoardVO> selectAllNoticesPerPage(Paging paging) {
+	          
+	        String sql = " SELECT NOTI.*"
+	              + "        FROM (SELECT (COUNT(*)OVER() - NOTI.RNUM + 1) REVRNUM"
+	              + "                   , NOTI.*"
+	              + "                FROM (SELECT ROWNUM RNUM"
+	              + "                    , NOTI.BODNUM"
+	              + "                    , NOTI.BODTITLE"
+	              + "                    , NOTI.BODCONTENTS"
+	              + "                    , NOTI.ADMINID"
+	              + "               FROM TBL_STU_BOARD NOTI"
+	              + "              ORDER BY NOTI.BODNUM DESC) NOTI"
+	              + "             ) NOTI"
+	              + "      WHERE NOTI.RNUM BETWEEN ? AND ?";
+	         
+	         List<StuBoardVO> list = new ArrayList<StuBoardVO>();
+	         Connection conn = null;
+	         PreparedStatement stmt = null;
+	         ResultSet rs = null;
+
+	         try {
+	            conn = getConnection();
+	            stmt = conn.prepareStatement(sql);
+	            
+	            
+	            
+	            stmt.setInt(1, ((paging.getPageNum() - 1) * paging.getPerPage()) + 1);
+	            stmt.setInt(2, ((paging.getPageNum() - 1) * paging.getPerPage()) + paging.getPerPage());
+	            
+	            
+	            
+	            rs = stmt.executeQuery();
+	            
+	            while (rs.next()) {
+	            	StuBoardVO stuVO = new StuBoardVO();
+	               
+	               stuVO.setrNum(rs.getInt("rNum"));
+	               stuVO.setBodNum(rs.getString("bodNum"));
+	               stuVO.setBodTitle(rs.getString("bodTitle"));
+	               stuVO.setBodContents(rs.getString("bodContents"));
+	               
+	               
+	               list.add(stuVO);
+	            }
+	         } catch (SQLException e) {
+	            e.printStackTrace();
+	         } finally {
+	            dbClose();
+	         }
+	         
+	         
+	         
+	         return list;
+	      }
+	   
+	   
+	   public Paging selectNoticeRowCount(Paging paging)
+	   {
+	      int cnt = 0;
+	      
+	      String sql = "SELECT COUNT(*) CNT"
+	            + "     FROM TBL_STU_BOARD";
+	      
+	          Connection conn = null;
+	         PreparedStatement stmt = null;
+	         ResultSet rs = null;
+	         
+	         try
+	         {
+	            conn = getConnection();
+	            stmt = conn.prepareStatement(sql);
+	            
+	            rs = stmt.executeQuery();
+	            
+	            while (rs.next())
+	            {
+	               cnt = rs.getInt("CNT");
+	               paging.setNumOfRow(cnt);;
+	            }
+	            
+	         }
+	         catch (SQLException e)
+	         {
+	            e.printStackTrace();
+	         }
+	         finally
+	         {
+	            dbClose();
+	         }
+	         
+	         return paging;
+	   }
+
 }
