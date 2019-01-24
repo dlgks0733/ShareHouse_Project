@@ -9,7 +9,7 @@ import com.sh.controller.action.epl.EplBoardListFormAction;
 import com.sh.controller.action.epl.EplBoardUpdateAction;
 import com.sh.controller.action.epl.EplBoardUpdateFormAction;
 import com.sh.controller.action.epl.EplBoardViewFormAction;
-
+import com.sh.controller.action.epl.EplCommentInsertAction;
 import com.sh.controller.action.epl.EplIntroInsertAction;
 import com.sh.controller.action.epl.EplIntroInsertFormAction;
 import com.sh.controller.action.epl.EplIntroUpdateAction;
@@ -86,8 +86,11 @@ public class EplActionFactory {
 			
 			action = new EplBoardDeleteAction();
 			
-		} 
+		} else if (command.equals("eplCommentInsertAction")) {
 			
+			action = new EplCommentInsertAction();
+			
+		} 
 			return action;
 		}
 }

@@ -21,151 +21,12 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/responsive.css">
 		
-		<style>
-		@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
-		@import url(https://fonts.googleapis.com/css?family=Oleo+Script);
-
-  	
 		
-	  h1 {
-			font-size: 1.8em;
-		}
-		h2 {
-			font-size: 1.3em;
-		}
-		p {
-			font-size: 1.3em;
-			line-height: 2.5;
-		}
-		li {
-			font-size: 1em;
-			line-height: 2;
-		}
-
-		/* 모바일 - 767px 이하 */
-		#container {
-			width: 100%;
-		}
-		header {
-			width: 100%;
-			height: 300px;
-			background: url(images/header.jpg) center no-repeat;
-			background-size: cover;
-			margin: 0;
-		}
-		nav {
-			height: 50px;
-			background: #000;
-		}
-		#main-nav {
-			list-style: none;
-			margin: 0;
-			padding: 10px;
-		}
-		#main-nav li {
-			display: inline-block;		
-			color: #fff;
-			font-family: "맑은 고딕", 돋움;
-			font-size: 0.8em;
-			margin: 5px 15px;
-		}		
-		section {
-			position: relative;
-			width: 100%;
-			padding: 15px 5% 10px 5%;
-		}
-		#container section:nth-child(odd) {
-			background: #eee;
-		}
-		.page-title {
-			position: absolute;
-			top: 20px;
-			left: 0;
-			padding: 30px 50px;
-		}
-		.page-title h1 {
-				margin-bottom: 30px;
-			}		
-    .content {
-    	margin: 80px auto 10px;
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      width: 90%;
-      padding: 20px;
-    }		
-		.content ol {
-			margin-top: 20px;
-		}
-		.sub-titles {
-			color: #0094ff;
-			font-weight: 600;
-		}		
-		.photo {
-			display: none;
-		}
-		
-
-
-    
-    /* PC - 992px 이상 */
-		@media screen and (min-width:992px) {
-      #container {
-				width: 1100px;
-				margin: 0 auto;
-				border: 1px solid #ccc;
-			}
-			
-      #intro, #map, #choice {
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        clear: both;
-        position: relative;
-        width: 100%;
-        height: 420px;
-        padding: 15px 2% 10px 5%;
-      }
-      .content {
-				margin: 80px auto 10px;
-				width: 90%;
-				padding: 20px;
-			}
-      .photo {
-				width: 42%;
-				display: block;
-			}
-      .photo > img {
-				width: 100%;
-				max-width: 320px;
-				height: auto;
-				margin-bottom: 30px;
-			}
-      .text {
-				width: 50%;
-			}
-      #intro .photo, #map .photo {
-				float: left;
-				margin-right: 5%;
-			}
-			#intro .text, #map .text {
-				float: left;
-			}
-			#choice .photo {
-				float: left;
-				margin-right: 5%;
-			}
-			#choice .text {
-				float: left;
-			}
-			
-    }
-	</style>
 
 	</head>
-<body>
-<section id="breadcrumb-section" class="breadcrumb-section w100dt mb-30">
-			<div class="container">
+		<body>
+		<section id="breadcrumb-section" class="breadcrumb-section w100dt mb-30">
+					<div class="container">
 
 				<nav class="breadcrumb-nav w100dt">
 					<div class="page-name hide-on-small-only left">
@@ -184,107 +45,100 @@
 		</section>
 		<!-- /.breadcrumb-section -->
 		<!-- ==================== header-section End ==================== -->
-		<div id="container">
-		
-		
-		<section id="intro">
-			<div class="page-title">
-				<h1>축구동아리 소개</h1>
-			</div>
-			<div class="content">
-				<table class="bordered">
-					<thead>
-						<tr>
-							<th> 동아리명 : <br></th>
-							<th> 동아리 소개 : </th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-						<c:forEach var="eplVo" items="${list}" >
-							<td>${eplVo.intClubname }</td>
-							<td>${eplVo.intContents }</td>
-						</c:forEach>
-						</tr>
-					</tbody>
-				</table>	
-				</div>
-				<br><br><br><br>
-				<hr>
-				
-				
-				</section>
-			</div>
-		
-		
-		<div id="container">
-		
-        <section id="intro">
-        <div class="page-title">
-				<h1>축구동아리 연혁</h1>
-			</div>
-           <div class="content">
-				<table class="bordered">				
-					<thead>
-						<tr>
-							<th> - 동아리 연혁 -  <br></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-						<c:forEach var="eplVo" items="${list}" >
-							<td>${eplVo.intHistory }</td>
-						</c:forEach>
-						</tr>
-					</tbody>
-				</table>	
-				</div>
-				<br><br><br><br>
-				<hr>
-				
-				
-        </section>
-        
-        </div>
-        
-
-      <div id="container">
-		
-        <section id="intro">
-        <form method="post" action="epl?command=eplIntroUpdateFormAction">
-        <div class="page-title">
-				<h1>축구동아리 구성원</h1>
-			</div>
-           <div class="content">
-				<table class="bordered">				
-					<thead>
-						<tr>
-							<th> - 동아리 회장 -  <br></th>
-							<th> - 동아리 구성원 -  <br></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-						<c:forEach var="eplVo" items="${list}" >
-						<input type="hidden" name="adminId" value="${eplVo.adminId}">	
-							<td>${eplVo.intName }</td>
-							<td>${eplVo.intId }</td>
-						</c:forEach>
-						</tr>
-					</tbody>
-				</table>	
-				</div>
-				<br><br><br><br>
-				<hr>
-				
-				<div>
-				 <input type="submit" class="btn" value="수정">
-				</div>
-			</form>
-        </section>
-
-	</div>
-	<br><br>
+		<section id="single-blog-section" class="single-blog-section w100dt mb-50">
+	      <form method="post" action="epl?command=eplIntroUpdateFormAction">
+	      <c:forEach var="eplVo" items="${list}" >
+	      <input type="hidden" name="adminId" value="${eplVo.adminId}">	
+	      <div class="container">
+	         <div class="row">
+	            <div class="col m12 s12">
+	               <div class="blogs mb-30">
+	                  <div class="card">
+	                     <div class="card-image">
+	                        <img src="img\eplMain.jpg" alt="축구동아리" width="500" height="200">
+	                     </div>
+	                     
+	                     <!-- /.card-image -->
+	                     <div class="card-content w100dt">
+	                     <p>
+	                           <a href="#" class="tag left w100dt l-blue mb-30">축구동아리 소개</a>
+	                        </p>
+	                        <ul class="post-mate right mb-30">
+	                           <li class="like"><a href="#"> <i
+	                                 class="icofont icofont-heart-alt"></i> 55
+	                           </a></li>
+	                           <li class="comment"><a href="#"> <i
+	                                 class="icofont icofont-comment"></i> 32
+	                           </a></li>
+	                        </ul>
+	                        
+	                        <a href="#" class="card-title mb-30"> - 동아리명 : ${eplVo.intClubname} - </a>
+	                        <p></p>
+	
+	                        
+	
+	                        <p class="w100dt mb-50">${eplVo.intContents}</p>
+	                        
+	                         <ul class="post-mate-time left mb-30">
+	                           <li>
+	                              <p class="hero left">
+	                              <a href="#" class="card-title mb-30"> - 동아리 연혁 - </a>
+	                              </p>
+	                        </ul>
+	                        
+	                        <p></p>
+	
+	                       <!--  <ul class="post-mate right mb-30">
+	                           <li class="like"><a href="#"> <i
+	                                 class="icofont icofont-heart-alt"></i> 55
+	                           </a></li>
+	                           <li class="comment"><a href="#"> <i
+	                                 class="icofont icofont-comment"></i> 32
+	                           </a></li>
+	                        </ul> -->
+	
+	                        <p class="w100dt mb-50">${eplVo.intHistory}</p>
+	                        
+	                        <p></p>
+	                        <p></p>
+	                        
+	                        <ul class="post-mate-time left mb-30">
+	                           <li>
+	                              <p class="hero left">
+	                              <a href="#" class="card-title mb-30"> - 동아리 구성원 - </a>
+	                              </p>
+	                        </ul>
+			
+							 <p></p>
+	
+	
+							<p class="w100dt mb-50">동아리 회장 : ${eplVo.intName}</p>
+	                        <p class="w100dt mb-50">동아리 구성원 : ${eplVo.intId}</p>
+	                        
+	                        
+	                        <ul class="tag-list left">
+	                           <li><input type="submit" class="btn" style="float: right; " value="수정"></li>
+	                        </ul>
+	
+	                        <ul class="share-links right">
+	                           <li><a href="https://web.facebook.com/hannamMIS/" class="facebook" target="_blank"><i
+	                                 class="icofont icofont-social-facebook"></i></a></li>
+	                           <li><a href="http://gitb.hannam.ac.kr/main/" class="google-plus" target="_blank"><i
+                                 class="icofont icofont-social-google-plus"></i></a></li>
+	                        </ul>
+	                     </div>
+                     <!-- /.card-content -->
+                  </div>
+                  <!-- /.card -->
+               </div>
+               <!-- /.blogs -->
+               <!-- nlb board table form -->
+            </div>
+         </div>
+      </div>
+      </c:forEach>
+      </form>
+   </section>
 		
 <%@include file="../include/footer.jsp" %>
 </body>

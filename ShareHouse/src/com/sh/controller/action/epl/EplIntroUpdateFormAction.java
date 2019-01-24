@@ -19,7 +19,7 @@ public class EplIntroUpdateFormAction implements Action {
 		String url = "epl/introUpdateForm.jsp";
 		
 		String adminId = request.getParameter("adminId");
-		
+		System.out.println(adminId);
 		
 		EplIntroductionDAO eplDao = EplIntroductionDAO.getInstance();
 		EplIntroductionVO eplVo = eplDao.eplIntroView(adminId);

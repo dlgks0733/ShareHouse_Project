@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.sh.vo.EplBoardVO;
+import com.sh.vo.EplCommentVO;
 
 import util.DBManager;
 
@@ -191,7 +192,76 @@ public class EplBoardDAO extends DBManager {
 			dbClose();
 		}
 	}
+	
+	//댓글 등록
+	public void insertComment(EplCommentVO eplVo) {
+		
+		String sql = "INSERT INTO TBL_EPL_COMMENT( "
+				+ "COMMNUM, COMMCONTENTS, BODNUM, COMMDATE) "
+				+ "VALUES (EPL_COMMNUM_SEQ.NEXTVAL, ?, ?, SYSDATE)";
+		
+		Connection conn = getConnection();
+		PreparedStatement pstmt;
+		
+		try {
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, eplVo.getCommContents());
+			pstmt.setString(2, eplVo.getBodNum());
+			pstmt.setString(3, eplVo.getCommDate());
+			
+			pstmt.executeQuery();
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			dbClose();
+		}
+	}
+	
+	//댓글 리스트 불러오기
+	public ArrayList<EplCommentVO> eplCommentList(String bodNum) {
+		
+		ArrayList<EplCommentVO> list = new ArrayList<EplCommentVO>();
+		
+		Connection conn = getConnection();
+		PreparedStatement pstmt;
+		ResultSet rs = null;
+		
+		String sql = "SELECT * FROM TBL_EPL_COMMENT WHERE BODNUM = ? ORDER BY COMMNUM ASC";
+		
+		try {
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, bodNum);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				EplCommentVO eplVo = new EplCommentVO();
+				
+				eplVo.setCommNum(rs.getString("COMMNUM"));
+				eplVo.setCommContents(rs.getString("COMMCONTENTS"));
+				eplVo.setCommDate(rs.getString("COMMDATE"));
+				
+				list.add(eplVo);
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			dbClose();
+		}
+		
+		return list;
+	}
+		
+		
+	
 }
+
 
 
 

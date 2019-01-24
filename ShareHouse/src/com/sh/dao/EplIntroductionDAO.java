@@ -95,7 +95,7 @@ public class EplIntroductionDAO extends DBManager {
 	public void updateEplIntro(EplIntroductionVO eplVo) {
 		String sql = "UPDATE TBL_EPL_INTRODUCTION SET INTCLUBNAME = ?"
 				+ ", INTCONTENTS = ? , INTHISTORY = ? , INTNAME = ?"
-				+ ", INTID = ?";
+				+ ", INTID = ? WHERE ADMINID = ?";
 		
 		Connection conn = getConnection();
 		PreparedStatement pstmt;
@@ -109,6 +109,7 @@ public class EplIntroductionDAO extends DBManager {
 			pstmt.setString(3, eplVo.getIntHistory());
 			pstmt.setString(4, eplVo.getIntName());
 			pstmt.setString(5, eplVo.getIntId());
+			pstmt.setString(6, eplVo.getAdminId());
 			
 			pstmt.executeUpdate();
 			
