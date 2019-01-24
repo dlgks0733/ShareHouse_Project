@@ -76,7 +76,7 @@
 							<!-- /.card-image -->
 							<div class="card-stacked">
 								<div class="card-content">
-									<a href="startup?command=stuBoardListFormAciton" class="tag left l-blue mb-10">창업동아리</a>
+									<a href="#" class="tag left l-blue mb-10">창업동아리</a>
 									<a href="https://www.hanqurator.com/" class="sm-name">한큐레이터 홈페이지</a>
 								</div>
 								<!-- /.card-content -->

@@ -62,7 +62,7 @@
 				<tbody>
 					
 
-					<c:forEach var="mVO" items="${list}" varStatus="status">
+					<c:forEach var="snsVo" items="${list}" varStatus="status">
 					<tr>
 					<td width="10%">${status.index+1}</td>
 					<td width="20%"><a href="sns?command=snsBoardViewFormAction&bodNum=${mVO.bodNum}">${mVO.bodTitle}</a></td>
