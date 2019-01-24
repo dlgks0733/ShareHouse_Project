@@ -51,7 +51,7 @@
 			<table class="bordered">
 					<tr>
 						<th>제목</th>
-						<td>${snsdVo.bodTitle}</td>
+						<td>${snsVo.bodTitle}</td>
 						<th>작성자</th>
 						<td>${snsVo.memberId}</td>
 						<th>작성일</th>
@@ -77,34 +77,71 @@
 				onclick="location.href='sns?command=snsBoardListFormAciton'" value="목록">
 			</div>
 			
+		
+		
+		
+		<!--댓글부분  -->
+		<table border="1" bordercolor="lightgray">
+		<!-- 댓글 목록 -->	
+		<c:if test="${requestScope.commentList != null}">
+			<c:forEach var="comment" items="${requestScope.commentList}">
+				<tr>
+					<!-- 아이디, 작성날짜 -->
+					<td width="150">
+						<div>
+							$${loginUser.memberName}<br>
+							<font size="2" color="lightgray">${commentList.COMMDATE}</font>
+						</div>
+					</td>
+					<!-- 본문내용 -->
+					<td width="550">
+						<div class="text_wrapper">
+						</div>
+					</td>
+				</tr>
+			</c:forEach>
+		</c:if>
+		</table>
+		
+		
+		
+		
+		
+		
+		
+		
+		<!--댓글입력  -->
+		<form name="frm" method="post" action="sns?command=snsCommentInsertAction" onsubmit="return validateBoard()">
+		<div class="box-reply">
+            <ul class="cmlist" id="com_list">
+               <li>
+                  <div class="comm_cont">
+                     <div class="h">
+                        <p class="comm m">
+                     </div>
+                  </div>
+               </li>
+            </ul>
+            <table class="responsive-table ">
+               <tr>
+                  <th>댓글 </th>
+                  <td colspan="5"><textarea name="contents"
+                  rows="28" cols="93" style="margin: 0px; width: 900px; height: 100px;" ></textarea></td>
+                  <td><input type="button" class="btn" style="float: right;"
+                  onclick="location.href='sns?command=snsBoardViewFormAction&snsNum=${snsVo.bodNum}'" value="등록"></td>
+               </tr>
+            </table>
+         </div>
+		</form>
+		
+		
+		
+		
+		         
 		</div>
-		<!-- container -->
-	</section>
+		
+		
 
-		
-		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-		<script type="text/javascript" src="js/materialize.js"></script>
-		<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-
-		<!-- my custom js -->
-		<script type="text/javascript" src="js/custom.js"></script>
-
-		<script type="text/javascript">
-		</script>
-		
-		
-		
-	test<br>
-	test<br>
-	test<br>
-	test<br>
-	test<br>
-	test<br>
-	"${CommentList }"
-	
-	아아
-		
-	<!-- 댓글 부분 -->
 	<div id="comment">
 		<table border="1" bordercolor="lightgray">
 		<!-- 댓글 목록 -->	
@@ -114,9 +151,7 @@
 					<!-- 아이디, 작성날짜 -->
 					<td width="150">
 						<div>
-					
-						
-							${comment.MEMBERID}<br>
+							${comment.loginUser}<br>
 							<font size="2" color="lightgray">${comment.COMMDATE}</font>
 						</div>
 					</td>
@@ -125,9 +160,7 @@
 						<div class="text_wrapper">
 						</div>
 					</td>
-					
 				</tr>
-				
 			</c:forEach>
 		</c:if>
 			
@@ -157,6 +190,17 @@
 		</table>
 	</div>
 
+		<!-- container -->
+	</section>
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="js/materialize.js"></script>
+		<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+
+		<!-- my custom js -->
+		<script type="text/javascript" src="js/custom.js"></script>
+
+		<script type="text/javascript">
+		</script>
 		
 <%@include file="../include/footer.jsp" %>		
 </body>

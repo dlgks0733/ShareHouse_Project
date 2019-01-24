@@ -56,7 +56,7 @@
 						<th>제목</th>
 						<td><input type="text" name="bodTitle" value="${snsVo.bodTitle}"></td>
 						<th>작성자</th>
-						<td>이한</td>
+						<td>${loginUser.memberName}</td>
 						<th>작성일</th>
 						<td>${snsVo.bodDate}</td>
 						
