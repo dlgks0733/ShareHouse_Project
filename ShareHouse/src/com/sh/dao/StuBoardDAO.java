@@ -256,6 +256,7 @@ public class StuBoardDAO extends DBManager{
 	               stuVO.setBodContents(rs.getString("bodContents"));
 	               stuVO.setBodDate(rs.getDate("bodDate"));
 	               
+	               
 	               list.add(stuVO);
 	            }
 	         } catch (SQLException e) {
