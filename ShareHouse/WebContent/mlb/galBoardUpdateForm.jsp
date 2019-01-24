@@ -15,7 +15,8 @@
 <link rel="stylesheet" type="text/css" href="css/materialize.css">
 <link rel="stylesheet" type="text/css" href="css/icofont.css">
 <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
-<link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css">
+<link rel="stylesheet" type="text/css"
+	href="css/owl.theme.default.min.css">
 
 
 <!-- my css include -->
@@ -51,48 +52,48 @@
 	<!-- ==================== header-section End ==================== -->
 
 	<!-- ==================== board-section start ==================== -->
-	<section id="single-blog-section" class="single-blog-section w100dt mb-50">
+	<section id="single-blog-section"
+		class="single-blog-section w100dt mb-50">
 		<div class="container">
 			<div class="row">
 				<div class="col m12 s12">
 					<div class="blogs mb-30">
 						<div class="card">
 							<div class="card-image">
-								<img width="300px" height="300px" alt="${mlbVo.fileName}"
-									src="/displayFile?fileName=${mlbVo.fileName}">
+								<img src="img/selfie.jpg" alt="Image">
 							</div>
 							<!-- /.card-image -->
 							<div class="card-content w100dt">
-								<p>
-									<a href="#" class="tag left w100dt l-blue mb-30">농구동아리</a>
+
+								<input type="text" value="${mlbVo.galTitle}"
+									class="card-title mb-30">
+								
+								
+								<div class="file-field">
+									<div class="btn btn-primary btn-sm float-left">
+										<span>사진 첨부</span> <input type="file">
+									</div>
+									<div class="file-path-wrapper">
+										<input class="file-path validate" type="text"
+											placeholder="Upload your file">
+									</div>
+								</div>
+								
+
+								<p class="w100dt mb-50">
+									<br>
+									<textarea style="margin: 0px; width: 1090px; height: 125px;">${mlbVo.galContents}</textarea>
 								</p>
-								<a href="#" class="card-title mb-30"> ${mlbVo.galTitle} </a>
-								<ul class="post-mate-time left mb-30">
-									<li>
-										<p class="hero left">
-											By - <a href="#" class="l-blue">${mlbVo.adminId}</a>
-										</p>
-									</li>
-									<li><i class="icofont icofont-ui-calendar"></i>
-										${mlbVo.galDate}</li>
-								</ul>
-								<p></p>
-
-								<ul class="post-mate right mb-30">
-									<li class="like"><a href="#"> <i
-											class="icofont icofont-heart-alt"></i> 55
-									</a></li>
-									<li class="comment"><a href="#"> <i
-											class="icofont icofont-comment"></i> 32
-									</a></li>
-								</ul>
-
-								<p class="w100dt mb-50">${mlbVo.galContents}</p>
 
 								<ul class="tag-list right">
-									<li><a href="mlb?command=mlbGalBoardListFormAction" class="waves-effect">#목록</a></li>
-									<li><a href="mlb?command=mlbGalBoardUpdateFormAction&galNum=${mlbVo.galNum}" class="waves-effect">#수정</a></li>
-									<li><a href="mlb?command=mlbGalBoardDeleteAction&galNum=${mlbVo.galNum}" class="waves-effect">#삭제</a></li>
+									<li><a href="mlb?command=mlbGalBoardListFormAction"
+										class="waves-effect">#목록</a></li>
+									<li><a
+										href="mlb?command=mlbGalBoardUpdateFormAction&galNum=${mlbVo.galNum}"
+										class="waves-effect">#수정</a></li>
+									<li><a
+										href="mlb?command=mlbGalBoardDeleteAction&galNum=${mlbVo.galNum}"
+										class="waves-effect">#삭제</a></li>
 								</ul>
 
 								<ul class="share-links left">
