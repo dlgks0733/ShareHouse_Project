@@ -19,11 +19,11 @@ public class StuBoardView implements Action {
 		String url = "/startup/boardView.jsp";
 
 		String bodNum = request.getParameter("bodNum");
+		request.setAttribute("bodNum", bodNum);
 
 		StuBoardDAO sDAO = StuBoardDAO.getInstance();
 		
 		StuBoardVO bodList =  sDAO.selectOneBoardByBodNum(bodNum);
-		request.setAttribute("bodNum", bodNum);
 		request.setAttribute("bodList", bodList);
 		System.out.println(bodList);
 		

@@ -48,6 +48,7 @@
 		<div class="container">
 			<!-- nlb board table form -->
 		<form name = "frm" method="post" action="stu?command=insertStuBoardAction" onsubmit="return validateBoard()">
+			<input type="hidden" name="memId" value="${loginUser.memberId}">
 			<table class="centered">
 					<tr>
 						<th>제목</th>

@@ -6,7 +6,7 @@ import java.util.Date;
 
 import java.sql.Timestamp;
 
-public class StuBoardVO {
+public class StuBoardVO extends MemberVO{
 /*	CREATE TABLE TBL_STU_BOARD
 	(
 		BOD_NUM             VARCHAR2(50)  CONSTRAINT STARTUP_BOD_NUM_PK PRIMARY KEY ,

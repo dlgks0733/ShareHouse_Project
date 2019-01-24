@@ -94,8 +94,8 @@ public class StuBoardDAO extends DBManager{
 		// 게시판 글 등록
 	   public void insertStuBoard(StuBoardVO stuVO) {
 		     
-		      String sql = "INSERT INTO TBL_STU_BOARD(BODNUM, BODTITLE, BODCONTENTS)"
-		      		+ "VALUES(STU_BODNUM_SEQ.nextval, ? , ?)";
+		      String sql = "INSERT INTO TBL_STU_BOARD(BODNUM, BODTITLE, BODCONTENTS, MEMBERID)"
+		      		+ "VALUES(STU_BODNUM_SEQ.nextval, ? , ?, ?)";
 		 
 
 		      Connection conn = getConnection();
@@ -109,8 +109,8 @@ public class StuBoardDAO extends DBManager{
 		    	 
 		    	 psmt.setString(1, stuVO.getBodTitle());
 		    	 psmt.setString(2, stuVO.getBodContents());
-/*		    	 psmt.setString(3, stuVO.getMemberId());
-		    	 psmt.setString(4, stuVO.getAdminId());*/
+		    	 psmt.setString(3, stuVO.getMemberId());
+		    	 //psmt.setString(4, stuVO.getAdminId());
 		    	 psmt.executeUpdate(); 
 		    	 
 		   }catch (SQLException e){
@@ -143,7 +143,9 @@ public class StuBoardDAO extends DBManager{
 	   }
 	   // 게시판 글 상세 내용 보기 글번호로 찾아온다.
 	  public StuBoardVO selectOneBoardByBodNum(String BodNum) {
-		  String sql = "SELECT * FROM TBL_STU_BOARD WHERE BODNUM = ?";
+		  String sql = "SELECT STU.*, M.MEMBERNAME AS MEMBERNAME" + 
+		  		"  FROM TBL_STU_BOARD STU, TBL_MEMBER M" + 
+		  		" WHERE STU.MEMBERID = M.MEMBERID AND BODNUM = ?";
 		  
 		  StuBoardVO stuVO  = null;
 		  Connection conn = getConnection();
@@ -166,6 +168,7 @@ public class StuBoardDAO extends DBManager{
 				stuVO.setBodDate(rs.getDate("bodDate"));
 				stuVO.setMemberId(rs.getString("memberId"));
 				stuVO.setAdminId(rs.getString("adminId"));
+				stuVO.setMemberName(rs.getString("MEMBERNAME"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -213,7 +216,7 @@ public class StuBoardDAO extends DBManager{
 	  }
 	   //공지사항 리스트 페이징처리
 	   
-	   public List<StuBoardVO> selectAllNoticesPerPage(Paging paging) {
+/*	   public List<StuBoardVO> selectAllNoticesPerPage(Paging paging) {
 	          
 	        String sql = " SELECT NOTI.*"
 	              + "        FROM (SELECT (COUNT(*)OVER() - NOTI.RNUM + 1) REVRNUM"
@@ -268,7 +271,65 @@ public class StuBoardDAO extends DBManager{
 	         
 	         
 	         return list;
+	      } */
+	  
+	  public List<StuBoardVO> selectAllNoticesPerPage(Paging paging) {
+          
+	        String sql = "SELECT NOTI.* FROM (SELECT (COUNT(*)OVER() - NOTI.RNUM + 1) REVRNUM" + 
+	        		"                                     , NOTI.* FROM (SELECT ROWNUM RNUM" + 
+	        		"                                     , NOTI.BODNUM" + 
+	        		"	                                 , NOTI.BODTITLE" + 
+	        		"	                                 , NOTI.BODCONTENTS" + 
+	        		"	                                 , NOTI.ADMINID" + 
+	        		"	              					 , NOTI.BODDATE" + 
+	        		"                                     ,(SELECT MEMBERNAME from TBL_MEMBER where MEMBERID = NOTI.MEMBERID) as memname" + 
+	        		"	                            FROM TBL_STU_BOARD NOTI" + 
+	        		"	                           ORDER BY NOTI.BODNUM DESC) NOTI" + 
+	        		"	                         ) NOTI" + 
+	        		"	               WHERE NOTI.RNUM BETWEEN ? AND ?";
+	         
+	         List<StuBoardVO> list = new ArrayList<StuBoardVO>();
+	         Connection conn = null;
+	         PreparedStatement stmt = null;
+	         ResultSet rs = null;
+
+	         try {
+	            conn = getConnection();
+	            stmt = conn.prepareStatement(sql);
+	            
+	            
+	            
+	            stmt.setInt(1, ((paging.getPageNum() - 1) * paging.getPerPage()) + 1);
+	            stmt.setInt(2, ((paging.getPageNum() - 1) * paging.getPerPage()) + paging.getPerPage());
+	            
+	            
+	            
+	            rs = stmt.executeQuery();
+	            
+	            while (rs.next()) {
+	            	StuBoardVO stuVO = new StuBoardVO();
+	               
+	               stuVO.setrNum(rs.getInt("rNum"));
+	               stuVO.setBodNum(rs.getString("bodNum"));
+	               stuVO.setBodTitle(rs.getString("bodTitle"));
+	               stuVO.setBodContents(rs.getString("bodContents"));
+	               stuVO.setBodDate(rs.getDate("bodDate"));
+	               stuVO.setMemberName(rs.getString("memname"));
+	               
+	               
+	               list.add(stuVO);
+	            }
+	         } catch (SQLException e) {
+	            e.printStackTrace();
+	         } finally {
+	            dbClose();
+	         }
+	         
+	         
+	         
+	         return list;
 	      }
+	  
 	   
 	   
 	   public Paging selectNoticeRowCount(Paging paging)

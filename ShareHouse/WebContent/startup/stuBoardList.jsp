@@ -68,7 +68,7 @@
 					<td width="10%">${(paging.numOfRow - status.index) - (paging.pageNum-1) * 10}</td>
 					
 					<td width="20%"><a href="stu?command=stuBoardView&bodNum=${StuBoardVO.bodNum}">${StuBoardVO.bodTitle}</a></td>
-					<td width="10%">김종욱</td>
+					<td width="10%">${StuBoardVO.memberName}</td>
 					<td width="10%">${StuBoardVO.bodDate}</td>
 					<td width="10%">${StuBoardVO.bodHits}</td>
 					</tr>

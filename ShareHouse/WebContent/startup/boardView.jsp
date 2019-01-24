@@ -58,7 +58,7 @@
 						<th>제목</th>
 						<td>${bodList.bodTitle}</td>
 						<th>작성자</th>
-						<td>김종욱</td>
+						<td>${bodList.memberName}</td>
 						<th>작성일</th>
 						<td>${bodList.bodDate}</td>
 						
@@ -80,6 +80,48 @@
 			onclick="location.href='stu?command=stuBoardUpdateForm&bodNum=${bodList.bodNum}'" value="수정">
 			<button type="submit" style="float: right;" class="btn btn-primary">삭제</button>
 			</div>
+			
+			<form name="frm" method="post" action="epl?command=eplCommentInsertAction" onsubmit="return validateBoard()">
+			<input type="hidden" name="bodNum" value="${eplVo.bodNum}"> 
+			
+			
+			
+			<table>
+			 <thead>
+			
+				<tr>
+					<th>댓글 번호</th>
+					<th>댓글 내용</th>
+					<th>작성 일자</th>
+				</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="eplVo" items="${list}" varStatus="status">
+						<tr>
+						<td>${status.index+1 }</td>
+						<td>${eplVo.commContents}</td>
+						<td>${eplVo.commDate}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+			
+			<br><br>
+			<H3>의견쓰기</H3>
+				<table class="responsive-table ">
+					<tr>
+						<th>댓글</th>
+						<td colspan="5"><textarea name="commContents"
+						rows="28" cols="93" style="margin: 0px; width: 900px; height: 100px;" ></textarea></td>
+						<td><input type="submit" class="btn" style="float: right;" value="답글"></td>
+					</tr>
+				</table>
+			
+			
+			
+			
+				
+		</form>
 			<!-- stu?command=stuBoardUpdateForm -->
 		</div>
 		</form>
