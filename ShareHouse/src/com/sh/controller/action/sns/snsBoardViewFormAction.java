@@ -1,7 +1,6 @@
 package com.sh.controller.action.sns;
 
 import java.io.IOException;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -23,6 +22,9 @@ public class snsBoardViewFormAction implements Action{
 		snsBoardDAO snsDao = snsBoardDAO.getInstance();
 		snsBoardVO snsVo = snsDao.snsBoardView(bodNum);
 		request.setAttribute("snsVo", snsVo);
+		
+		
+		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
