@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+		<script type="text/javascript" src="js/board.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
 
 		<title>Share House :: 축구동아리 게시판</title>
@@ -28,7 +28,7 @@
 
 				<nav class="breadcrumb-nav w100dt">
 					<div class="page-name hide-on-small-only left">
-						<h4>축구동아리 게시판</h4>
+						<h4>축구동아리 게시물 수정</h4>
 					</div>
 					<div class="nav-wrapper right">
 						<a href="index.html" class="breadcrumb">Home</a>
@@ -48,14 +48,13 @@
 	<section id="error-section" class="error-section w100dt mb-50">
 		<div class="container">
 			<!-- nlb board table form -->
-                
-                <input type="button" class="btn" style="float: right;"
-				onclick="location.href='epl?command=eplCommentFormAction&bodNum=${eplVo.bodNum}'" value="답글">
-				
+			
+		<form name="frm" method="post" action="epl?command=eplBoardUpdateAction" onsubmit="return validateBoard()">
+			<input type="hidden" name="bodNum" value="${eplVo.bodNum}">		
 			<table class="bordered">
 					<tr>
 						<th>제목</th>
-						<td>${eplVo.bodTitle}</td>
+						<td><input type="text" name="bodTitle" value="${eplVo.bodTitle}"></td>
 						<th>작성자</th>
 						<td>김정민</td>
 						<th>작성일</th>
@@ -65,22 +64,18 @@
 				
 					<tr>
 						<th>내용</th>
-						<td colspan="5"><textarea name="contents"
-						rows="28" cols="93" style="margin: 0px; width: 1051px; height: 246px;" disabled="disabled" >${eplVo.bodContents}</textarea></td>
-					</tr>
-								
-			</table>
-			
+						<td colspan="5"><textarea name="bodContents"
+						rows="28" cols="93" style="margin: 0px; width: 1051px; height: 246px;">${eplVo.bodContents}</textarea></td>
+					</tr>				
+							
+			</table>			
+			<hr>
 			<div>
-				
 				<input type="button" class="btn" style="float: right;"
-				onclick="location.href='epl?command=eplBoardDeleteAction&bodNum=${eplVo.bodNum}'" value="삭제">
-				<input type="button" class="btn" style="float: right;"
-				onclick="location.href='epl?command=eplBoardUpdateFormAction&bodNum=${eplVo.bodNum}'" value="수정">
-				<input type="button" class="btn" style="float: right;"
-				onclick="location.href='epl?command=eplBoardListFormAciton'" value="목록">
+				onclick="location.href='epl?command=eplBoardListFormAciton'" value="취소">
+				<input type="submit" class="btn" style="float: right;" value="등록">
 			</div>
-			
+		</form>
 		</div>
 		<!-- container -->
 	</section>

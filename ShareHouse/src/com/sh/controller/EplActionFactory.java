@@ -2,10 +2,14 @@ package com.sh.controller;
 
 import com.sh.controller.action.Action;
 import com.sh.controller.action.MainAction;
+import com.sh.controller.action.epl.EplBoardDeleteAction;
 import com.sh.controller.action.epl.EplBoardInsertAction;
 import com.sh.controller.action.epl.EplBoardInsertFormAction;
 import com.sh.controller.action.epl.EplBoardListFormAction;
+import com.sh.controller.action.epl.EplBoardUpdateAction;
+import com.sh.controller.action.epl.EplBoardUpdateFormAction;
 import com.sh.controller.action.epl.EplBoardViewFormAction;
+
 import com.sh.controller.action.epl.EplIntroInsertAction;
 import com.sh.controller.action.epl.EplIntroInsertFormAction;
 import com.sh.controller.action.epl.EplIntroUpdateAction;
@@ -70,7 +74,19 @@ public class EplActionFactory {
 			
 			action = new EplBoardViewFormAction();
 					
-		}
+		} else if (command.equals("eplBoardUpdateFormAction")) {
+			
+			action = new EplBoardUpdateFormAction();
+			
+		} else if (command.equals("eplBoardUpdateAction")) {
+			
+			action = new EplBoardUpdateAction();
+			
+		} else if (command.equals("eplBoardDeleteAction")) {
+			
+			action = new EplBoardDeleteAction();
+			
+		} 
 			
 			return action;
 		}

@@ -87,6 +87,27 @@ public class EplBoardDAO extends DBManager {
 		
 		return list;
 	}
+	//조회수 늘어나는거
+	public void updateHits(String bodNum) {
+		
+		String sql = "UPDATE TBL_EPL_BOARD SET BODHITS = BODHITS +1 WHERE BODNUM = ?";
+		
+		Connection conn = getConnection();
+		PreparedStatement pstmt;
+		
+		try {
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, bodNum);
+			
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			dbClose();
+		}
+	}
 	
 	//epl 게시판 상세보기
 	public EplBoardVO eplBoardView(String bodNum) {
@@ -126,7 +147,7 @@ public class EplBoardDAO extends DBManager {
 	
 	//epl 게시물 수정
 	public void updateEplBoard(EplBoardVO eplVo) {
-		String sql = "UPDATE TBL_MLB_BOARD SET BODTITLE = ?"
+		String sql = "UPDATE TBL_EPL_BOARD SET BODTITLE = ?"
 				+ "	 , BODCONTENTS = ?"
 				+ "	  WHERE BODNUM = ?";
 		
@@ -151,8 +172,9 @@ public class EplBoardDAO extends DBManager {
 		
 	}
 	
+	//게시글 삭제
 	public void deleteEplBoard(String bodNum) {
-		String sql = "DELETE FROM TBL_MLB_BOARD WHERE BODNUM = ?";
+		String sql = "DELETE FROM TBL_EPL_BOARD WHERE BODNUM = ?";
 		
 		Connection conn = getConnection();
 		PreparedStatement pstmt = null;
