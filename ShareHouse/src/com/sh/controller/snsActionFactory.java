@@ -12,6 +12,9 @@ import com.sh.controller.action.sns.snsBoardListFormAction;
 import com.sh.controller.action.sns.snsBoardUpdateAction;
 import com.sh.controller.action.sns.snsBoardUpdateFormAction;
 import com.sh.controller.action.sns.snsBoardViewFormAction;
+import com.sh.controller.action.sns.snsCommentCountAction;
+import com.sh.controller.action.sns.snsCommentInsertAction;
+import com.sh.controller.action.sns.snsCommentListAction;
 import com.sh.controller.action.sns.snsGalBoardInsertFormAction;
 import com.sh.controller.action.sns.snsGalBoardListFormAction;
 
@@ -35,10 +38,7 @@ public class snsActionFactory {
 
 			action = new MainAction();
 		}
-		/**
-		 * @author LeeHan
-		 * 
-		 */
+		
 		else if (command.equals("snsBoardListFormAciton")) {
 
 			action = new snsBoardListFormAction();
@@ -85,6 +85,18 @@ public class snsActionFactory {
 		} else if (command.equals("snsGalBoardInsertFormAction")) {
 			
 			action = new snsGalBoardInsertFormAction();
+			
+		} else if (command.equals("snsCommentInsertAction")) {
+			
+			action = new snsCommentInsertAction();
+			
+		} else if (command.equals("snsCommentCountAction")) {
+			
+			action = new snsCommentCountAction();
+			
+		} else if (command.equals("snsCommentListAction")) {
+			
+			action = new snsCommentListAction();
 			
 		}
 
