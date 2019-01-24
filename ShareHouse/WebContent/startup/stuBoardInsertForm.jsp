@@ -4,10 +4,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+		
+		<script type="text/javascript" src="js/board.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
-
-		<title>Share House :: 창업동아리 게시판</title>
+		<title>Share House :: 창업동아리 공지사항</title>
 
 		<!-- css include -->
 		<link rel="stylesheet" type="text/css" href="css/materialize.css">
@@ -27,11 +27,11 @@
 
 				<nav class="breadcrumb-nav w100dt">
 					<div class="page-name hide-on-small-only left">
-						<h4>창업동아리 게시판</h4>
+						<h4>창업동아리 공지사항</h4>
 					</div>
 					<div class="nav-wrapper right">
 						<a href="index.html" class="breadcrumb">Home</a>
-						<a href="404.html" class="breadcrumb active">창업동아리 게시판</a>
+						<a href="404.html" class="breadcrumb active">창업동아리 공지사항</a>
 					</div>
 					<!-- /.nav-wrapper -->
 				</nav>
@@ -47,7 +47,7 @@
 	<section id="error-section" class="error-section w100dt mb-50">
 		<div class="container">
 			<!-- nlb board table form -->
-		<form method="post" action="stu?command=insertStuBoardAction" entype = "multipart/form-data">
+		<form name = "frm" method="post" action="stu?command=insertStuBoardAction" onsubmit="return validateBoard()">
 			<table class="centered">
 					<tr>
 						<th>제목</th>
