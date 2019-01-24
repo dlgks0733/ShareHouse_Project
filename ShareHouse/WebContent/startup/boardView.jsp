@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
- 
+ 		<script type="text/javascript" src="js/deleteboard.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
 
 		<title>Share House :: 창업동아리 게시판</title>
@@ -47,7 +47,7 @@
 
 		<!-- ==================== board-section start ==================== -->
 	<section id="error-section" class="error-section w100dt mb-50">
-	<form name="frm" method="post" action="stu?command=stuBoardUpdateForm">
+	<form name="frm" method="post" action="stu?command=stuBoardDelete&bodNum=${bodList.bodNum}" onsubmit="return validateDeleteBoard()">
 		<div class="container">
 			<!-- nlb board table form -->
 			
@@ -74,13 +74,13 @@
 			
 			<hr>
 			<div>
-			<a type = "button" href ="stu?command=stuBoardList" class="btn btn-danger">취소</a>
+			<a type = "button" href ="stu?command=stuBoardList" style="float: right;" class="btn btn-danger">취소</a>
 			<%-- <a href="stu?command=stuBoardDelete&bodNum=${bodList.bodNum}">삭제</a> --%>
 			<input type="button" class="btn" style="float: right;"
-			onclick="location.href='stu?command=stuBoardDelete&bodNum=${bodList.bodNum}'" value="삭제">
-			<button type="submit" class="btn btn-primary">수정</button>
+			onclick="location.href='stu?command=stuBoardUpdateForm&bodNum=${bodList.bodNum}'" value="수정">
+			<button type="submit" style="float: right;" class="btn btn-primary">삭제</button>
 			</div>
-			
+			<!-- stu?command=stuBoardUpdateForm -->
 		</div>
 		</form>
 		<!-- container -->

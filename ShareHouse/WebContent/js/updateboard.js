@@ -2,7 +2,7 @@
  *  @author Lee Han
  */
 
-function validateBoard(){
+function validateUpdateBoard(){
 	if (document.frm.bodTitle.value == "") {
 		alert("제목을 입력해주세요.");
 		frm.bodTitle.focus();
@@ -13,7 +13,7 @@ function validateBoard(){
 		frm.bodContents.focus();
 		return false;
 	}
-	alert("등록되었습니다.");
+	alert("수정되었습니다.");
 	return true;
 }
 
