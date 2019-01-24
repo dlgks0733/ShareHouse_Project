@@ -2,7 +2,7 @@ package com.sh.vo;
 
 import java.sql.Date;
 
-public class MlbBoardVO {
+public class MlbBoardVO extends MemberVO{
 
 	private String bodNum;
 	private String bodTitle;
