@@ -47,7 +47,7 @@
 	<section id="error-section" class="error-section w100dt mb-50">
 		<div class="container">
 			<!-- nlb board table form -->
-		<form method="post" action="stu?command=insertStuBoardAction">
+		<form method="post" action="stu?command=insertStuBoardAction" entype = "multipart/form-data">
 			<table class="centered">
 					<tr>
 						<th>제목</th>

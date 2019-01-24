@@ -17,7 +17,7 @@ public class StuBoardVO {
 	    MEMBER_ID           VARCHAR2(8)   CONSTRAINT STARTUP_BOD_MEBMER_ID_FK REFERENCES TBL_MEMBER(MEMBER_ID),
 		ADMIN_ID            VARCHAR2(10)  CONSTRAINT STARTUP_BOD_ADMIN_ID_FK REFERENCES TBL_STU_ADMIN(ADMIN_ID)
 	);*/
-	
+	private int rNum;
 	private String BodNum;
 	private String BodTitle;
 	private String BodContents;
@@ -74,6 +74,11 @@ public class StuBoardVO {
 		return "StuBoardVO [BodNum=" + BodNum + ", BodTitle=" + BodTitle + ", BodContents=" + BodContents + ", BodHits="
 				+ BodHits + ", BodDate=" + BodDate + ", MemberId=" + MemberId + ", AdminId=" + AdminId + "]";
 	}
-	
+	public int getrNum() {
+		return rNum;
+	}
+	public void setrNum(int rNum) {
+		this.rNum = rNum;
+	}
 	
 }

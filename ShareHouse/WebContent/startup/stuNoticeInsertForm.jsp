@@ -47,13 +47,16 @@
 	<section id="error-section" class="error-section w100dt mb-50">
 		<div class="container">
 			<!-- nlb board table form -->
-		<form method="post" action="stu?command=StuNoticeinsert">
+		<form method="post" action="stu?command=nocfileInsert">
 			<table class="centered">
 					<tr>
 						<th>제목</th>
 						<td><input type="text" name="nocTitle"></td>
 					</tr>
-					
+					<tr>
+					<th>첨부파일</th>
+					<td><input type = "file" name = "fileName" > 
+					</tr>
 					<tr>
 						<th>내용</th>
 						<td><textarea name="nocContents"
