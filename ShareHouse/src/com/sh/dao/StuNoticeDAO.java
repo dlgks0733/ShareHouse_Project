@@ -3,13 +3,17 @@ package com.sh.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import com.sh.vo.StuBoardVO;
 import com.sh.vo.StuNoticeVO;
 
 import util.DBManager;
+import util.Paging;
+
 
 public class StuNoticeDAO extends DBManager{
 	private StuNoticeDAO(){
@@ -150,5 +154,7 @@ public class StuNoticeDAO extends DBManager{
 		}
 		
 	}
+	
 	}
+	
 

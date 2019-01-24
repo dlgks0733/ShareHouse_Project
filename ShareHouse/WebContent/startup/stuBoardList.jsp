@@ -6,6 +6,7 @@
 <html>
 <head>
 
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
 
 		<title>Share House :: 창업동아리 게시판</title>
@@ -45,7 +46,7 @@
 		<!-- ==================== header-section End ==================== -->
 
 		<!-- ==================== board-section start ==================== -->
-	<section id="error-section" class="error-section w100dt mb-50">
+	<section id="cateogry-section" class="cateogry-section w100dt mb-50">
 		<div class="container">
 			<!-- nlb board table form -->
 			<table class="centered">
@@ -62,9 +63,10 @@
 				<tbody>
 					
 
-					<c:forEach var="StuBoardVO" items="${StuBoardList}" varStatus="status">
+					<c:forEach var="StuBoardVO" items="${noticeList}" varStatus="status">
 					<tr>
-					<td width="10%">${status.index+1}</td>
+					<td width="10%">${(paging.numOfRow - status.index) - (paging.pageNum-1) * 10}</td>
+					
 					<td width="20%"><a href="stu?command=stuBoardView&bodNum=${StuBoardVO.bodNum}">${StuBoardVO.bodTitle}</a></td>
 					<td width="10%">김종욱</td>
 					<td width="10%">${StuBoardVO.bodDate}</td>
@@ -81,8 +83,77 @@
 				onclick="location.href='stu?command=insertStuBoardList'" value="등록">
 			</div>
 		</div>
-		<!-- container -->
+	<div class="row">
+    <div class="col-sm-12">
+    <div class="text-center"> 
+		<ul class="pagination w100dt">
+		<c:if test="${paging.pageNum > 1}">
+		<li class="waves-effect"><a href="/ShareHouse/stu?command=stuBoardList&pageNum=${paging.pageNum - 1}" 
+		aria-label="Previous"><i class="icofont icofont-simple-left"></i></a></li>
+		</c:if>
+		
+		<c:forEach begin="${paging.firstPage}" end="${paging.lastPage}" var="idx">
+		<c:choose>
+		<c:when test="${idx == paging.pageNum}">
+		<li><span style="font-weight: bold;">${idx}</span></li>
+		</c:when>
+		<c:otherwise>
+		<li class="waves-effect"><a  href="/ShareHouse/stu?command=stuBoardList&pageNum=${idx}">
+        ${idx} </a></li>
+         </c:otherwise>
+		</c:choose>
+		</c:forEach>
+		<c:if test="${paging.numOfPage != paging.pageNum}">
+		<li class="waves-effect"><a href=href="/ShareHouse/stu?command=stuBoardList&pageNum=${paging.pageNum + 1}"
+		aria-label="Previous">»</a></li>
+		</c:if>
+	
+	</ul>
+	</div>
+	</div>
+	</div> 
 	</section>
+			<!-- ---------------------------- 페이징 부분------------------------------------------------------------------------------- -->
+
+<%-- 		  <div class="row">
+                        <div class="col-sm-12">
+                           
+                               <div class="text-center"> 
+                                <ul class="pagination theme-colored xs-pull-center mb-xs-40">
+                                    <c:if test="${paging.pageNum > 1}">
+                                       <li><a
+                                          href="/ShareHouse/stu?command=stuBoardList&pageNum=${paging.pageNum - 1}"
+                                          aria-label="Previous"> <span aria-hidden="true">«</span>
+                                       </a></li>
+                                    </c:if>
+
+                                    <c:forEach begin="${paging.firstPage}"
+                                       end="${paging.lastPage}" var="idx">
+                                       <c:choose>
+                                          <c:when test="${idx == paging.pageNum}">
+                                             <li><span style="font-weight: bold;">${idx}</span></li>
+                                          </c:when>
+                                          <c:otherwise>
+                                             <li><a  href="/ShareHouse/stu?command=stuBoardList&pageNum=${idx}">
+                                                   ${idx} </a></li>
+                                          </c:otherwise>
+                                       </c:choose>
+                                    </c:forEach>
+
+                                    <c:if test="${paging.numOfPage != paging.pageNum}">
+                                       <li><a
+                                          href="/ShareHouse/stu?command=stuBoardList&pageNum=${paging.pageNum + 1}"
+                                          aria-label="Previous"> <span aria-hidden="true">»</span>
+                                       </a></li>
+                                    </c:if>
+                                 </ul>
+                              </div> 
+                           
+                        </div>
+                     </div>  --%>
+						
+                      
+		<!-- container -->
 
 		
 		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>

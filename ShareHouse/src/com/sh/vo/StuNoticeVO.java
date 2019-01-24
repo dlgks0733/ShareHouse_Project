@@ -12,7 +12,7 @@ import java.util.Date;
     ADMIN_ID           VARCHAR2(10)  CONSTRAINT STARTUP_ADMIN_ID_FK REFERENCES TBL_STU_ADMIN(ADMIN_ID)
 );*/
 public class StuNoticeVO {
-
+	
 	private String NocNum;
 	private String NocTitle;
 	private String NocContents;
@@ -62,6 +62,6 @@ public class StuNoticeVO {
 		return "StuNoiceVO [NocNum=" + NocNum + ", NocTitle=" + NocTitle + ", NocContents=" + NocContents + ", NocHits="
 				+ NocHits + ", NocDate=" + NocDate + ", AdminId=" + AdminId + "]";
 	}
-	
+
 	
 }
