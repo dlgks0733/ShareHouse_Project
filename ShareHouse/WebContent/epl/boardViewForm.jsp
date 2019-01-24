@@ -56,7 +56,7 @@
 						<th>제목</th>
 						<td>${eplVo.bodTitle}</td>
 						<th>작성자</th>
-						<td>김정민</td>
+						<td>${eplVo.memberName }</td>
 						<th>작성일</th>
 						<td>${eplVo.bodDate}</td>
 						
@@ -70,14 +70,7 @@
 
 			</table>
 			
-			<div>
-				<input type="button" class="btn" style="float: right;"
-				onclick="location.href='epl?command=eplBoardDeleteAction&bodNum=${eplVo.bodNum}'" value="삭제">
-				<input type="button" class="btn" style="float: right;"
-				onclick="location.href='epl?command=eplBoardUpdateFormAction&bodNum=${eplVo.bodNum}'" value="수정">
-				<input type="button" class="btn" style="float: right;"
-				onclick="location.href='epl?command=eplBoardListFormAciton'" value="목록">
-			</div>
+			
 			
 			
 			
@@ -88,14 +81,6 @@
 			
 			<br><br>
 			<H3>의견쓰기</H3>
-				<table class="responsive-table ">
-					<tr>
-						<th>댓글</th>
-						<td colspan="5"><textarea name="commContents"
-						rows="28" cols="93" style="margin: 0px; width: 900px; height: 100px;" ></textarea></td>
-						<td><input type="submit" class="btn" style="float: right;" value="답글"></td>
-					</tr>
-				</table>
 			
 			
 			
@@ -104,6 +89,7 @@
 			
 				<tr>
 					<th>댓글 번호</th>
+					<th>작성자</th>
 					<th>댓글 내용</th>
 					<th>작성 일자</th>
 				</tr>
@@ -112,6 +98,7 @@
 					<c:forEach var="eplVo" items="${list}" varStatus="status">
 						<tr>
 						<td>${status.index+1 }</td>
+						<td>${eplVo.memberId }</td>
 						<td>${eplVo.commContents}</td>
 						<td>${eplVo.commDate}</td>
 						</tr>
@@ -119,10 +106,25 @@
 				</tbody>
 			</table>
 			
+				<table class="responsive-table ">
+					<tr>
+						<th>댓글</th>
+						<td colspan="5"><textarea name="commContents"
+						rows="28" cols="93" style="margin: 0px; width: 900px; height: 100px;" ></textarea></td>
+						<td><input type="submit" class="btn" style="float: right;" value="답글"></td>
+					</tr>
+				</table>
 				
 		</form>
 				
-			
+			<div>
+				<input type="button" class="btn" style="float: right;"
+				onclick="location.href='epl?command=eplBoardDeleteAction&bodNum=${eplVo.bodNum}'" value="삭제">
+				<input type="button" class="btn" style="float: right;"
+				onclick="location.href='epl?command=eplBoardUpdateFormAction&bodNum=${eplVo.bodNum}'" value="수정">
+				<input type="button" class="btn" style="float: right;"
+				onclick="location.href='epl?command=eplBoardListFormAciton'" value="목록">
+			</div>
 			
 		</div>
 		<!-- container -->
