@@ -73,8 +73,8 @@
 										class="icofont icofont-simple-down"></i></a>
 									<ul class="dropdown-container">
 										<li><a href="404.html">동아리 소개</a></li>
-										<li><a href="stu?command=stuNoticeList">공지사항</a></li>
-										<li><a href="stu?command=stuBoardList">게시판</a></li>
+										<li><a href="stu?command=stuBoardList">공지사항</a></li>
+										<li><a href="stu?command=stuNoticeList">게시판</a></li>
 										<li><a href="404.html">갤러리</a></li>
 									</ul> <!-- /.dropdown-container --></li>
 								<li class="dropdown"><a href="404.html">SNS동아리<i
@@ -125,8 +125,8 @@
 										class="icofont icofont-simple-down"></i></a>
 									<ul class="dropdown-container">
 										<li><a href="404.html">동아리 소개</a></li>
-										<li><a href="stu?command=stuNoticeList">공지사항</a></li>
-										<li><a href="stu?command=stuBoardList">게시판</a></li>
+										<li><a href="stu?command=stuBoardList">공지사항</a></li>
+										<li><a href="stu?command=stuNoticeList">게시판</a></li>
 										<li><a href="404.html">갤러리</a></li>
 									</ul> <!-- /.dropdown-container --></li>
 								<li class="dropdown"><a href="404.html">SNS동아리<i

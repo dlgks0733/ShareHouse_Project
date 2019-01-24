@@ -9,7 +9,7 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
 
-		<title>Share House :: 창업동아리 게시판</title>
+		<title>Share House :: 창업동아리 공지사항</title>
 
 		<!-- css include -->
 		<link rel="stylesheet" type="text/css" href="css/materialize.css">
@@ -29,11 +29,11 @@
 
 				<nav class="breadcrumb-nav w100dt">
 					<div class="page-name hide-on-small-only left">
-						<h4>창업동아리 게시판</h4>
+						<h4>창업동아리 공지사항</h4>
 					</div>
 					<div class="nav-wrapper right">
 						<a href="index.html" class="breadcrumb">Home</a>
-						<a href="mlb?command=mlbBoardListFormAciton" class="breadcrumb active">창업동아리 게시판</a>
+						<a href="mlb?command=mlbBoardListFormAciton" class="breadcrumb active">창업동아리 공지사항</a>
 					</div>
 					<!-- /.nav-wrapper -->
 				</nav>

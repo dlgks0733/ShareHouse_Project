@@ -223,6 +223,7 @@ public class StuBoardDAO extends DBManager{
 	              + "                    , NOTI.BODTITLE"
 	              + "                    , NOTI.BODCONTENTS"
 	              + "                    , NOTI.ADMINID"
+	              + "					 , NOTI.BODDATE"
 	              + "               FROM TBL_STU_BOARD NOTI"
 	              + "              ORDER BY NOTI.BODNUM DESC) NOTI"
 	              + "             ) NOTI"
@@ -253,7 +254,7 @@ public class StuBoardDAO extends DBManager{
 	               stuVO.setBodNum(rs.getString("bodNum"));
 	               stuVO.setBodTitle(rs.getString("bodTitle"));
 	               stuVO.setBodContents(rs.getString("bodContents"));
-	               
+	               stuVO.setBodDate(rs.getDate("bodDate"));
 	               
 	               list.add(stuVO);
 	            }
