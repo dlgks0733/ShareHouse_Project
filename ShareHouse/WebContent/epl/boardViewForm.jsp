@@ -56,7 +56,7 @@
 						<th>제목</th>
 						<td>${eplVo.bodTitle}</td>
 						<th>작성자</th>
-						<td>김정민</td>
+						<td>${eplVo.memberName }</td>
 						<th>작성일</th>
 						<td>${eplVo.bodDate}</td>
 						

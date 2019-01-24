@@ -61,7 +61,9 @@ public class EplBoardDAO extends DBManager {
 		PreparedStatement pstmt;
 		ResultSet rs = null;
 		
-		String sql = "SELECT * FROM TBL_EPL_BOARD ORDER BY BODNUM DESC";
+		String sql = "SELECT EP.BODNUM, EP.BODTITLE, EP.BODCONTENTS, EP.BODHITS, EP.BODDATE, EP.MEMBERID, EP.ADMINID,"
+				+ "   M.MEMBERNAME FROM TBL_EPL_BOARD EP, TBL_MEMBER M"
+				+ "   WHERE EP.MEMBERID = M.MEMBERID";
 		
 		try {
 			
@@ -77,6 +79,7 @@ public class EplBoardDAO extends DBManager {
 				eplVo.setBodDate(rs.getDate("BODDATE"));
 				eplVo.setBodHits(rs.getInt("BODHITS"));
 				eplVo.setMemberId(rs.getString("MEMBERID"));
+				eplVo.setMemberName(rs.getString("MEMBERNAME"));
 				
 				
 				list.add(eplVo);

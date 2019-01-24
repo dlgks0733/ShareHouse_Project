@@ -2,7 +2,7 @@ package com.sh.vo;
 
 import java.sql.Date;
 
-public class EplBoardVO {
+public class EplBoardVO extends MemberVO{
 
 	private String bodNum;
 	private String bodTitle;
@@ -11,6 +11,7 @@ public class EplBoardVO {
 	private Date bodDate;
 	private String memberId;
 	private String adminId;
+	
 	public String getBodNum() {
 		return bodNum;
 	}

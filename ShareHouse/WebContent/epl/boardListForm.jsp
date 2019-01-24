@@ -66,7 +66,7 @@
 					<tr>
 					<td width="10%">${status.index+1}</td>
 					<td width="20%"><a href="epl?command=eplBoardViewFormAction&bodNum=${eVO.bodNum}">${eVO.bodTitle}</a></td>
-					<td width="10%">${eVO.memberId}</td>
+					<td width="10%">${eVO.memberName}</td>
 					<td width="10%">${eVO.bodDate}</td>
 					<td width="10%">${eVO.bodHits}</td>
 					</tr>
