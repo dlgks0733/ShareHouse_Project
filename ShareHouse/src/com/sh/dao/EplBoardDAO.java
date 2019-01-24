@@ -208,7 +208,7 @@ public class EplBoardDAO extends DBManager {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, eplVo.getCommContents());
 			pstmt.setString(2, eplVo.getBodNum());
-			pstmt.setString(3, eplVo.getCommDate());
+//			pstmt.setString(3, eplVo.getCommDate());
 			
 			pstmt.executeQuery();
 			
