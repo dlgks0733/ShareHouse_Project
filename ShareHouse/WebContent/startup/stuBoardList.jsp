@@ -104,7 +104,7 @@
 		</c:choose>
 		</c:forEach>
 		<c:if test="${paging.numOfPage != paging.pageNum}">
-		<li class="waves-effect"><a href=href="/ShareHouse/stu?command=stuBoardList&pageNum=${paging.pageNum + 1}"
+		<li class="waves-effect"><a href="/ShareHouse/stu?command=stuBoardList&pageNum=${paging.pageNum + 1}"
 		aria-label="Previous">»</a></li>
 		</c:if>
 	

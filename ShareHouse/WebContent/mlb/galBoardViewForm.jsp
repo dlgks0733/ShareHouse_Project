@@ -59,7 +59,7 @@
 						<div class="card">
 							<div class="card-image">
 								<img width="300px" height="300px" alt="${mlbVo.fileName}"
-									src="/displayFile?fileName=${mlbVo.fileName}">
+									src="displayFile?fileName=${mlbVo.fileName}">
 							</div>
 							<!-- /.card-image -->
 							<div class="card-content w100dt">

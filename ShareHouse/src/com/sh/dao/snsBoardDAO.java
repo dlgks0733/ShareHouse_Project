@@ -30,7 +30,7 @@ public class snsBoardDAO extends DBManager{
 	public void insertsnsBoard(snsBoardVO snsVo) {
 		String sql = "INSERT INTO TBL_SNS_BOARD("
 				+ "	  BODNUM, BODTITLE, BODCONTENTS )"
-				+ "	  VALUES(sns_bodnum_seq.nextval, ?, ?)";
+				+ "	  VALUES(sns_bodnum_seq.nextval, ?, ?,?)";
 		
 		Connection conn = getConnection();
 		PreparedStatement pstmt;
@@ -40,8 +40,8 @@ public class snsBoardDAO extends DBManager{
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, snsVo.getBodTitle());
 			pstmt.setString(2, snsVo.getBodContents());
-		//	pstmt.setInt(3, snsVo.getBodHits());
-		//	pstmt.setString(4, snsVo.getMemberId());
+		//	pstmt.setInt(4, snsVo.getBodHits());
+			pstmt.setString(3, snsVo.getMemberId());
 		//	pstmt.setString(5, snsVo.getAdminId());
 			
 			pstmt.executeQuery();
@@ -78,6 +78,7 @@ public class snsBoardDAO extends DBManager{
 				snsVo.setBodContents(rs.getString("BODCONTENTS"));
 				snsVo.setBodDate(rs.getDate("BODDATE"));
 				snsVo.setBodHits(rs.getInt("BODHITS"));
+				snsVo.setBodHits(rs.getInt("MEMBERNAME"));
 				
 				
 				list.add(snsVo);

@@ -65,8 +65,8 @@
 					<c:forEach var="snsVo" items="${list}" varStatus="status">
 					<tr>
 					<td width="10%">${status.index+1}</td>
-					<td width="20%"><a href="sns?command=snsBoardViewFormAction&bodNum=${mVO.bodNum}">${mVO.bodTitle}</a></td>
-					<td width="10%">${snsVo.memberName}</td>
+					<td width="20%"><a href="sns?command=snsBoardViewFormAction&bodNum=${snsVo.bodNum}">${snsVo.bodTitle}</a></td>
+					<td width="10%">${snsVo.memberId}</td>
 					<td width="10%">${snsVo.bodDate}</td>
 					<td width="10%">${snsVO.bodHits}</td>
 					</tr>

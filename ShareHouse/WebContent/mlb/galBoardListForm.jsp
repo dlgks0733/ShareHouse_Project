@@ -59,7 +59,7 @@
 						<div class="card">
 							<div class="card-image">
 								<img class='max-small' alt=""
-									src="/displayFile?fileName=${galVo.fileName}">
+									src="displayFile?fileName=${galVo.fileName}">
 
 								<!--<a class="btn-floating center-align cmn-bgcolor halfway-fab waves-effect waves-light">
 												<i class="icofont icofont-camera-alt"></i>

@@ -45,93 +45,42 @@
 		<!-- ==================== header-section End ==================== -->
 
 		<!-- ==================== board-section start ==================== -->
-	<section id="error-section" class="error-section w100dt mb-50">
+	<section id="single-blog-section"
+		class="single-blog-section w100dt mb-50">
 		<div class="container">
-		
-			<div class="col m6 s12">
-								<div class="blogs mb-30">
-									<div class="card">
-										<div class="card-image">
-											<img src="img/selfie.jpg" alt="Image">
-											<!--<a class="btn-floating center-align cmn-bgcolor halfway-fab waves-effect waves-light">
-												<i class="icofont icofont-camera-alt"></i>
-											</a> -->
-										</div>
-										<!-- /.card-image -->
-										<div class="card-content w100dt">
-											<p>
-												<a href="#" class="tag left w100dt l-blue mb-30">sns동아리</a>
-											</p>
-											<a href="single-blog.html" class="card-title">
-												Labore Etdolore Magna Aliqua Utero Ratione
-											</a>
-											<p class="mb-30">
-												Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
-											</p>
-											<ul class="post-mate-time left">
-												<li>
-													<p class="hero left">
-														By - <a href="#" class="l-blue">SujonMaji</a>
-													</p>
-												</li>
-												<li>
-													<i class="icofont icofont-ui-calendar"></i> 5 February'17
-												</li>
-											</ul>
-
-										<!--	<ul class="post-mate right">
-												<li class="like">
-													<a href="#">
-														<i class="icofont icofont-heart-alt"></i> 55
-													</a>
-												</li>
-												<li class="comment">
-													<a href="#">
-														<i class="icofont icofont-comment"></i> 32
-													</a>
-												</li>
-											</ul> -->
-										</div>
-										<!-- /.card-content -->
-									</div>
-									<!-- /.card -->
-								</div>
-								<!-- /.blogs -->
-							</div>
-							
-							
+			<c:forEach items="${galList }" var="galVo" varStatus="galStat">
 				<div class="col m6 s12">
-								<div class="blogs mb-30">
-									<div class="card">
-										<div class="card-image">
-											<img src="img/selfie.jpg" alt="Image">
-											<!--<a class="btn-floating center-align cmn-bgcolor halfway-fab waves-effect waves-light">
+					<div class="blogs mb-30">
+						<div class="card">
+							<div class="card-image">
+								<img class='max-small' alt=""
+									src="/displayFile?fileName=${galVo.fileName}">
+
+								<!--<a class="btn-floating center-align cmn-bgcolor halfway-fab waves-effect waves-light">
 												<i class="icofont icofont-camera-alt"></i>
 											</a> -->
-										</div>
-										<!-- /.card-image -->
-										<div class="card-content w100dt">
-											<p>
-												<a href="#" class="tag left w100dt l-blue mb-30">sns동아리</a>
-											</p>
-											<a href="single-blog.html" class="card-title">
-												Labore Etdolore Magna Aliqua Utero Ratione
-											</a>
-											<p class="mb-30">
-												Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
-											</p>
-											<ul class="post-mate-time left">
-												<li>
-													<p class="hero left">
-														By - <a href="#" class="l-blue">SujonMaji</a>
-													</p>
-												</li>
-												<li>
-													<i class="icofont icofont-ui-calendar"></i> 5 February'17
-												</li>
-											</ul>
+							</div>
+							<!-- /.card-image -->
 
-										<!--	<ul class="post-mate right">
+							<div class="card-content w100dt">
+								<p>
+									<a href="#" class="tag left w100dt l-blue mb-30">SNS동아리</a>
+								</p>
+								<a
+									href="mlb?command=mlbGalBoardViewFormAction&galNum=${galVo.galNum}"
+									class="card-title"> ${galVo.galTitle} </a>
+								<p class="mb-30">${galVo.galContents}</p>
+								<ul class="post-mate-time left">
+									<li>
+										<p class="hero left">
+											By - <a href="#" class="l-blue">${galVo.adminId}</a>
+										</p>
+									</li>
+									<li><i class="icofont icofont-ui-calendar"></i>
+										${galVo.galDate}</li>
+								</ul>
+
+								<!--	<ul class="post-mate right">
 												<li class="like">
 													<a href="#">
 														<i class="icofont icofont-heart-alt"></i> 55
@@ -143,145 +92,63 @@
 													</a>
 												</li>
 											</ul> -->
-										</div>
-										<!-- /.card-content -->
-									</div>
-									<!-- /.card -->
-								</div>
-								<!-- /.blogs -->
 							</div>
-							
-				<div class="col m6 s12">
-								<div class="blogs mb-30">
-									<div class="card">
-										<div class="card-image">
-											<img src="img/selfie.jpg" alt="Image">
-											<!--<a class="btn-floating center-align cmn-bgcolor halfway-fab waves-effect waves-light">
-												<i class="icofont icofont-camera-alt"></i>
-											</a> -->
-										</div>
-										<!-- /.card-image -->
-										<div class="card-content w100dt">
-											<p>
-												<a href="#" class="tag left w100dt l-blue mb-30">sns동아리</a>
-											</p>
-											<a href="single-blog.html" class="card-title">
-												Labore Etdolore Magna Aliqua Utero Ratione
-											</a>
-											<p class="mb-30">
-												Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
-											</p>
-											<ul class="post-mate-time left">
-												<li>
-													<p class="hero left">
-														By - <a href="#" class="l-blue">SujonMaji</a>
-													</p>
-												</li>
-												<li>
-													<i class="icofont icofont-ui-calendar"></i> 5 February'17
-												</li>
-											</ul>
+							<!-- /.card-content -->
+						</div>
+						<!-- /.card -->
+					</div>
+					<!-- /.blogs -->
 
-										<!--	<ul class="post-mate right">
-												<li class="like">
-													<a href="#">
-														<i class="icofont icofont-heart-alt"></i> 55
-													</a>
-												</li>
-												<li class="comment">
-													<a href="#">
-														<i class="icofont icofont-comment"></i> 32
-													</a>
-												</li>
-											</ul> -->
-										</div>
-										<!-- /.card-content -->
-									</div>
-									<!-- /.card -->
-								</div>
-								<!-- /.blogs -->
-							</div>
-							
-							
-				<div class="col m6 s12">
-								<div class="blogs mb-30">
-									<div class="card">
-										<div class="card-image">
-											<img src="img/selfie.jpg" alt="Image">
-											<!--<a class="btn-floating center-align cmn-bgcolor halfway-fab waves-effect waves-light">
-												<i class="icofont icofont-camera-alt"></i>
-											</a> -->
-										</div>
-										<!-- /.card-image -->
-										<div class="card-content w100dt">
-											<p>
-												<a href="#" class="tag left w100dt l-blue mb-30">sns동아리</a>
-											</p>
-											<a href="single-blog.html" class="card-title">
-												Labore Etdolore Magna Aliqua Utero Ratione
-											</a>
-											<p class="mb-30">
-												Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
-											</p>
-											<ul class="post-mate-time left">
-												<li>
-													<p class="hero left">
-														By - <a href="#" class="l-blue">SujonMaji</a>
-													</p>
-												</li>
-												<li>
-													<i class="icofont icofont-ui-calendar"></i> 5 February'17
-												</li>
-											</ul>
-
-										<!--	<ul class="post-mate right">
-												<li class="like">
-													<a href="#">
-														<i class="icofont icofont-heart-alt"></i> 55
-													</a>
-												</li>
-												<li class="comment">
-													<a href="#">
-														<i class="icofont icofont-comment"></i> 32
-													</a>
-												</li>
-											</ul> -->
-										</div>
-										<!-- /.card-content -->
-									</div>
-									<!-- /.card -->
-								</div>
-								<!-- /.blogs -->
-							</div>
-							
-							
-							
-							
-							
-							
-			
-				<hr>
-				
-				<div>
-					<input type="button" class="btn" style="float: right;"
-				onclick="location.href='sns?command=snsGalBoardInsertFormAction'" value="등록">
 				</div>
-			
-			
+			</c:forEach>
+
+			<%-- 			<c:forEach items="${galList }" var="galVo" varStatus="galStat">
+				<div class="col m6 s12">
+					<div class="blogs mb-30">
+						<div class="card">
+							<div class="card-image">
+								<img class='max-small' alt=""
+									src="/displayFile?fileName=${galVo.fileName}">
+							</div>
+						</div>
+					</div>
+				</div>
+			</c:forEach> --%>
+
+
+
+			<div class="col m12 s12">
+				<a href="mlb?command=mlbGalBoardInsertFormAction">
+				<button type="button" class="custom-btn waves-effect waves-light right" >등록</button>
+				</a>				
+			</div>
+
+		<ul class="pagination w100dt">
+							<li class="waves-effect"><a href="#!"><i class="icofont icofont-simple-left"></i></a></li>
+							<li class="active"><a href="#!">1</a></li>
+							<li class="waves-effect"><a href="#!">2</a></li>
+							<li class="waves-effect"><a href="#!">3</a></li>
+							<li class="waves-effect"><a href="#!">4</a></li>
+							<li class="waves-effect"><a href="#!">5</a></li>
+							<li class="waves-effect"><a href="#!"><i class="icofont icofont-simple-right"></i></a></li>
+						</ul>
+
+
 		</div>
 		<!-- container -->
 	</section>
 
+
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/materialize.js"></script>
+	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+
+	<!-- my custom js -->
+	<script type="text/javascript" src="js/custom.js"></script>
+
+	<script type="text/javascript">
 		
-		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-		<script type="text/javascript" src="js/materialize.js"></script>
-		<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-
-		<!-- my custom js -->
-		<script type="text/javascript" src="js/custom.js"></script>
-
-		<script type="text/javascript">
-		</script>
-<%@include file="../include/footer.jsp" %>		
+	</script>
+	<%@include file="../include/footer.jsp"%>
 </body>
 </html>
