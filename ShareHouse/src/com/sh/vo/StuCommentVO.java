@@ -9,50 +9,51 @@ package com.sh.vo;
 
 import java.util.Date;
 
-public class StuCommentVO {
+public class StuCommentVO extends MemberVO {
 	
-	private String CommNum;
-	private String CommContents;
-	private Date CommDate;
-	private String BodNum;
-	private String MemberId;
+	private String commNum;
+	private String commContents;
+	private Date commDate;
+	private String bodNum;
+	private String memberId;
 	
 	public String getCommNum() {
-		return CommNum;
+		return commNum;
 	}
 	public void setCommNum(String commNum) {
-		CommNum = commNum;
+		this.commNum = commNum;
 	}
 	public String getCommContents() {
-		return CommContents;
+		return commContents;
 	}
 	public void setCommContents(String commContents) {
-		CommContents = commContents;
+		this.commContents = commContents;
 	}
 	public Date getCommDate() {
-		return CommDate;
+		return commDate;
 	}
 	public void setCommDate(Date commDate) {
-		CommDate = commDate;
+		this.commDate = commDate;
 	}
 	public String getBodNum() {
-		return BodNum;
+		return bodNum;
 	}
 	public void setBodNum(String bodNum) {
-		BodNum = bodNum;
+		this.bodNum = bodNum;
 	}
 	public String getMemberId() {
-		return MemberId;
+		return memberId;
 	}
 	public void setMemberId(String memberId) {
-		MemberId = memberId;
+		this.memberId = memberId;
 	}
-	
 	@Override
 	public String toString() {
-		return "StuComment [CommNum=" + CommNum + ", CommContents=" + CommContents + ", CommDate=" + CommDate
-				+ ", BodNum=" + BodNum + ", MemberId=" + MemberId + "]";
+		return "StuCommentVO [commNum=" + commNum + ", commContents=" + commContents + ", commDate=" + commDate
+				+ ", bodNum=" + bodNum + ", memberId=" + memberId + "]";
 	}
+	
+	
 	
 	
 	

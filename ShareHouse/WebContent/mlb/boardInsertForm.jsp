@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<script type="text/javascript" src="js/board.js"></script>
+		<script type="text/javascript" src="../js/mlbGalBoard.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
 
 		<title>Share House :: 농구동아리 게시판</title>
@@ -47,7 +47,7 @@
 	<section id="error-section" class="error-section w100dt mb-50">
 		<div class="container">
 			<!-- nlb board table form -->
-		<form name="frm" method="post" action="mlb?command=mlbBoardInsertAction" onsubmit="return validateBoard()">
+		<form name="frm" method="post" action="mlb?command=mlbBoardInsertAction" onsubmit="return validateGalBoard()">
 			<input type="hidden" name="memId" value="${loginUser.memberId}">
 			<table class="centered">
 					<tr>

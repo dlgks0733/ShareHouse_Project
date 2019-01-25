@@ -42,7 +42,7 @@ public class MlbBoardDAO extends DBManager {
 			// pstmt.setInt(3, mlbVo.getBodHits());
 			// pstmt.setString(5, mlbVo.getAdminId());
 
-			pstmt.executeQuery();
+			pstmt.executeUpdate();
 
 		} catch (SQLException e) {
 			e.printStackTrace();

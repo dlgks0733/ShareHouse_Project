@@ -29,8 +29,8 @@ public class EplBoardDAO extends DBManager {
 	//epl 게시물 등록
 	public void insertEplBoard(EplBoardVO eplVo) {
 		String sql = "INSERT INTO TBL_EPL_BOARD("
-				+ "	  BODNUM, BODTITLE, BODCONTENTS )"
-				+ "	  VALUES(mlb_bodnum_seq.nextval, ?, ?)";
+				+ "	  BODNUM, BODTITLE, BODCONTENTS, MEMBERID )"
+				+ "	  VALUES(mlb_bodnum_seq.nextval, ?, ?, ?)";
 		
 		Connection conn = getConnection();
 		PreparedStatement pstmt;
@@ -40,6 +40,7 @@ public class EplBoardDAO extends DBManager {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, eplVo.getBodTitle());
 			pstmt.setString(2, eplVo.getBodContents());
+			pstmt.setString(3, eplVo.getMemberId());
 			
 			pstmt.executeQuery();
 			
@@ -60,7 +61,9 @@ public class EplBoardDAO extends DBManager {
 		PreparedStatement pstmt;
 		ResultSet rs = null;
 		
-		String sql = "SELECT * FROM TBL_EPL_BOARD ORDER BY BODNUM DESC";
+		String sql = "SELECT EP.BODNUM, EP.BODTITLE, EP.BODCONTENTS, EP.BODHITS, EP.BODDATE, EP.MEMBERID, EP.ADMINID,"
+				+ "   M.MEMBERNAME FROM TBL_EPL_BOARD EP, TBL_MEMBER M"
+				+ "   WHERE EP.MEMBERID = M.MEMBERID";
 		
 		try {
 			
@@ -75,6 +78,8 @@ public class EplBoardDAO extends DBManager {
 				eplVo.setBodContents(rs.getString("BODCONTENTS"));
 				eplVo.setBodDate(rs.getDate("BODDATE"));
 				eplVo.setBodHits(rs.getInt("BODHITS"));
+				eplVo.setMemberId(rs.getString("MEMBERID"));
+				eplVo.setMemberName(rs.getString("MEMBERNAME"));
 				
 				
 				list.add(eplVo);
@@ -197,8 +202,8 @@ public class EplBoardDAO extends DBManager {
 	public void insertComment(EplCommentVO eplVo) {
 		
 		String sql = "INSERT INTO TBL_EPL_COMMENT( "
-				+ "COMMNUM, COMMCONTENTS, BODNUM, COMMDATE) "
-				+ "VALUES (EPL_COMMNUM_SEQ.NEXTVAL, ?, ?, SYSDATE)";
+				+ "COMMNUM, MEMBERID, COMMCONTENTS, BODNUM, COMMDATE) "
+				+ "VALUES (EPL_COMMNUM_SEQ.NEXTVAL, ?, ?, ?, SYSDATE)";
 		
 		Connection conn = getConnection();
 		PreparedStatement pstmt;
@@ -206,8 +211,9 @@ public class EplBoardDAO extends DBManager {
 		try {
 			
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, eplVo.getCommContents());
-			pstmt.setString(2, eplVo.getBodNum());
+			pstmt.setString(1, eplVo.getMemberId());
+			pstmt.setString(2, eplVo.getCommContents());
+			pstmt.setString(3, eplVo.getBodNum());
 //			pstmt.setString(3, eplVo.getCommDate());
 			
 			pstmt.executeQuery();
@@ -245,6 +251,7 @@ public class EplBoardDAO extends DBManager {
 				eplVo.setCommNum(rs.getString("COMMNUM"));
 				eplVo.setCommContents(rs.getString("COMMCONTENTS"));
 				eplVo.setCommDate(rs.getString("COMMDATE"));
+				eplVo.setMemberId("MEMBERID");
 				
 				list.add(eplVo);
 				

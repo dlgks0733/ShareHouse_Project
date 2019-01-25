@@ -1,6 +1,6 @@
 package com.sh.vo;
 
-public class EplCommentVO {
+public class EplCommentVO extends MemberVO {
 	
 	private String commNum;
 	private String commContents;

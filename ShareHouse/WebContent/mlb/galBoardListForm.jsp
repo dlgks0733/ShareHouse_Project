@@ -123,9 +123,8 @@
 
 
 			<div class="col m12 s12">
-				<a href="mlb?command=mlbGalBoardInsertFormAction">
-				<button type="button" class="custom-btn waves-effect waves-light right" >등록</button>
-				</a>				
+				<button type="button" class="custom-btn waves-effect waves-light right"
+				 onclick="location.href='mlb?command=mlbGalBoardInsertFormAction'">등록</button>
 			</div>
 
 		<ul class="pagination w100dt">

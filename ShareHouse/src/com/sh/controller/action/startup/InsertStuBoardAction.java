@@ -20,21 +20,21 @@ public class InsertStuBoardAction implements Action{
 		
 		String bodTitle = request.getParameter("bodTitle");
 		String bodContents = request.getParameter("bodContents");
-/*		String MemberId = request.getParameter("MemberId");
-		String AdminId = request.getParameter("AdminId");*/
+		String memId = request.getParameter("memId");
+		//String AdminId = request.getParameter("AdminId");
 		
 		
 		System.out.println("bodTitle :" + bodTitle );
 		System.out.println("bodContents :" + bodContents );
-/*		System.out.println("MemberId :" + MemberId );
-		System.out.println("AdminId :" + AdminId );*/
+		System.out.println("MemberId :" + memId );
+/*		System.out.println("AdminId :" + AdminId );*/
 		
 		StuBoardVO stuVO = new StuBoardVO();
 		
 		stuVO.setBodTitle(bodTitle);
 		stuVO.setBodContents(bodContents);
-/*		stuVO.setMemberId(MemberId);
-		stuVO.setAdminId(AdminId);*/
+		stuVO.setMemberId(memId);
+		/*stuVO.setAdminId(AdminId);*/
 		
 		StuBoardDAO stuDAO = StuBoardDAO.getInstance();
 		stuDAO.insertStuBoard(stuVO);
