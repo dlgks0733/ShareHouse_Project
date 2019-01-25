@@ -9,7 +9,8 @@ import com.sh.controller.action.startup.StuBoardListFormAction;
 import com.sh.controller.action.startup.StuBoardUpdateAction;
 import com.sh.controller.action.startup.StuBoardUpdateFormAction;
 import com.sh.controller.action.startup.StuBoardView;
-
+import com.sh.controller.action.startup.StuCommentDeleteAction;
+import com.sh.controller.action.startup.StuCommentUpdateAction;
 import com.sh.controller.action.startup.StuNoticeDeleteAction;
 import com.sh.controller.action.startup.StuNoticeInsertAction;
 import com.sh.controller.action.startup.StuNoticeInsertFormAction;
@@ -17,6 +18,7 @@ import com.sh.controller.action.startup.StuNoticeListFormAction;
 import com.sh.controller.action.startup.StuNoticeUpdateAction;
 import com.sh.controller.action.startup.StuNoticeUpdateFormAction;
 import com.sh.controller.action.startup.StuNoticeViewAction;
+import com.sh.controller.action.startup.stuCommentInsertAction;
 
 
 
@@ -95,7 +97,25 @@ public class StuActionFactory {
 		} else if (command.equals("noticeDelete")) {
 			
 			action = new StuNoticeDeleteAction();
-		} 
+		} else if (command.equals("stuCommentInsertAction")) {
+			
+			action = new stuCommentInsertAction();
+			
+		} else if (command.equals("stuBoardDelete")) {
+			
+			action = new StuBoardDeleteAction();
+			
+		} else if (command.equals("stuCommentDeleteAction")) {
+			
+			action = new StuCommentDeleteAction();
+			
+		} else if (command.equals("stuCommentUpdateAction")) {
+			
+			action = new StuCommentUpdateAction();
+		}
+		
+		
+		
 		return action;
 
 	}

@@ -9,8 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.sql.Date;
 
-
+import com.sh.vo.EplCommentVO;
 import com.sh.vo.StuBoardVO;
+import com.sh.vo.StuCommentVO;
 import com.sh.vo.StuNoticeVO;
 
 import util.DBManager;
@@ -28,7 +29,7 @@ public class StuBoardDAO extends DBManager{
 		// 게시판 목록
 	public ArrayList<StuBoardVO> selectAllStuBoard(){
 		
-		String sql = "SELECT * FROM TBL_STU_BOARD";
+		String sql = "SELECT * FROM TBL_STU_BOARD ORDER BY BODNUM DESC";
 		
 		ArrayList<StuBoardVO> list = new ArrayList<StuBoardVO>();
 		
@@ -120,7 +121,7 @@ public class StuBoardDAO extends DBManager{
 		   }
 		}
 	   //조회수 늘어나는거
-	   public void updateHits(String BodNum) {
+	   public void updateHits(String bodNum) {
 		   
 		   String sql = "UPDATE TBL_STU_BOARD SET BODHITS = BODHITS +1 WHERE BODNUM = ?";
 		   
@@ -131,7 +132,7 @@ public class StuBoardDAO extends DBManager{
 			   
 			   
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, BodNum);
+			psmt.setString(1, bodNum);
 			
 			psmt.executeQuery();
 		} catch (Exception e) {
@@ -201,7 +202,7 @@ public class StuBoardDAO extends DBManager{
 	  }
 	  
 	  public void deleteStuBoard(String bodNum) {
-		  String sql = "DELETE TBL_STU_BOARD WHERE BODNUM = ?";
+		  String sql = "DELETE FROM TBL_STU_BOARD WHERE BODNUM = ?";
 		  
 		  Connection conn = getConnection();
 		  PreparedStatement psmt;
@@ -368,5 +369,143 @@ public class StuBoardDAO extends DBManager{
 	         
 	         return paging;
 	   }
+	   
+	 //댓글 등록
+		public void insertComment(StuCommentVO stuVO) {
+			
+			String sql = "INSERT INTO TBL_STU_COMMENT("
+					+ "COMMNUM, MEMBERID, COMMCONTENTS, BODNUM, COMMDATE) "
+					+ "VALUES (STU_COMMNUM_SEQ.NEXTVAL, ?, ?, ?, SYSDATE)";
+			
+			Connection conn = getConnection();
+			PreparedStatement pstmt;
+			
+			try {
+				
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, stuVO.getMemberId());
+				pstmt.setString(2, stuVO.getCommContents());
+				pstmt.setString(3, stuVO.getBodNum());
+				
+				pstmt.executeUpdate();
+				
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				dbClose();
+			}
+		}
+		
+		//댓글 리스트 불러오기
+		public ArrayList<StuCommentVO> stuCommentList(String bodNum) {
+			
+			ArrayList<StuCommentVO> list = new ArrayList<StuCommentVO>();
+			
+			Connection conn = getConnection();
+			PreparedStatement pstmt;
+			ResultSet rs = null;
+			
+			String sql = "SELECT C.*, M.MEMBERNAME" + 
+					"  FROM TBL_STU_COMMENT C, TBL_MEMBER M" + 
+					" WHERE C.MEMBERID = M.MEMBERID AND BODNUM = ?" + 
+					"ORDER BY COMMDATE ASC";
+			
+			try {
+				
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, bodNum);
+				
+				rs = pstmt.executeQuery();
+				
+				while(rs.next()) {
+					
+					StuCommentVO stuVO = new StuCommentVO();
+					
+					stuVO.setCommNum(rs.getString("COMMNUM"));
+					stuVO.setCommContents(rs.getString("COMMCONTENTS"));
+					stuVO.setBodNum(rs.getString("BODNUM"));
+					stuVO.setCommDate(rs.getDate("COMMDATE"));
+					stuVO.setMemberId(rs.getString("MEMBERID"));
+					stuVO.setMemberName(rs.getString("MEMBERNAME"));
+					
+					list.add(stuVO);
+					
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				dbClose();
+			}
+			
+			return list;
+		}
+		
+		public void stuCommentDelete(String commNum) {
+			
+			String sql = "DELETE FROM TBL_STU_COMMENT WHERE COMMNUM = ?";
+			
+			Connection conn = getConnection();
+			PreparedStatement pstmt;
+			
+			try {
+				
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, commNum);
+				pstmt.executeUpdate();
+				
+			}	catch (SQLException e) {
+					e.printStackTrace();
+			}	finally {
+				
+				dbClose();
+			}
+			
+		}
+		
+		//게시글에 있는 모든 댓글 삭제
+		
+public void stuAllCommentDelete(String bodNum) {
+			
+			String sql = "DELETE FROM TBL_STU_COMMENT WHERE bodNum = ?";
+			
+			Connection conn = getConnection();
+			PreparedStatement pstmt;
+			
+			try {
+				
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, bodNum);
+				pstmt.executeUpdate();
+				
+			}	catch (SQLException e) {
+					e.printStackTrace();
+			}	finally {
+				
+				dbClose();
+			}
+			
+		}
+
+//댓글 수정
+public void updateStuComment(StuCommentVO stuVo) {
+	
+	String sql = "UPDATE TBL_STU_COMMENT SET COMMCONTENTS = ?, COMMDATE = SYSDATE WHERE COMMNUM = ?";
+	Connection conn = getConnection();
+	PreparedStatement pstmt;
+	
+	try {
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, stuVo.getCommContents());
+		pstmt.setString(2, stuVo.getCommNum());
+		pstmt.executeUpdate();
+	}	catch (SQLException e) {
+		e.printStackTrace();
+	}	finally {
+		dbClose();
+	}
+	
+}
+
 
 }
