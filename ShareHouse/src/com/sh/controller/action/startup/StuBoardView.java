@@ -42,7 +42,7 @@ public class StuBoardView implements Action {
 		StuBoardVO bodList =  sDAO.selectOneBoardByBodNum(bodNum);
 		request.setAttribute("bodList", bodList);
 		
-		
+		System.out.println("bodList :" + bodList);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);

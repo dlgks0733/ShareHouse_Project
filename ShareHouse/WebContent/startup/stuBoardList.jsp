@@ -16,7 +16,8 @@
 <link rel="stylesheet" type="text/css" href="css/materialize.css">
 <link rel="stylesheet" type="text/css" href="css/icofont.css">
 <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
-<link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css">
+<link rel="stylesheet" type="text/css"
+	href="css/owl.theme.default.min.css">
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/site.css">
 
@@ -60,82 +61,86 @@
 			<div class="row">
 				<div class="col m12 s12">
 					<div class="blogs mb-30">
-					<div class="card">
-						<!-- nlb board table form -->
-						<table class="centered">
-							<thead>
-								<tr>
-									<th>번호</th>
-									<th>제목</th>
-									<th>작성자</th>
-									<th>작성일</th>
-									<th>조회수</th>
-								</tr>
-							</thead>
-
-							<tbody>
-
-
-								<c:forEach var="StuBoardVO" items="${noticeList}"
-									varStatus="status">
+						<div class="card">
+							<!-- nlb board table form -->
+							<table class="centered">
+								<thead>
 									<tr>
-										<td width="10%">${(paging.numOfRow - status.index) - (paging.pageNum-1) * 10}</td>
-
-										<td width="20%"><a
-											href="stu?command=stuBoardView&bodNum=${StuBoardVO.bodNum}">${StuBoardVO.bodTitle}</a></td>
-										<td width="10%">${StuBoardVO.memberName}</td>
-										<td width="10%">${StuBoardVO.bodDate}</td>
-										<td width="10%">${StuBoardVO.bodHits}</td>
+										<th>번호</th>
+										<th>제목</th>
+										<th>작성자</th>
+										<th>작성일</th>
+										<th>조회수</th>
 									</tr>
-								</c:forEach>
-							</tbody>
+								</thead>
 
-						</table>
+								<tbody>
 
+
+									<c:forEach var="StuBoardVO" items="${noticeList}"
+										varStatus="status">
+										<tr>
+											<td width="10%">${(paging.numOfRow - status.index) - (paging.pageNum-1) * 10}</td>
+
+											<td width="20%"><a
+												href="stu?command=stuBoardView&bodNum=${StuBoardVO.bodNum}">${StuBoardVO.bodTitle}</a></td>
+											<td width="10%">${StuBoardVO.memberName}</td>
+											<td width="10%">${StuBoardVO.bodDate}</td>
+											<td width="10%">${StuBoardVO.bodHits}</td>
+										</tr>
+									</c:forEach>
+								</tbody>
+
+							</table>
+
+						</div>
+					</div>
+					<div>
+						<input type="hidden" name="memId" value="${loginUser.memberId}">
+						<button type="button" class="btn btn-primary right"
+							onclick="location.href='stu?command=insertStuBoardList'; return insertFormCheck();">등록</button>
 					</div>
 				</div>
-				<div>
-				<input type="hidden" name="memId" value="${loginUser.memberId}">
-				<button type="button" class="btn btn-primary right"
-				 onclick="location.href='stu?command=insertStuBoardList'; return insertFormCheck();">등록</button>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="text-center">
+						<ul class="pagination w100dt">
+							<c:if test="${paging.pageNum > 1}">
+								<li class="waves-effect"><a
+									href="/ShareHouse/stu?command=stuBoardList&pageNum=${paging.pageNum - 1}"
+									aria-label="Previous"><i
+										class="icofont icofont-simple-left"></i></a></li>
+							</c:if>
+
+							<c:forEach begin="${paging.firstPage}" end="${paging.lastPage}"
+								var="idx">
+								<c:choose>
+									<c:when test="${idx == paging.pageNum}">
+										<li><span style="font-weight: bold;">${idx}</span></li>
+									</c:when>
+									<c:otherwise>
+										<li class="waves-effect"><a
+											href="/ShareHouse/stu?command=stuBoardList&pageNum=${idx}">
+												${idx} </a></li>
+									</c:otherwise>
+								</c:choose>
+							</c:forEach>
+							<c:if test="${paging.numOfPage != paging.pageNum}">
+								<li class="waves-effect"><a
+									href="/ShareHouse/stu?command=stuBoardList&pageNum=${paging.pageNum + 1}"
+									aria-label="Previous">»</a></li>
+							</c:if>
+
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
-<<<<<<< HEAD
-	<div class="row">
-    <div class="col-sm-12">
-    <div class="text-center"> 
-		<ul class="pagination w100dt">
-		<c:if test="${paging.pageNum > 1}">
-		<li class="waves-effect"><a href="/ShareHouse/stu?command=stuBoardList&pageNum=${paging.pageNum - 1}" 
-		aria-label="Previous"><i class="icofont icofont-simple-left"></i></a></li>
-		</c:if>
-		
-		<c:forEach begin="${paging.firstPage}" end="${paging.lastPage}" var="idx">
-		<c:choose>
-		<c:when test="${idx == paging.pageNum}">
-		<li><span style="font-weight: bold;">${idx}</span></li>
-		</c:when>
-		<c:otherwise>
-		<li class="waves-effect"><a  href="/ShareHouse/stu?command=stuBoardList&pageNum=${idx}">
-        ${idx} </a></li>
-         </c:otherwise>
-		</c:choose>
-		</c:forEach>
-		<c:if test="${paging.numOfPage != paging.pageNum}">
-		<li class="waves-effect"><a href="/ShareHouse/stu?command=stuBoardList&pageNum=${paging.pageNum + 1}"
-		aria-label="Previous">»</a></li>
-		</c:if>
-	
-	</ul>
-	</div>
-	</div>
-	</div> 
 	</section>
-			<!-- ---------------------------- 페이징 부분------------------------------------------------------------------------------- -->
-=======
-		</div>
->>>>>>> branch 'master' of https://github.com/dlgks0733/ShareHouse_Project.git
+	<!-- ---------------------------- 페이징 부분------------------------------------------------------------------------------- -->
+	<!--  </div>-->
+	<%-- >>>>>>> branch 'master' of https://github.com/dlgks0733/ShareHouse_Project.git
 
 		<div class="row">
 			<div class="col-sm-12">
@@ -170,8 +175,10 @@
 					</ul>
 				</div>
 			</div>
-		</div>
+		</div> 
+		
 	</section>
+		--%>
 	<!-- ---------------------------- 페이징 부분------------------------------------------------------------------------------- -->
 
 	<%-- 		  <div class="row">

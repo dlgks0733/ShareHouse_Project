@@ -279,7 +279,8 @@ public class StuBoardDAO extends DBManager{
 	  
 	  public List<StuBoardVO> selectAllNoticesPerPage(Paging paging) {
           
-	        String sql = "SELECT NOTI.* FROM (SELECT (COUNT(*)OVER() - NOTI.RNUM + 1) REVRNUM" + 
+	        String sql = "SELECT * FROM ( "
+	        		+ "SELECT ROWNUM AS PNUM , NOTI.* FROM (SELECT (COUNT(*)OVER() - NOTI.RNUM + 1) REVRNUM" + 
 	        		"                                     , NOTI.* FROM (SELECT ROWNUM RNUM" + 
 	        		"                                     , NOTI.BODNUM" + 
 	        		"	                                 , NOTI.BODTITLE" + 
@@ -288,9 +289,9 @@ public class StuBoardDAO extends DBManager{
 	        		"	              					 , NOTI.BODDATE" + 
 	        		"                                     ,(SELECT MEMBERNAME from TBL_MEMBER where MEMBERID = NOTI.MEMBERID) as memname" + 
 	        		"	                            FROM TBL_STU_BOARD NOTI" + 
-	        		"	                           ORDER BY NOTI.BODNUM DESC) NOTI" + 
+	        		"	                           ORDER BY NOTI.BODDATE DESC) NOTI" + 
 	        		"	                         ) NOTI" + 
-	        		"	               WHERE NOTI.RNUM BETWEEN ? AND ?";
+	        		"	               )WHERE PNUM BETWEEN ? AND ?";
 	         
 	         List<StuBoardVO> list = new ArrayList<StuBoardVO>();
 	         Connection conn = null;
@@ -301,7 +302,7 @@ public class StuBoardDAO extends DBManager{
 	            conn = getConnection();
 	            stmt = conn.prepareStatement(sql);
 	            
-	            
+	            System.out.println(sql);
 	            
 	            stmt.setInt(1, ((paging.getPageNum() - 1) * paging.getPerPage()) + 1);
 	            stmt.setInt(2, ((paging.getPageNum() - 1) * paging.getPerPage()) + paging.getPerPage());
